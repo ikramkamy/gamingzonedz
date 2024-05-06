@@ -2,9 +2,9 @@ import './style.css'
 import Home from './components/home';
 function App() {
   return (
-    <div className="App">
-     <h1 className='text-red-500'>Gaming Zone DZ</h1>
+    <div className="bg-black text-white overflow-hidden">
      <Home/>
+     
     </div>
   );
 }

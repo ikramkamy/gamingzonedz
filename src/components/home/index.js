@@ -1,10 +1,10 @@
 import SectionOne from "./sectionOne";
-
+import Navbar from "../navbar";
 
 const Home=()=>{
-    return(<div>home page elements
+    return(<div>
 
-
+        <Navbar/>
         <SectionOne/>
     </div>)
 }

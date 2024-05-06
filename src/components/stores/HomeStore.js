@@ -1,6 +1,7 @@
 import { create  } from "zustand";
-import imageCarousel1 from "../../assets/home/section1/withoutbackg/Women Png copy.png"
-import imageCarousel2 from "../../assets/home/section1/Composant11Next-removebg-previewuseit.png"
+import imageCarousel1 from "../../assets/home/section1/Composant11.png";
+import imageCarousel2 from "../../assets/home/section1/Composant11Next.png";
+
 
 import axios from "axios";
 
@@ -27,7 +28,7 @@ export const HomeCarouselElements =create((set,get)=>({
         title:"your gaming destination ",
     }, 
      {
-      ImageUrl:imageCarousel2,
+      ImageUrl:imageCarousel1,
       subtitle:"the epic gaming store 5",
       title:"your gaming destination 2",
   },

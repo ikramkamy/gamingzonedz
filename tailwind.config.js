@@ -1,10 +1,13 @@
+
+//const duration = require('tailwindcss-animated/src/utilities/duration');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}','./public/index.html'],
   content: [],
   theme: {
     extend: {
-      backgroundImage: {
+backgroundImage: {
         'sectionOnebg': "url('assets/home/section1/Groupedemasques3.png')",
         
       },
@@ -22,6 +25,18 @@ width: {
 height:{
 
 },
+left:{
+'37%':'37%'
+},
+
+maxWidth:{
+'60%':'60%',
+},
+translate:{
+  '13':'13%',
+  'minus30':'-30%',
+  'minus10':'-10%'
+},
 
 boxShadow: {
   'btnCarouselShadow': '1px 2px 18px 6px #CA2026',
@@ -38,6 +53,13 @@ fontFamily:{
 fontSize: {
   sm: ['10px', '20px'],
 
+},
+
+animation:{
+  duration:{
+    '2000':'2000'
+  }
+  
 }
 
     },
@@ -45,7 +67,7 @@ fontSize: {
   },
   plugins: [
     require('tailwindcss'),
-    require('autoprefixer')
+    require('autoprefixer'),
   ],
 }
 

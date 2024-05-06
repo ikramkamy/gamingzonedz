@@ -12,8 +12,11 @@ import { HomeCarouselElements } from "../../stores/HomeStore";
 import { useEffect, useState } from "react";
 import { ButtonHomeSection1 } from "./ComponentsSection1";
 const SectionOne=()=>{
+   
 const {CarouselElements, getBanners}=HomeCarouselElements((state=>state))
-const [elem , setElem]=useState(0)
+const [elem , setElem]=useState(0);
+const [classVisible, setClassVisible]=useState('visible');
+const [classInvisible,setClassInvisible]=useState('invisible')
 
 useEffect( ()=>{
     getBanners && getBanners()
@@ -29,6 +32,12 @@ const ForwordCarousel=()=>{
     if(elem < CarouselElements.length-1){
         
         setElem(elem+1)
+        if(elem%2==0){
+            alert('show first')
+        }
+        else{
+            alert('show second')
+        }
         //console.log(CarouselElements[elem].title.splite('')[0])
     }else(setElem(0))
 }
@@ -36,12 +45,26 @@ const BackwordCarousel=()=>{
     setElem(elem-1)
 }
 
+useEffect(()=>{
+    if(elem%2==0){
+        
+        setClassVisible('visible')
+        setClassInvisible('invisible')
+    }
+    else{
+        
+        setClassVisible('invisible')
+        setClassInvisible('visible')
+
+    }
+},[elem])
+
     return(
-    <div className="w-full  h-screen flex flex-col items-center ">
-        <div className="wrapFirstSection 
-        flex justify-center items-center w-full h-full  bg-sectionOnebg bg-cover">
+    <div className="w-full   flex flex-col items-center ">
+        <div className="
+        flex justify-center items-center w-full h-full  bg-sectionOnebg bg-cover bg-no-repeat bg-center">
 
-
+<div className="h-5/6 flex  w-full  justify-center items-center">
             <div className="flex flex-col items-start mt-40 h-full ">
               <div id="#subtitleOne" className="flex justify-center items-center">
                 <div id="#stylingVerticalSlach" className="w-1 h-4 bg-btnCarouselHover mr-2"></div>
@@ -81,35 +104,31 @@ const BackwordCarousel=()=>{
         </div>
 
 
-       <div className="w-7/12 h-full overflow-hidden flex justify-end ">
+       <div className="w-5/12 h-full overflow-hidden flex justify-end  ">
         
        <div className="w-full ">
         <div className="flex w-full justify-between">
-            <img src={trace1} alt="gaming zone" className="translate-y-10"/>
+            <img src={trace1} alt="gaming zone" className="translate-y-10 "/>
             <img src={trace2} alt="gaming zone"/>
-            <img src={trace3} alt="gaming zone" className="translate-y-20"/>
+            <img src={trace3} alt="gaming zone" className="translate-y-20  "/>
             <img src={trace1} alt="gaming zone" className="rotate-180"/>
         </div>
-        <div className="flex w-full justify-between  relative">
+        <div className="flex w-full justify-between  ">
         <img src={trace1} alt="gaming zone" className=""/>
         
         <img src={trace6} alt="gaming zone"/>
       
      </div>
-     <div className="flex w-full justify-between">
+     <div className="flex w-full justify-between m-t-10">
         <img src={trace7} alt="gaming zone"/>
-        {/*<img src={image.getBanner()} alt="gaming" className=""/>*/}
         <img src={trace8} alt="gaming zone"/>
      </div>
+{/*<img src={image.getBanner()} alt="gaming" className="absolute top-1/4 left-[37%] max-w-90%"/>*/}
+     <img src={image.getBanner()} alt="gaming" className={`absolute top-1/4 left-[37%] max-w-60% translate-x-13 translate-y-minus10 ${classVisible}`}/>
+     <img src={image.getBanner()} alt="gaming" className={`absolute top-1/4 left-[37%] max-w-60% translate-x-minus30 translate-y-minus10   ${classInvisible}`}/>
         </div> 
 
-        <div className="flex ">
-        <div className="flex justify-between w-full">
-            
-            
-           
-        </div>
-        </div>
+       
 
         
         
@@ -119,10 +138,11 @@ const BackwordCarousel=()=>{
         </div>
         
       
-            
-
+</div>            
+ 
 
         <ProductInTheStore/>
+      
         
     </div>)
 }

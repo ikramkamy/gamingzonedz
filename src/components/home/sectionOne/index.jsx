@@ -61,11 +61,11 @@ useEffect(()=>{
 
     return(
     <div className="w-full   flex flex-col items-center ">
-        <div className="
-        flex justify-center items-center w-full h-full  bg-sectionOnebg bg-cover bg-no-repeat bg-center">
-
-<div className="h-5/6 flex  w-full  justify-center items-center">
-            <div className="flex flex-col items-start mt-40 h-full ">
+  
+<div className="flex justify-center items-center w-full h-full p-20 bg-sectionOnebg bg-cover bg-no-repeat bg-center">
+   
+<div className="h-5/6 flex  w-10/12   justify-between items-center">
+            <div className="flex flex-col  items-start mt-40 h-full  ">
               <div id="#subtitleOne" className="flex justify-center items-center">
                 <div id="#stylingVerticalSlach" className="w-1 h-4 bg-btnCarouselHover mr-2"></div>
                 <h1 className="text-[21px] uppercase">{CarouselElements[elem].subtitle}</h1>
@@ -80,7 +80,7 @@ useEffect(()=>{
         
         </div>
         
-              <div className="btnCarousel flex justify-between mt-5">
+              <div className="btnCarousel flex justify-between mt-5 w-80%">
     
                         <div className="w-57  sm:w-10 h-1 bg-btnCarousel   m-1 cursor-pointer hover:bg-btnCarouselHover hover:shadow-btnCarouselShadow" onClick={()=>setElem(0)}></div>
                         <div className="w-57  sm:w-10 h-1 bg-btnCarousel   m-1 cursor-pointer hover:bg-btnCarouselHover hover:shadow-btnCarouselShadow" onClick={()=>setElem(1)}></div>
@@ -104,9 +104,9 @@ useEffect(()=>{
         </div>
 
 
-       <div className="w-5/12 h-full overflow-hidden flex justify-end  ">
+       <div className="w-7/12 h-full flex justify-end  ">
         
-       <div className="w-full ">
+       <div className="w-full  relative">
         <div className="flex w-full justify-between">
             <img src={trace1} alt="gaming zone" className="translate-y-10 "/>
             <img src={trace2} alt="gaming zone"/>
@@ -118,14 +118,14 @@ useEffect(()=>{
         
         <img src={trace6} alt="gaming zone"/>
       
-     </div>
-     <div className="flex w-full justify-between m-t-10">
+        </div>
+         <div className="flex w-full justify-between m-t-10">
         <img src={trace7} alt="gaming zone"/>
         <img src={trace8} alt="gaming zone"/>
-     </div>
+        </div>
 {/*<img src={image.getBanner()} alt="gaming" className="absolute top-1/4 left-[37%] max-w-90%"/>*/}
-     <img src={image.getBanner()} alt="gaming" className={`absolute top-1/4 left-[37%] max-w-60% translate-x-13 translate-y-minus10 ${classVisible}`}/>
-     <img src={image.getBanner()} alt="gaming" className={`absolute top-1/4 left-[37%] max-w-60% translate-x-minus30 translate-y-minus10   ${classInvisible}`}/>
+     <img src={image.getBanner()} alt="gaming" className={`absolute translate-x-minus30 w-4/5 top-0 right-0 ${classVisible}`}/>
+     <img src={image.getBanner()} alt="gaming" className={`absolute  translate-xminus30  w-4/5 top-0 right-0 ${classInvisible}`}/>
         </div> 
 
        
@@ -140,9 +140,7 @@ useEffect(()=>{
       
 </div>            
  
-
-        <ProductInTheStore/>
-      
+ <ProductInTheStore/>
         
     </div>)
 }

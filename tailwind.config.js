@@ -9,33 +9,51 @@ module.exports = {
     extend: {
 backgroundImage: {
         'sectionOnebg': "url('assets/home/section1/Groupedemasques3.png')",
+        'productsTyps':"url('assets/home/section1/Tracé 50.png')",
+        'btnbg':"url('assets/home/section1/btns/Tracé 51.png')",
+        'newLabel':"url('assets/home/section1/Tracé 87.png')",
+        'carousItemNouveaute':"url('assets/home/section1/nouveaute/Groupe 1228.png')"
         
       },
 backgroundColor:{
   'primary':'#202020',
+  'primary1':'#2E2E2E',
   'btnCarousel':'#727272',
   'btnCarouselHover':"#CA2026",
   'secondary':'#101010'
 
 },
+backgroundPosition:{
+  'bottom-10':"10%"
+},
+backgroundSize:{
+  '100%': '100%',
+},
 width: {
   '57':'57px',
-  "90%":"90%"
+  "90%":"90%",
+  "80%":"70%"
 },
 height:{
+  '45':'45vh'
 
 },
 left:{
 '37%':'37%'
 },
+objectPosition:{
+  top:{
+    '10%':'10%',
+  }
 
+},
 maxWidth:{
-'60%':'60%',
+'45%':'70%',
 },
 translate:{
-  '13':'13%',
+  '35':'35%',
   'minus30':'-30%',
-  'minus10':'-10%'
+  'minus10':'15%'
 },
 
 boxShadow: {

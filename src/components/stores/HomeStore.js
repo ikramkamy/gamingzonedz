@@ -1,6 +1,7 @@
 import { create  } from "zustand";
-import imageCarousel1 from "../../assets/home/section1/Composant11.png";
-import imageCarousel2 from "../../assets/home/section1/Composant11Next.png";
+//import imageCarousel1 from "../../assets/home/section1/Composant11.png";
+import imageCarousel1 from "../../assets/home/section1/withoutbackg/Women Png copy.png";
+import imageCarousel2 from "../../assets/home/section1/withoutbackg/Groupe 92.png";
 
 
 import axios from "axios";

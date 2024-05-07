@@ -3,15 +3,11 @@ import { useState } from "react"
 export const ButtonHomeSection1=(props)=>{
 const [fillColor , setFillColor]=useState('none')
 
-    return(<div className="flex justify-center items-center 
-      z-10 cursor-pointer relative  w-[241.83px] h-[57.961px]"
-      
-      onMouseEnter={()=>setFillColor("#ca2026")}
-      onMouseLeave={()=>setFillColor("none")}
-      >
+    return(
+    <div className="flex justify-center items-center z-10 cursor-pointer relative  w-[241.83px] h-[40.961px]" 
+    onMouseEnter={()=>setFillColor("#ca2026")} onMouseLeave={()=>setFillColor("none")} >
 
-  <div className="uppercase bg-transparent cursor-pointer z-20 h-full flex justify-center items-center
-  ">
+  <div className="uppercase text-[24px] bg-transparent cursor-pointer z-20 flex justify-center items-center ">
     {props.btnName}
     
     </div>

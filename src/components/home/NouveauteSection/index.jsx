@@ -1,36 +1,98 @@
 
 import image from '../../../assets/home/section1/nouveaute/mhw100_960x960.png' 
-import image2 from '../../../assets/home/section1/nouveaute/Groupe 1228.png'
+import CarouselItem from './CarouselItem.jsx';
 import { UseProductsStore } from '../../stores/ProductsStore';
+import { useEffect, useState,useRef } from 'react';
+
 const NouveauteSection=()=>{
-    const {NewProducts}=UseProductsStore((state)=>state)
-    console.log('new', NewProducts)
-    return(<div className="flex flex-col justify-center items-center">
+  const [filleye, setFilleye]=useState('none')
+    const {NewProducts ,NewConfigs}=UseProductsStore((state)=>state);
+    const [translateX, setTranslateX] = useState(0);
+    
+    const [isTranslating, setIsTranslating] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [currentX, setCurrentX] = useState(0);
+    const divRef = useRef(null);
+  
+      const handleMouseDown = (event) => {
+        setIsTranslating(true);
+        setStartX(event.clientX);
+        setCurrentX(translateX);
+      };
+    
+      const handleMouseMove = (event) => {
+        if (isTranslating) {
+          const deltaX = event.clientX - startX;
+          const newTranslateX = currentX + deltaX;
+          setTranslateX(newTranslateX);
+        }
+      };
+    
+      const handleMouseUp = () => {
+        setIsTranslating(false);
+      };
+    
+      const handleMouseLeave = () => {
+        setIsTranslating(false);
+      };
+    
+      const handleClick = (event) => {
+        if (event.clientX < divRef.current.clientWidth /2) {
+          setTranslateX((prevTranslateX) => prevTranslateX - divRef.current.clientWidth);
+        } else {
+          setTranslateX((prevTranslateX) => prevTranslateX + divRef.current.clientWidth);
+        }
+     };
+    useEffect(()=>{
+      NewProducts.forEach(item=>NewConfigs.push(item))
+      console.log('newconfigs',NewConfigs)
+    },[NewProducts])
+
+//scrolling carousel functions
+  
+  
+
+  
+
+    
+    
+    return(
+    <div className="flex flex-col justify-center items-center mt-[10%] ">
 
 
        <h1 className="uppercase text-[67px] font-semibold">nouveauté</h1>  
-       <div id="#subtitleOne" className="flex justify-center items-center">
+       <div id="#subtitleOne" className="flex justify-center items-center mb-[10%]">
                 <div id="#stylingVerticalSlach" className="w-1 h-4 bg-btnCarouselHover mr-2"></div>
                 <h1 className="text-[21px] uppercase">the epic gaming store</h1>
              
                 </div>
 
-
-                <div id='#carouselNouveaute  ' className=' w-full flex'>
-                    <div id="#carouselitem"  
-                     className='bg-carousItemNouveaute  flex flex-col 
-                     h-[100vh]
-                     w-2/12
-                    bg-no-repeat bg-100% '>
-                    <img src={image} alt="gaming zone "/>
-                    <h2>{NewProducts[0].name}</h2>
-                    <h2>{NewProducts[0].typeProduct}</h2>
-                    <h2>{NewProducts[0].descreption}</h2>
-                  <img src=""/>
-
-                    <div className='absolute z-10 left-[17px] top-[4px] bg-newLabel bg-no-repeat w-[30%] h-[20%] text-center'> new</div>
-                </div>
-                </div>
+             
+                 <div className='relative h-[80vh]  w-full  overflow-hidden' 
+                 ref={divRef}
+                 style={{ transform: `translateX(${translateX}px)` }}
+                   onMouseDown={handleMouseDown}
+                   onMouseMove={handleMouseMove}
+                  // onMouseUp={handleMouseUp}
+                   // onMouseLeave={handleMouseLeave}
+                    onClick={handleClick}
+             
+                 
+                 
+                 
+                 
+                 
+                 >
+                 <div className={`flex justify-between items-center absolute left-0 bottom-0`}
+                 onM
+                 
+                 >
+                 
+                 {NewProducts.map((e)=><CarouselItem urlImage={e.urlImage} name={e.name} typeProduct={e.typeProduct} 
+                 descreption={e.descreption} price={e.price} btn={e.btn}/>) }
+               </div>
+                  
+        </div>
     </div>)
 }
 export default NouveauteSection;

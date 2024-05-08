@@ -17,12 +17,14 @@ const Navbar=()=>{
 <div className="flex flex-col  justify-center items-center bg-secondary text-[10px] z-10 relative">
     <div className="absolute z-0 translate-y-[-3.25rem]">
      <div className="oveflow-hidden">
-<svg xmlns="http://www.w3.org/2000/svg" width="2544.896" height="151.382" viewBox="0 0 2544.896 151.382" className="translate-y-[143px] w-full">
+{/*<svg xmlns="http://www.w3.org/2000/svg" width="2544.896" height="151.382" viewBox="0 0 2544.896 151.382" className="translate-y-[143px] w-full">
   <path id="Tracé_19" data-name="Tracé 19" d="M1663,2818.081h540.754l46.888,22.015h1374.5l54.926-22.015H4207.9V2688.713H1663Z" transform="translate(-1663 -2688.713)" fill="#101010"/>
 </svg>
 <svg xmlns="http://www.w3.org/2000/svg" width="2544.896" height="151.382" viewBox="0 0 2544.896 151.382" className=" w-[2544.896px]">
   <path id="Tracé_30" data-name="Tracé 30" d="M1663,2818.081l518.588-19.5,69.053,41.513h1374.5l56.253-32,516.846-24.574,9.656-94.808H1663Z" transform="translate(-1663 -2688.713)" fill="#242424"/>
-</svg>
+    </svg>*/}
+
+
 </div>
 </div>
 {/*<LogoDesign/>*/}
@@ -194,6 +196,14 @@ const Navbar=()=>{
 
 
 </div>
+
+
+<svg id="Groupe_1089" data-name="Groupe 1089" xmlns="http://www.w3.org/2000/svg" width="100%" height="159.38" viewBox="0 0 1920 159.38" className="absolute top-0">
+  <path id="Tracé_20950" data-name="Tracé 20950" d="M1920,8V117.2l-214.05,10.18-8.61,4.9-47.64,27.1H275.2l-49.93-30.02-19.13-11.5L0,125.61V8Z" fill="#242424"/>
+  <path id="Tracé_20951" data-name="Tracé 20951" d="M1920,0V129.36H1704.62l-7.28,2.92-47.65,19.1H275.19l-46.88-22.02H0V0Z" fill="#111"/>
+</svg>
+
+
     </div>)
 }
 export default Navbar;

@@ -7,12 +7,15 @@ module.exports = {
   content: [],
   theme: {
     extend: {
+      colors:{
+        redPrimary:'#CA2026'
+      },
 backgroundImage: {
         'sectionOnebg': "url('assets/home/section1/Groupedemasques3.png')",
         'productsTyps':"url('assets/home/section1/Tracé 50.png')",
         'btnbg':"url('assets/home/section1/btns/Tracé 51.png')",
         'newLabel':"url('assets/home/section1/Tracé 87.png')",
-        'carousItemNouveaute':"url('assets/home/section1/nouveaute/Groupe 1228.png')"
+        'carousItemNouveaute':"url('assets/home/section1/Groupe 1226.png')"
         
       },
 backgroundColor:{
@@ -52,7 +55,7 @@ maxWidth:{
 },
 translate:{
   '35':'35%',
-  'minus30':'-30%',
+  'minus20':'-20%',
   'minus10':'15%'
 },
 
@@ -76,6 +79,9 @@ fontSize: {
 animation:{
   duration:{
     '2000':'2000'
+  },
+  spacing: {
+    '50%': '50%',
   }
   
 }

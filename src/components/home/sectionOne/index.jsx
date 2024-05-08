@@ -64,7 +64,7 @@ useEffect(()=>{
   
 <div className="flex justify-center items-center w-full h-full p-20 bg-sectionOnebg bg-cover bg-no-repeat bg-center">
    
-<div className="h-5/6 flex  w-10/12   justify-between items-center">
+<div className="h-5/6 w-10/12 flex   flex-wrap  justify-between items-center">
             <div className="flex flex-col  items-start mt-40 h-full  ">
               <div id="#subtitleOne" className="flex justify-center items-center">
                 <div id="#stylingVerticalSlach" className="w-1 h-4 bg-btnCarouselHover mr-2"></div>
@@ -124,8 +124,8 @@ useEffect(()=>{
         <img src={trace8} alt="gaming zone"/>
         </div>
 {/*<img src={image.getBanner()} alt="gaming" className="absolute top-1/4 left-[37%] max-w-90%"/>*/}
-     <img src={image.getBanner()} alt="gaming" className={`absolute translate-x-minus30 w-4/5 top-0 right-0 ${classVisible}`}/>
-     <img src={image.getBanner()} alt="gaming" className={`absolute  translate-xminus30  w-4/5 top-0 right-0 ${classInvisible}`}/>
+     <img src={image.getBanner()} alt="gaming" className={`absolute w-full max-w-[812px] object-cover translate-x-minus20 w-4/5 top-0 right-0 ${classVisible}`}/>
+     <img src={image.getBanner()} alt="gaming" className={`absolute  w-full  max-w-[812px] object-cover translate-xminus20  w-4/5 top-0 right-0 ${classInvisible}`}/>
         </div> 
 
        

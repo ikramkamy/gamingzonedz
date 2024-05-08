@@ -10,7 +10,7 @@ console.log('images list',OurProductsTypes)
         }
     }
     return(<div className="flex justify-center items-center w-full bg-primary py-10 px-20">
-        <div className="flex justify-between items-center w-10/12">
+        <div className="flex flex-wrap justify-between items-center w-10/12">
       {OurProductsTypes.map((e)=>
         <div className="relative flex flex-col justify-start items-center h-fit  bg-productsTyps bg-center  bg-no-repeat bg-100% bg-bottom">
         <div className="h-45 ">

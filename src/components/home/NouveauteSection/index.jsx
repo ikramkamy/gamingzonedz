@@ -37,16 +37,21 @@ const NouveauteSection=()=>{
       };
     
       const handleClick = (event) => {
+
         if (event.clientX < divRef.current.clientWidth /2) {
-          setTranslateX((prevTranslateX) => prevTranslateX - divRef.current.clientWidth);
+         
+         setTranslateX((prevTranslateX) =>  prevTranslateX-15 );
+         console.log('client width', translateX)
+         console.log('prevTranslateX', translateX)
+         console.log('curent client width',divRef.current.clientWidth)
+       
+       
         } else {
-          setTranslateX((prevTranslateX) => prevTranslateX + divRef.current.clientWidth);
+
+          setTranslateX((prevTranslateX) => prevTranslateX-15);
         }
      };
-    useEffect(()=>{
-      NewProducts.forEach(item=>NewConfigs.push(item))
-      console.log('newconfigs',NewConfigs)
-    },[NewProducts])
+
 
 //scrolling carousel functions
   
@@ -60,7 +65,7 @@ const NouveauteSection=()=>{
     <div className="flex flex-col justify-center items-center mt-[10%] ">
 
 
-       <h1 className="uppercase text-[67px] font-semibold">nouveauté</h1>  
+       <h1 className="uppercase text-[67px] font-semibold max-sm:text-[43px]">nouveauté</h1>  
        <div id="#subtitleOne" className="flex justify-center items-center mb-[10%]">
                 <div id="#stylingVerticalSlach" className="w-1 h-4 bg-btnCarouselHover mr-2"></div>
                 <h1 className="text-[21px] uppercase">the epic gaming store</h1>
@@ -69,27 +74,38 @@ const NouveauteSection=()=>{
 
              
                  <div className='relative h-[80vh]  w-full  overflow-hidden' 
-                 ref={divRef}
+                 >
+                 <div 
+                 
+                
+                 
+                 
+                 
+                 
+                 
+                 className={`flex justify-between items-center absolute `} >
+                 <div  className='flex'  ref={divRef}
                  style={{ transform: `translateX(${translateX}px)` }}
-                   onMouseDown={handleMouseDown}
-                   onMouseMove={handleMouseMove}
-                  // onMouseUp={handleMouseUp}
-                   // onMouseLeave={handleMouseLeave}
-                    onClick={handleClick}
-             
+                  onMouseDown={handleMouseDown}
+                  onMouseMove={handleMouseMove}
+                  onMouseUp={handleMouseUp}
+                   onMouseLeave={handleMouseLeave}
+                  onClick={handleClick}>
+                 {NewProducts.map((e)=><CarouselItem 
+                 
+              
                  
                  
                  
                  
                  
-                 >
-                 <div className={`flex justify-between items-center absolute left-0 bottom-0`}
-                 onM
+                 urlImage={e.urlImage} name={e.name} typeProduct={e.typeProduct} 
+                 descreption={e.descreption} price={e.price} btn={e.btn}/>
                  
-                 >
                  
-                 {NewProducts.map((e)=><CarouselItem urlImage={e.urlImage} name={e.name} typeProduct={e.typeProduct} 
-                 descreption={e.descreption} price={e.price} btn={e.btn}/>) }
+                 
+                 ) }
+</div>
                </div>
                   
         </div>

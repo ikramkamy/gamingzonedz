@@ -15,7 +15,8 @@ backgroundImage: {
         'productsTyps':"url('assets/home/section1/Tracé 50.png')",
         'btnbg':"url('assets/home/section1/btns/Tracé 51.png')",
         'newLabel':"url('assets/home/section1/Tracé 87.png')",
-        'carousItemNouveaute':"url('assets/home/section1/Groupe 1226.png')"
+        'carousItemNouveaute':"url('assets/home/section1/Groupe 1226.png')",
+        'bgSection2':"url('assets/home/section2/configurator-pc-exemple.c598a585.png')"
         
       },
 backgroundColor:{

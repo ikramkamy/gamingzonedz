@@ -1,5 +1,6 @@
 import './carou.css'
-import { Splide, SplideSlide } from '@splidejs/react-splide';
+import newProdimg5 from '../../assets/home/section1/nouveaute/mcex_640x640.png';
+import Splide from '@splidejs/splide';
 const Carouselm=()=>{
     document.addEventListener( 'DOMContentLoaded', function () {
         new Splide('#splide', {
@@ -37,16 +38,16 @@ const Carouselm=()=>{
       <div id="splide" className="splide">
         <div className="splide__track">
           <ul className="splide__list">
-            <li className="splide__slide"><img src="https://brandontran.com/images/cardboard-castle-10.jpg"/></li>
-            <li className="splide__slide"><img src="https://brandontran.com/images/cardboard-castle-5.jpg"/></li>
-            <li className="splide__slide"><img src="https://brandontran.com/images/cardboard-castle-4.jpg"/></li>
-            <li className="splide__slide"><img src="https://brandontran.com/images/cardboard-castle-3.jpg"/></li>
+            <li className="splide__slide"><img src={newProdimg5}/></li>
+            <li className="splide__slide"><img src={newProdimg5}/></li>
+            <li className="splide__slide"><img src={newProdimg5}/></li>
+            <li className="splide__slide"><img src={newProdimg5}/></li>
           </ul>
         </div>
       </div>
       
       
-      <img src="https://brandontran.com/images/brandon-tran.jpg" alt="Brandon Tran" width="100"/>
+      {/*<img src="https://brandontran.com/images/brandon-tran.jpg" alt="Brandon Tran" width="100"/>*/}
       </div>
       )
 }

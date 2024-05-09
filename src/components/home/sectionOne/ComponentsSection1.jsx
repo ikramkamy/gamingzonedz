@@ -1,20 +1,20 @@
 import { useState } from "react"
 
-export const ButtonHomeSection1=(props)=>{
+export const ButtonHomeSection=(props)=>{
 const [fillColor , setFillColor]=useState('none')
 
     return(
-    <div className="flex justify-center items-center z-10 cursor-pointer relative  w-[241.83px] h-[40.961px]" 
+    <div className="flex justify-center items-center z-10 cursor-pointer relative  w-[241.83px] h-[40.961px] max-sm:w-full" 
     onMouseEnter={()=>setFillColor("#ca2026")} onMouseLeave={()=>setFillColor("none")} >
 
-  <div className="uppercase text-[24px] bg-transparent cursor-pointer z-20 flex justify-center items-center ">
+  <div className="uppercase text-[24px] bg-transparent cursor-pointer z-20 flex justify-center items-center max-sm:text-[14px]">
     {props.btnName}
     
     </div>
     <svg 
     className="absolute top-0 sm:h-[50px]" 
     xmlns="http://www.w3.org/2000/svg" 
-    width="241.83" height="57.961" 
+    width="" height="" 
     viewBox="0 0 241.83 57.961">
         
   <g id="Tracé_40" data-name="Tracé 40" transform="translate(4.815)" fill={fillColor} >

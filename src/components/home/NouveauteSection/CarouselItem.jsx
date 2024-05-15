@@ -35,7 +35,10 @@ const CarouselItem=({urlImage, name,typeProduct,descreption,price,btn})=>{
                 transform="translate(6.158 3.849)" fill={filleye} stroke="#fff" stroke-linecap="round" stroke-linejoin="round" 
                 stroke-width="1.5"/>
               </g>
-            </svg>
+  </svg> 
+ 
+
+
          </div> 
         
          <h2 className='text-[20px] font-semibold text-center'>{name}</h2>
@@ -47,8 +50,10 @@ const CarouselItem=({urlImage, name,typeProduct,descreption,price,btn})=>{
             
          </div>
          <div className="uppercase font-normal text-[15px] text-center bg-btnbg 
-              bg-no-repeat bg-center bg-cover cursor-pointer mt-3 w-[147px] h-[35px] flex items-center justify-center
+              bg-no-repeat bg-center bg-cover cursor-pointer 
+              mt-3 w-[147px] h-[35px] flex items-center justify-center
               mt-[10%]
+             
               absolute
               bottom-[-2%]
               ">

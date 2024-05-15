@@ -4,11 +4,10 @@ import trace3 from "../../../assets/home/section1/Tracé 46.png";
 import trace6 from "../../../assets/home/section1/Tracé 45.png";
 import trace7 from "../../../assets/home/section1/Tracé 43.png";
 import trace8 from "../../../assets/home/section1/Tracé 44.png";
-import imagesection2 from "../../../assets/home/section2/configurator-pc-exemple.c598a585.png";
 import { ButtonHomeSection } from "../sectionOne/ComponentsSection1";
 const Section2=()=>{
     return(
-<div className="flex justify-center items-center relative mt-[10%]">
+<div className="flex justify-center items-center relative mt-[10%] h-[100vh]">
 <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="2046.567" height="798.282" viewBox="0 0 2046.567 798.282" className="absolute w-full" >
   <defs>
     <linearGradient id="linear-gradient" x1="0.028" y1="0.5" x2="0.966" y2="0.5" gradientUnits="objectBoundingBox">

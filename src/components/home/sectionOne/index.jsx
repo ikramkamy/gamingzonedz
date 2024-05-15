@@ -73,13 +73,14 @@ useEffect(()=>{
                 </div>
               <h1 className="text-[79px] uppercase text-left text-wrap max-sm:text-[43px]"> {`${CarouselElements[elem].title.split(' ')[0]} ${CarouselElements[elem].title.split(' ')[1]}`}</h1>
               <h2 className="text-[79px] uppercase text-left font-light max-sm:text-[43px]">{CarouselElements[elem].title.split(' ')[2]}</h2> 
+              
+              {/**buttons Products & trending */}
+              <div className="flex justify-between items-center mb-10 h-1/5  max-sm:w-full">
+               <ButtonHomeSection btnName="products" />
+               <ButtonHomeSection btnName="trendings"/>
         
-        <div className="flex justify-between items-center mb-10 h-1/5  max-sm:w-full">
-        <ButtonHomeSection btnName="products" />
-        <ButtonHomeSection btnName="trendings"/>
-        
-        </div>
-        
+             </div>
+              {/**buttons to control carousel */}
               <div className="btnCarousel flex justify-between mt-5 w-80%">
     
                         <div className="w-57  sm:w-10 h-1 bg-btnCarousel   m-1 cursor-pointer hover:bg-btnCarouselHover hover:shadow-btnCarouselShadow" onClick={()=>setElem(0)}></div>
@@ -92,42 +93,41 @@ useEffect(()=>{
                </div>
 
 
-
-        
-        
-        
-        
-        
-        
-        
-        
         </div>
 
-
+{/*******************************************images inimated *****************************************/}
        <div className="w-7/12 h-full flex justify-end  max-sm:w-full ">
         
-       <div className="w-full  relative">
-        <div className="flex w-full justify-between">
-           <div className="w-fit bg-white">
-            <img src={trace1} alt="gaming zone" className="translate-y-10 max-sm:translate-y-0"/>
-            </div>
-            <img src={trace2} alt="gaming zone"/>
-            <div className="bg-white">  <img src={trace3} alt="gaming zone" className="translate-y-20  max-sm:translate-y-0"/></div>
-          
-            <img src={trace1} alt="gaming zone" className="rotate-180"/>
+            <div className="w-full  relative group ">
+              <div className="flex w-full justify-between">
+                
+                 <div className="w-fit">
+                    {/**<img src={trace1} alt="gaming zone" className="translate-y-10 max-sm:translate-y-0"/>*/}
+                   <img src={trace1} alt="gaming zone" className="translate-y-[150%] translate-x-[202%] rotate-[125deg] animate-move1 group-hover:animate-move1 max-sm:translate-y-0"/></div>
+                    {/*<img src={trace2} alt="gaming zone"/>*/}
+                   <img src={trace2} alt="gaming zone" className="animate-move2 translate-y-[100%] translate-x-[-50%]"/>
+                    {/*<img src={trace3} alt="gaming zone" className="translate-y-20  max-sm:translate-y-0"/>*/}
+                   <img src={trace3} alt="gaming zone" className="translate-y-[80%]  translate-x-[19%] rotate-[55deg]  max-sm:translate-y-0 animate-move3"/>
+                    {/**<img src={trace1} alt="gaming zone" className="rotate-180"/> */}
+                   <img src={trace1} alt="gaming zone" className="rotate-[350deg] translate-y-[150%]  translate-x-[-200%] animate-move4"/>
+                 </div>
+                 <div className="flex w-full justify-between  ">
+                    {/**<img src={trace1} alt="gaming zone" className=""/>*/}
+                   <img src={trace1} alt="gaming zone" className="animate-move1 rotate-[-130deg] translate-x-[110%] translate-y-[40%]"/>
+                   {/**<img src={trace6} alt="gaming zone"/>*/}
+                   <img src={trace6} alt="gaming zone" className="animate-move5 rotate-[45deg] translate-x-[-80%]"/>
+                </div>
+                <div className="flex w-full justify-between m-t-10">
+                   <img src={trace7} alt="gaming zone"/>
+                    
+                     {/**<img src={trace7} alt="gaming zone" className="animate-move7 ranslate-x-[0%]"/>*/}
+                <div className="">
+                <img src={trace8} alt="gaming zone" className="group-hover:animate-move6 "/>
+               {/* <img src={trace8} alt="gaming zone" className="group-hover:animate-move6 translate-x-[-35%] translate-y-[35%] rotate-[2deg]"/>*/}
+                </div> 
         </div>
-        <div className="flex w-full justify-between  ">
-        <img src={trace1} alt="gaming zone" className=""/>
-        
-        <img src={trace6} alt="gaming zone"/>
-      
-        </div>
-         <div className="flex w-full justify-between m-t-10">
-        <img src={trace7} alt="gaming zone"/>
-       <div className="bg-white"><img src={trace8} alt="gaming zone"/></div> 
-        </div>
-{/*<img src={image.getBanner()} alt="gaming" className="absolute top-1/4 left-[37%] max-w-90%"/>*/}
-     <img src={image.getBanner()} alt="gaming" className={`absolute w-full max-w-[812px] object-cover translate-x-minus20 w-4/5 top-0 right-0 ${classVisible}`}/>
+{/*************************************************************************************************** */}
+     <img src={image.getBanner()} alt="gaming" className={`absolute  w-full max-w-[812px] object-cover translate-x-minus20 w-4/5 top-0 right-0 ${classVisible}`}/>
      <img src={image.getBanner()} alt="gaming" className={`absolute  w-full  max-w-[812px] object-cover translate-xminus20  w-4/5 top-0 right-0 ${classInvisible}`}/>
         </div> 
 

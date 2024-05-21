@@ -1,11 +1,8 @@
-
-import image from '../../../assets/home/section1/nouveaute/mhw100_960x960.png' 
 import CarouselItem from './CarouselItem.jsx';
 import { UseProductsStore } from '../../stores/ProductsStore';
-import { useEffect, useState,useRef } from 'react';
+import { useState,useRef } from 'react';
 
 const NouveauteSection=()=>{
-  const [filleye, setFilleye]=useState('none')
     const {NewProducts ,NewConfigs}=UseProductsStore((state)=>state);
     const [translateX, setTranslateX] = useState(0);
     const [isTranslating, setIsTranslating] = useState(false);
@@ -32,48 +29,22 @@ const NouveauteSection=()=>{
           console.log('prevTranslateX', translateX)
           console.log('curent client width',divRef.current.clientWidth)
         }
-/*
-        if (isTranslating) {
-          const deltaX = event.clientX - startX;
-          const newTranslateX = currentX + deltaX;
-          const maxTranslateX = (divRef.current.clientWidth - 3100) * -1;
-          const minTranslateX = 0;
-          setTranslateX(newTranslateX);
-          if (newTranslateX > maxTranslateX) {
-            setTranslateX(maxTranslateX);
-          } else if (newTranslateX < minTranslateX) {
-            setTranslateX(minTranslateX);
-          }
-        }
-        */
+
       };
-     //allows to clck on another item and tranlating 
+     //allows to click on another item and tranlating 
       const handleMouseUp = () => {
         setIsTranslating(false);
-      };
-    
+      };    
       const handleMouseLeave = () => {
         setIsTranslating(false);
-      };
-    
+      };   
       const handleClick = (event) => {
-        console.log('client width', divRef.current.clientWidth)
-        console.log('prevTranslateX', translateX)
-        console.log('curent client width',divRef.current.clientWidth)
         if (event.clientX < divRef.current.clientWidth /2) {
          
-         setTranslateX((prevTranslateX) =>  prevTranslateX-15 );
-         console.log('x position of the mouse', event.clientX )
-         console.log('prevTranslateX', translateX)
-         console.log('curent client width',divRef.current.clientWidth)
-       
-       
+         setTranslateX((prevTranslateX) =>  prevTranslateX-15 );   
         } else {
-
           setTranslateX((prevTranslateX) => prevTranslateX+15);
-          console.log('client width', divRef.current.clientWidth)
-          console.log('prevTranslateX', translateX)
-          console.log('curent client width',divRef.current.clientWidth)
+        
         }
      };
 
@@ -97,9 +68,9 @@ const NouveauteSection=()=>{
                 </div>
 
              
-                 <div className='relative h-[80vh]  w-full  overflow-hidden' 
+                 <div className='relative h-[80vh]  w-10/12  overflow-hidden' 
                  >
-                 <div className={`flex justify-between items-center absolute`}
+                 <div className={`flex justify-between w-fit items-center absolute`}
                   ref={divRef}
                   style={{ transform: `translateX(${translateX}px)` }}
                   onMouseDown={handleMouseDown}
@@ -107,16 +78,18 @@ const NouveauteSection=()=>{
                    onMouseUp={handleMouseUp}
                     onMouseLeave={handleMouseLeave}
                    onClick={handleClick}>
-                
                  {NewProducts.map((e)=><CarouselItem 
                  urlImage={e.urlImage} name={e.name} typeProduct={e.typeProduct} 
                  descreption={e.descreption} price={e.price} btn={e.btn}/>
-                 
-                 
-                 
                  ) }
 
+                
+
                </div>
+
+               
+
+              
                   
         </div>
     </div>)

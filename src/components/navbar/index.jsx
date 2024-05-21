@@ -6,15 +6,21 @@ import TwitterIcon from "../../assets/home/section1/icons/Icon awesome-twitter.p
 import YoutubeBookIcon from "../../assets/home/section1/icons/Icon awesome-youtube.png";
 import UserIcon from "../../assets/home/section1/icons/user.png";
 import Iconsearch from "../../assets/home/section1/icons/Icon feather-search.png";
+import NavSmallScreen from "./navSmallScreen";
 import { useState } from "react";
 
 
 
 
 const Navbar=()=>{
- const [fade, setFade]=useState(false)   
+ const [fade, setFade]=useState(false) ;
+ const [showMenue, setShowMenue]  =useState();
+ const handelShowMenue=()=>{
+
+  setShowMenue(!showMenue);
+ }
     return(
- <div className="sticky top-0 z-20 w-full">
+ <div className="sticky top-[-1%] z-20 w-full ">
 <div className="flex flex-col  max-sm:hidden  justify-center items-center bg-secondary text-[10px] z-10  relative w-full">
    
     <svg 
@@ -256,7 +262,7 @@ const Navbar=()=>{
 </svg>
 
 
-  <svg xmlns="http://www.w3.org/2000/svg" width="36.379" height="24.92" viewBox="0 0 36.379 24.92" className="mr-2">
+  <svg xmlns="http://www.w3.org/2000/svg" width="36.379" height="24.92" viewBox="0 0 36.379 24.92" className="mr-2" onClick={handelShowMenue}>
   <g id="Groupe_1117" data-name="Groupe 1117" transform="translate(1 1)">
     <g id="Icon_feather-menu" data-name="Icon feather-menu">
       <path id="Tracé_20783" data-name="Tracé 20783" d="M4.5,18H38.879" transform="translate(-4.5 -6.54)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
@@ -268,6 +274,7 @@ const Navbar=()=>{
 
 </div>
 
+{showMenue && <NavSmallScreen/>}
 
     </div>)
 }

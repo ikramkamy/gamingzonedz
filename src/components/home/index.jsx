@@ -4,8 +4,7 @@ import NouveauteSection from "./NouveauteSection";
 import Section2 from "./section2";
 import Section3 from "./section3";
 import OurBrandsSection from "./OurBrands";
-import { Gallery } from "../carou";
-import { Carou2 , Carou3} from "../carou/Carou2";
+import { Gallery ,Carou3} from "../carou/Carou2";
 import RebuitPc from "./RebuiltPcsection";
 import ActualiteSection from "./Actualite";
 import Footer from "../footer";
@@ -15,15 +14,12 @@ const Home=()=>{
  <Navbar /> 
  <SectionOne/>
  <NouveauteSection/>
-
 <Section2/>
 <RebuitPc/>
 <Section3/>
 <OurBrandsSection/>
-{/*<Gallery/>
 
-<Carou2/> */}
-    <Carou3/>
+
 <ActualiteSection/>
 <Footer/>
     </div>)

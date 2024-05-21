@@ -32,12 +32,18 @@ backgroundImage: {
         'bgRebuiltPc':"url('assets/home/rebuiltcomputers/Ellipse 7.png')",
         'bgImgRebuiltPc':"url('assets/home/rebuiltcomputers/Ellipse 8.png')",
         'bgSection3':"url('assets/home/section3/Groupe 1226.png')",
+        'bgSection33':"url('assets/home/section3/Groupe 1230.png')",
         'bgActualite':"url('assets/home/actualite/Groupe 1226.png')",
         'bgActualiteItem':"url('assets/home/actualite/Groupe 1227.png')",
+        'bgNouveaute':"url('assets/home/nouveaute/Groupe 1227.png')",
+
+
+        
         },
 backgroundColor:{
   'primary':'#202020',
   'primary1':'#2E2E2E',
+  'lightGrey':"#0F0F0F",
   'btnCarousel':'#727272',
   'btnCarouselHover':"#CA2026",
   'secondary':'#101010',
@@ -82,7 +88,8 @@ boxShadow: {
 borderColor:{
   'primary':"#202020",
   'secondary':'#3B3B3B',
-  'btnCarousel':'#CA2026'
+  'btnCarousel':'#CA2026',
+  'lightGrey':"#0F0F0F",
 },
 
 fontFamily:{
@@ -119,21 +126,69 @@ keyframes:{
     '100%' :{transform: 'translateX(-100%)  translateY(100%) rotate(90deg)'},
   },
   translate6: {
-
-    //'0%' :{transform: 'translateX(0%) translateY(0) rotate(0)'},
-    '0%' :{transform: 'translateX(-35%) translateY(35%) rotate(2deg)'},
-    //'100%' :{transform: 'translateX(-50%)  translateY(50%) rotate(0deg)'},
+    '0%' :{transform: 'translateX(-35%) translateY(95%) rotate(2deg)'},
+    '100%' :{transform: 'translateX(0%)  translateY(0%) rotate(0deg)'},
+  },
+  translate66: {
+    '0%' :{transform: 'translateX(-65%) translateY(35%) rotate(2deg)'},
     '100%' :{transform: 'translateX(0%)  translateY(0%) rotate(0deg)'},
   },
   translate7: {
     '0%' :{transform: 'translateX(80%)  translateY(0%) rotate(45deg)'},
     '100%' :{transform: 'translateX(0%) translateY(0%) rotate(90deg)'},
   },
+  spin1: {
+    '0%' :{transform: 'rotate(360deg)'},
+    '100%' :{transform: 'rotate(0deg)'},
+  },
+  spin2: {
+    '0%' :{transform: 'rotate(-360deg)'},
+    '100%' :{transform: 'rotate(0deg)'},
+  },
+none1: {
+    '0%' :{transform: 'rotate(0deg)'},
+    '100%' :{transform: 'rotate(0deg)'},
+  },
+  vibration1 :{
+    '0%' :{transform: 'translate(1px, 1px)'},
+    '50%' :{transform: 'translate(-1px, -1px)'},
+    '100%' :{transform: 'translate(1px, 1px)'},
+    },
+    colorEffect1 :{
+      '0%' :{color:'#9D9D9D'},
+      '50%' :{color:'#fffff'},
+      '100%' :{color:'#CA2026'},
+      },
+      zoom1 :{
+        '0%' :{width:'0%'},
+        
+        '100%' :{width:'25%'},
+        },
+        zoom2 :{
+          '0%' :{width:'100%'},
+          
+          '100%' :{width:'150%'},
+          },
+        skewanimation:{
+          '0%' :{transform: 'skew(-1deg)'},
+          '100%' :{transform: 'skew(1deg)'},
+        },
+        wiggle: {
+          '0% ': {transform: 'rotate(-3deg)' },
+          '100%': { transform: 'rotate(3deg)' },
+        },
+        fade: {
+          '0% ': {opacity:'0'},
+          '100%': {opacity:'1'} ,
+        }
+
 },
 animation:{
 
-  'spin-slow': 'spin 20s linear infinite',
-  'spin-slow1': 'spin 10s linear infinite',
+  'spin-slow': 'spin 20s alternate infinite',
+  'spin-slow1': 'spin1 10s linear infinite',
+  'spin-slow2': 'spin1 15s linear infinite',
+  'spin-slow3': 'spin2 15s linear infinite',
   'move1': 'translate1 1s ease-in 1',
   'move11': 'translate1 1s ease-out 1',
   'move2': 'translate2 1s linear 1',
@@ -141,7 +196,16 @@ animation:{
   'move4': 'translate4 1s linear 1',
   'move5': 'translate5 1s linear 1',
   'move6': 'translate6 600ms ease-in 1',
+  'move66': 'translate66 3s ease-in infinite',
   'move7': 'translate7 1s linear 1',
+  'vibrate': ' vibration1  100ms linear 2',
+  'colorEffect1': 'colorEffect1  1s alternate infinite',
+  'zoomEffect': 'zoom1  1s alternate infinite',
+  'zoomEffect1': 'zoom2  500ms alternate 2',
+  'skewEffect': 'skewanimation  1s alternate infinite',
+  'wiggle1':'wiggle 10ms alternate infinite',
+  'fade':'fade 1s alternate infinite',
+  'fade2':'fade 2s alternate infinite',
   
   duration:{
     '100':'200'
@@ -149,14 +213,8 @@ animation:{
   spacing: {
     '50%': '50%',
   } ,
-  
- 
-  
 },
-
-
-
-    },
+},
    
     
   },

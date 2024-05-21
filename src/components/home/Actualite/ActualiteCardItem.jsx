@@ -8,16 +8,17 @@ export const ActualiteCardItem=(props)=>{
 
 
 <div className=' flex justify-center items-center w-fit 
-relative bg-bgActualiteItem bg-no-repeat bg-cover p-10'>
+relative bg-bgActualiteItem bg-no-repeat bg-cover p-10 max-sm:p-5'>
 
 
 
 <div className='w-full z-10  flex flex-col  '>
 
 
-        <img src={image} alt="gaming zone events news" className='mb-2 w-[80%] max-md:w-3/4'/>
-        <h1 className='text-[23px] uppercase text-black font-semibold w-fit'>{title}</h1>
-        <h2  className='text-[18px] w-fit '>
+        <img src={image} alt="gaming zone events news" 
+        className='mb-2 w-[80%] max-sm:w-full max-md:w-3/4 shadow-lg shadow-lightGrey' />
+        <h1 className='text-[23px] max-sm:text-[15px] max-sm:w-full max-sm:text-center uppercase text-black font-semibold w-fit'>{title}</h1>
+        <h2  className='text-[18px] max-sm:text-[10px] w-fit max-sm:w-full max-sm:text-center'>
             {subtitle.split(' ').slice(0, 6).join(' ')}<br/>
             {subtitle.split(' ').slice(7, 13).join(' ')}<br/>
             {subtitle.split(' ').slice(14, 20).join(' ')}<br/>
@@ -28,22 +29,16 @@ relative bg-bgActualiteItem bg-no-repeat bg-cover p-10'>
         </h2>
         
         <div className='relative flex justify-center items-center  
-        cursor-pointer m-4  p-10 w-fit ' >
+        cursor-pointer m-4  p-10 max-sm:p-2 w-fit max-sm:w-full ' >
         <h1 className='  z-10
-         text-center uppercase text-[18px] font-regular hover:font-bold'>read more</h1>
-       
-         {/**200.723  43.707*/}
+         text-center uppercase text-[18px] max-sm:text-[10px] font-regular hover:font-bold'>read more</h1>
+
        <svg 
        className='absolute w-full'
        
        xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" 
         width="" height="" viewBox="0 0 200.723 43.707">
-                   <defs>
-                     <linearGradient id="linear-gradient" x1="0.043" y1="0.5" x2="0.953" y2="0.5" gradientUnits="objectBoundingBox">
-                       <stop offset="0" stop-color="#ca2026"/>
-                       <stop offset="1" stop-color="#651013"/>
-                     </linearGradient>
-                   </defs>
+  
                    <path id="Tracé_237" data-name="Tracé 237" d="M12.412,0H196.5L178.067,43.706H-4.223Z" transform="translate(4.223)" fill="url(#linear-gradient)"/>
     </svg>
 

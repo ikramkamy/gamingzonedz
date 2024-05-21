@@ -5,9 +5,9 @@ const RebuitPc=()=>{
     const {OurRebuiltComputers}=UseRebuiltComputersStore((state)=>state)
     return(
 <div className="flex flex-col justify-center items-center ">
-<div className="uppercase text-[67px] text-center w-full bg-bgRebuiltPc
- bg-no-repeat bg-cover bg-center p-20">rebuilt computers</div>
-<div className="flex w-10/12 justify-center items-center">
+<div className="uppercase text-[67px] max-sm:text-[28px] text-center w-full bg-bgRebuiltPc
+ bg-no-repeat bg-cover bg-center p-20 ">rebuilt computers</div>
+<div className="flex w-10/12 max-sm:w-11/12 justify-center items-center">
 <ButtonRebuiltPcSection btnName="budget" />
 <ButtonRebuiltPcSection btnName="performence"/>
 <ButtonRebuiltPcSection  btnName="workstation"/>
@@ -19,10 +19,9 @@ const RebuitPc=()=>{
 <ReabuiltItem index={OurRebuiltComputers.indexOf(e)} urlImage={e.urlImage} name={e.name} description={e.description}/>
 
 
-
 )}
 </div>  
-<div className="mt-20">
+<div className="mt-10 w-full flex justify-center ">
    <Button2RebuiltPcSection btnName="discover"/> 
    </div>
     </div>)

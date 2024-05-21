@@ -17,11 +17,12 @@ if(index %2 ===1){
 }
 },[])
 return(<div 
-className={`flex flex-col w-1/3  justify-center items-center px-2 cursor-pointer ${withBorder}`} onClick={()=>setSeeMore(!seeMore)}>
+className={`py-10 transition delay-50 group hover:bg-lightGrey flex flex-col w-1/3 max-sm:w-full 
+justify-center items-center px-2 cursor-pointer ${withBorder}`} onClick={()=>setSeeMore(!seeMore)}>
 <div className="bg-bgImgRebuiltPc bg-no-repeat w-full p-[10%] flex justify-center bg-center relative">
 
 <svg 
-className="absolute top-0 animate-spin-slow"
+className="absolute top-0 animate-spin-slow animate-running group-hover:animate-none"
 
 id="Groupe_1227" data-name="Groupe 1227" xmlns="http://www.w3.org/2000/svg" width="283.058" height="289.839" viewBox="0 0 283.058 289.839">
   <g id="Groupe_34" data-name="Groupe 34" transform="translate(53.174 38.411)">
@@ -119,7 +120,7 @@ id="Groupe_1227" data-name="Groupe 1227" xmlns="http://www.w3.org/2000/svg" widt
   </g>
 </svg>
 <svg 
-className="absolute top-10 animate-spin-slow1"
+className="absolute top-10 animate-spin-slow1 animate-running group-hover:animate-none group-hover:animate-spin-slow2"
 xmlns="http://www.w3.org/2000/svg" width="222.667" height="203.155" viewBox="0 0 222.667 203.155">
   <g id="Groupe_1228" data-name="Groupe 1228" transform="translate(-29.473 -40.535)">
     <g id="Groupe_36" data-name="Groupe 36" transform="translate(66.227 78.176)">
@@ -193,14 +194,16 @@ xmlns="http://www.w3.org/2000/svg" width="222.667" height="203.155" viewBox="0 0
   </g>
 </svg>
 
-    <img src={props.urlImage} alt="gaming zone"/>
+    <img src={props.urlImage} alt="gaming zone" className="group-hover:w-[220px] group-hover:animate-skewEffect"/>
     </div>
-<h1 className="text-redPrimary text-[38px] uppercase">{props.name}</h1>
-<p className="w-1/2 text-[15px]">{props.description.split(' ').slice(0 , 10).join(' ')} <br/></p>
-<p className="w-1/2 text-[15px] mt-[15px]">{props.description.split(' ').slice(11,21).join(' ')} <br/></p>
-<p className="w-1/2 text-[15px] mt-[15px]">{props.description.split(' ').slice(22,32).join(' ')} <br/></p>
-<p className="w-1/2 text-[15px] mt-[15px]">{props.description.split(' ').slice(33,43).join(' ')} <br/></p>
-{seeMore && <p className="w-1/2 mt-[15px]">
+<h1 className="text-redPrimary text-[38px] uppercase animate-colorEffect1 animate-running group-hover:animate-none animate-alternate-reverse">{props.name}</h1>
+{/**deviding the descreption in small paragraps of 10 words */}
+<div className=" w-1/2 max-sm:w-full">
+<p className="  text-[15px]">{props.description.split(' ').slice(0 , 10).join(' ')} <br/></p>
+<p className=" text-[15px] mt-[15px]">{props.description.split(' ').slice(11,21).join(' ')} <br/></p>
+<p className=" text-[15px] mt-[15px]">{props.description.split(' ').slice(22,32).join(' ')} <br/></p>
+<p className=" text-[15px] mt-[15px]">{props.description.split(' ').slice(33,43).join(' ')} <br/></p>
+{seeMore && <p className=" mt-[15px]">
     
     {props.description.split(' ').slice(44, 54).join(' ')} <br/>
     {props.description.split(' ').slice(55, 65).join(' ')} <br/>
@@ -209,7 +212,8 @@ xmlns="http://www.w3.org/2000/svg" width="222.667" height="203.155" viewBox="0 0
     {props.description.split(' ').slice(88, 98).join(' ')} <br/>
     
     </p>}
-<div className="flex w-[80%] justify-between items-center mt-[5%]">
+</div>
+<div className="flex  w-[80%] max-lg:w-full justify-between items-center mt-[5%]">
     <Button2RebuiltPcSection btnName="customize"/>
     <Button3RebuiltPcSection btnName="preconfigured"/>
 </div>

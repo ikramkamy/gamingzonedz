@@ -12,6 +12,7 @@ export const UseBlogStore= create((set, get)=>({
     bloglink:"/blog"
     
 },
+
 {
     imageURL:image2,
     title:"visite entreprise",

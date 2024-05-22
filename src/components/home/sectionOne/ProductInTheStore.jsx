@@ -10,7 +10,7 @@ const ProductInTheStore=()=>{
   
 
     return(
-<div className="flex justify-center flex-col items-center w-full bg-primary py-40 px-20 max-sm:px-2">
+<div className="flex justify-center flex-col items-center w-full bg-primary py-40 px-20 max-lg:px-0 max-sm:px-2">
         <div className="flex  max-sm:hidden justify-between items-center w-10/12 max-sm:w-full max-md:flex-wrap max-sm:flex-no-wrap max-sm:flex-col max-md:justify-left">
       {OurProductsTypes.map((e)=>
         <div className="group relative flex flex-col w-[19%] max-sm:w-full justify-start items-center

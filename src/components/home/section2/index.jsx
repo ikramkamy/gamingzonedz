@@ -16,6 +16,7 @@ import trace19 from "../../../assets/home/section2/forms/Tracé 104.png";
 import image from "../../../assets/home/section2/configurator-pc-exemple.c598a585.png"
 import { ButtonHomeSection } from "../sectionOne/ComponentsSection1";
 import { useState } from "react";
+import AnimatedImages from "../sectionOne/AnimatedImages";
 const Section2=()=>{
 
 const [dynamicAnimate, setDynamicAnimate]=useState({
@@ -90,11 +91,11 @@ const handelDynamicAnimation=()=>{
   })
 }
     return(
-<div className="flex flex-col justify-center items-center relative mt-[10%] h-[100vh]">
-<div className="hidden z-10 w-full max-sm:flex uppercase justify-center 
- text-center max-sm:text-[38px] max-md:text-[47px] ">
-          build your <br/> dream pc</div>
-     <div className="absolute top-0 w-full  flex justify-center items-center  h-[100%]">
+<div className="flex flex-col justify-center items-center relative mt-[10%] h-[100vh]
+bg-bgSection3 bg-center bg-cover bg-no-repeat max-sm:bg-bgSection33 max-sm:h-150vh max-sm:bg-no-repeat max-sm:bg-[length:1000px_150vh]
+ max-sm:bg-contain">
+
+<div className="absolute hidden top-0 w-full  flex justify-center items-center  h-[100%]">
   <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" 
 width="" height="" viewBox="0 0 2046.567 798.282" className="" >
 
@@ -104,12 +105,14 @@ width="" height="" viewBox="0 0 2046.567 798.282" className="" >
   </g>
     </svg>
      </div>
-     <div className="z-10 flex w-9/12 justify-between items-center
+    
+     <div className="z-10 flex w-9/12 max-lg:w-10/12 justify-between items-center
       max-sm:flex-col-reverse max-sm:w-full " >
-        <div className="w-2/6 max-sm:w-full">
-        <div className=" uppercase max-sm:hidden w-fit text-[47px] text-center max-sm:text-[47px] max-md:text-[47px] ">
+        <div className="w-2/6 max-lg:w-1/2 max-lg:pl-10 flex flex-col end max-sm:w-full">
+        <div className="uppercase w-fit max-sm:w-full 
+         text-[47px] text-center  max-lg:text-[30px] max-sm:text-[18px]">
           build your<br/>dream pc</div>
-          <h3 className="text-[18px]  text-left max-sm:w-full max-sm:p-5">
+          <h3 className="text-[18px] max-lg:text-[12px] max-sm:text-center  text-left max-sm:w-full max-sm:p-5">
             Grow your empire as you learn to repair, build and customize PCs at the next level. Experience deeper
              simulation, an upgraded career mode, and powerful new customisation features. 
              Use realistic parts from 40+ hardware brands to bring your ultimate PC to life.</h3>
@@ -124,30 +127,13 @@ width="" height="" viewBox="0 0 2046.567 798.282" className="" >
 
 
       
-        <div className={`w-4/6 top-0 max-sm:w-full h-full flex
-        justify-center  max-sm:w-full max-sm:hidden`} onMouseEnter={handelDynamicPosition} onMouseOut={handelDynamicPositionInitial} >
-        <img src={image} alt="pc configuration" className={`z-10  `}/>
+        <div className={`w-4/6 max-lg:w-3/6  flex justify-center hidden max-sm:justify-center
+         max-lg:justify-end max-lg:items-end  top-0 max-sm:w-full h-full 
+        max-sm:w-full `} onMouseEnter={handelDynamicPosition} onMouseOut={handelDynamicPositionInitial} >
+        <img src={image} alt="pc configuration" className={`z-10 w-7/12 hidden`}/>
         
         {/*******************************animated forms*****************************/}
-        <div className="w-full flex flex-col justify-end items-end absolute hidden">
-         <div className="flex w-[90%]  justify-between">
-           <img src={trace1} alt="gaming zone" className={`translate-y-10 max-sm:translate-y-0 ${dynamicPosition.postion1} ${dynamicAnimate.mouvment1}`}/>
-           <img src={trace2} alt="gaming zone" className={`${dynamicAnimate.mouvment2}`}/>
-           <img src={trace3} alt="gaming zone" className={`translate-y-20  max-sm:translate-y-0 ${dynamicAnimate.mouvment3}`}/>
-           <img src={trace1} alt="gaming zone" className={`rotate-180 ${dynamicAnimate.mouvment4}`}/>
-         </div>
-         <div className="flex w-[90%] justify-between  ">
-            <img src={trace1} alt="gaming zone" className=""/>
-          <div className=""><img src={trace19} alt="gaming zone pc builder" className="top-0"/></div>  
-            <img src={trace6} alt="gaming zone"/>
-         </div>
-          <div className="flex w-[90%] justify-between m-t-10">
-         <img src={trace7} alt="gaming zone"/>
-         <img src={trace8} alt="gaming zone"/>
-         </div>
-         
-      
-         </div> 
+        
  
         
  
@@ -155,34 +141,7 @@ width="" height="" viewBox="0 0 2046.567 798.282" className="" >
          
          </div> 
          
-    <div className="group w-4/6 max-sm:w-full h-full flex justify-end  max-sm:w-full hidden max-sm:flex ">
-
-        <div className="w-full flex flex-col justify-end items-end  ">
-        <div className="flex w-[90%]  justify-between ">
-          <img src={trace11} alt="gaming zone" className={`translate-y-10 max-sm:translate-y-0 ${dynamicAnimate.mouvment1}`}/>
-          
-          <img src={trace13} alt="gaming zone" className={`translate-y-20  max-sm:translate-y-0  ${dynamicAnimate.mouvment1}`}/>
-          <img src={trace14} alt="gaming zone" className={`rotate-180   ${dynamicAnimate.mouvment1}`}/>
-        </div>
-        <div className="flex w-[90%] justify-between ">
-           <div><img src={trace1} alt="gaming zone" className="animate-pulse"/></div>
-           <div><img src={trace12} alt="gaming zone" className="animate-pulse"/></div>
-           <img src={trace19} alt="gaming zone pc builder" className=""/>
-           <div><img src={trace16} alt="gaming zone" className="animate-spin-slow1"/></div>
-        </div>
-         <div className="flex w-[90%] justify-between m-t-10 ">
-        <img src={trace17} alt="gaming zone" className="animate-move66"/>
-        <img src={trace18} alt="gaming zone"/>
-        </div>
-        
-     
-        </div> 
-
-       
-
-        
-        
-        </div> 
+         <AnimatedImages hide='hidden'/>
      </div>
     </div>)
 }

@@ -8,14 +8,14 @@ import Iconsearch from "../../assets/home/section1/icons/Icon feather-search.png
 import { useState } from "react";
 const Footer=()=>{
     return(
-<div className="flex flex-col  max-sm:hidden  justify-center items-center bg-secondary text-[10px] z-10  relative w-full">
+<div className="flex flex-col  justify-center items-center bg-secondary text-[10px] z-10  relative w-full">
    
     
  
       {/**upper footer*/}
 
 
-           <div className="flex justify-between align-middle bor w-10/12 border-b-secondary border-b-2 p-4">
+           <div className="flex max-sm:flex-col justify-between align-middle bor w-10/12 border-b-secondary border-b-2 p-4">
     
                       <div className="flex justify-start items-center w-3/12 ">
                     <a href="/"   className="mx-2">HOME</a>
@@ -28,7 +28,7 @@ const Footer=()=>{
     
                      <div>
         {/**Social media section */}
-                <div className="flex justify-between items-center " >
+                <div className="flex justify-between items-center max-sm:w-fit max-sm:mt-10" >
             <div className="flex justify-center items-center p-l-2">FOLLOW </div>
         
 

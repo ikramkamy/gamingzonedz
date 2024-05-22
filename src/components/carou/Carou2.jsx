@@ -50,7 +50,7 @@ export const Product=(props) =>{
 export const Carou3=()=>{
 const {brands}=UseBrandssStore((state)=>state)
     const brandslist = brands.map((item) => (
-      <div className="relative h-full flex justify-center aline-center max-sm:w-[100vw] w-[248.199px] h-[67.415px]">
+      <div className="relative h-[80%] flex justify-center aline-center max-sm:w-[100vw] w-[248.199px] h-[67.415px]">
         <svg 
         className="absolute max-sm:w-[100vw]"
         xmlns="http://www.w3.org/2000/svg" width="248.199" height="67.415" viewBox="0 0 248.199 67.415">

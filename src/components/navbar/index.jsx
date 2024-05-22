@@ -7,9 +7,10 @@ import YoutubeBookIcon from "../../assets/home/section1/icons/Icon awesome-youtu
 import UserIcon from "../../assets/home/section1/icons/user.png";
 import Iconsearch from "../../assets/home/section1/icons/Icon feather-search.png";
 import NavSmallScreen from "./navSmallScreen";
-import { useState } from "react";
-
-
+import BtnForm from './SVG/Tracé 35.svg'
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import './nav.css';
 
 
 const Navbar=()=>{
@@ -19,24 +20,46 @@ const Navbar=()=>{
 
   setShowMenue(!showMenue);
  }
+ const [colorNavLine, setColorNavLine]=useState('#242424')
+useEffect(()=>{
+  setTimeout(() => {
+    if(colorNavLine ==="#242424"){
+      setColorNavLine("#CA2026")
+    }
+    else{
+      setColorNavLine("#242424")
+    }
+   
+  }, 1000);
+
+ 
+
+},[colorNavLine])
+
     return(
  <div className="sticky top-[-1%] z-20 w-full ">
 <div className="flex flex-col  max-sm:hidden  justify-center items-center bg-secondary text-[10px] z-10  relative w-full">
    
     <svg 
+   
+    id="Groupe_1089" data-name="Groupe 1089" xmlns="http://www.w3.org/2000/svg"
+     width="100%" height="159.38" viewBox="0 0 1920 159.38" 
+    className="absolute top-12  w-[100%] ">
     
-    id="Groupe_1089" data-name="Groupe 1089" xmlns="http://www.w3.org/2000/svg" width="100%" height="159.38" viewBox="0 0 1920 159.38" className="absolute top-12  w-[100%]">
-  <path id="Tracé_20950" data-name="Tracé 20950" d="M1920,8V117.2l-214.05,10.18-8.61,4.9-47.64,27.1H275.2l-49.93-30.02-19.13-11.5L0,125.61V8Z" fill="#242424"/>
-  <path id="Tracé_20951" data-name="Tracé 20951" d="M1920,0V129.36H1704.62l-7.28,2.92-47.65,19.1H275.19l-46.88-22.02H0V0Z" fill="#111"/>
-</svg>
+  <path  id="Trace_20950" data-name="Tracé 20950" d="M1920,8V117.2l-214.05,10.18-8.61,4.9-47.64,27.1H275.2l-49.93-30.02-19.13-11.5L0,125.61V8Z" fill="#242424"/>
+  <path id="Trace_20951" data-name="Tracé 20951" d="M1920,0V129.36H1704.62l-7.28,2.92-47.65,19.1H275.19l-46.88-22.02H0V0Z" 
+   fill="#111"/>
+   </svg>
 
 
 
 {/*<LogoDesign/>*/}
-<div className="absolute top-0 z-[11] w-2/12 ">
-    <div className="relative  " >
-    
-<svg xmlns="http://www.w3.org/2000/svg" width="227.678" height="111.583" viewBox="0 0 227.678 111.583" className="w-full">
+<div className="absolute  top-0 z-[11] w-2/12 ">
+    <div className="relative " >
+
+<svg
+
+   xmlns="http://www.w3.org/2000/svg" width="227.678" height="111.583" viewBox="0 0 227.678 111.583" className="w-full ">
   <g id="Groupe_1226" data-name="Groupe 1226" transform="translate(-846.272)">
     <path id="Tracé_27" data-name="Tracé 27" d="M2804.948,2690.5l39.382,111.583h152.606l35.69-111.583Z" transform="translate(-1958.676 -2690.498)" fill="#202020"/>
     <path id="Tracé_28" data-name="Tracé 28" d="M2817.746,2721.885l7.842,3.548,15.685,44.814-3.548,8.776Z" transform="translate(-1960.281 -2694.434)" fill="#ca2026"/>
@@ -47,7 +70,9 @@ const Navbar=()=>{
   
 
 
-<svg xmlns="http://www.w3.org/2000/svg" width="113.225" height="57.357" viewBox="0 0 113.225 57.357" className="absolute top-1/4 left-1/5 cursor-pointer w-full">
+<svg 
+
+xmlns="http://www.w3.org/2000/svg" width="113.225" height="57.357" viewBox="0 0 113.225 57.357" className="absolute  top-1/4 left-1/5 cursor-pointer w-full max-lg:w-1/2 max-lg:left-1/4">
   <g id="Groupe_1" data-name="Groupe 1" transform="translate(0 0)">
     <g id="Groupe_1-2" data-name="Groupe 1" transform="translate(0)">
       <path id="Tracé_1" data-name="Tracé 1" d="M7241.093,2173.678l-9.592-9.592V2143.1l9.721-9.721H7343.9l-31.274,25.2h32.1l-20.56,15.094Z" transform="translate(-7231.5 -2133.383)" fill="#ca2026"/>
@@ -80,7 +105,7 @@ const Navbar=()=>{
 
 
         {/**upper navbar */}
-<div className="flex justify-between align-middle bor w-10/12 border-b-secondary border-b-2 p-4">
+<div className="flex justify-between align-middle w-10/12   max-lg:w-full  p-4">
      <div>
         <div className="flex justify-between items-center " >
             <div className="flex justify-center items-center p-l-2">FOLLOW </div>
@@ -126,7 +151,7 @@ const Navbar=()=>{
         </div>
       
     <div className="flex justify-between align-middle text-center items-center" >
-     <div className="flex justify-center items-center  px-4 mx-2 relative">
+     <div className="flex justify-center items-center  px-4  mx-2 max-lg:mx-0 relative">
      <svg xmlns="http://www.w3.org/2000/svg" width="127.115" height="31.405" viewBox="0 0 127.115 31.405" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
   <path id="Tracé_35" data-name="Tracé 35" d="M2.538,0H117.927l-12.2,31.405H-9.188Z" transform="translate(9.188)" fill="#2d2d2d"/>
 </svg>
@@ -134,15 +159,18 @@ const Navbar=()=>{
       <div className="bg-primary h-10 flex flex-col justify-center items-center "></div>
              <div className="flex justify-center items-center z-10 relative"> 
        
-         <svg xmlns="http://www.w3.org/2000/svg" width="36.295" height="23.271" viewBox="0 0 36.295 23.271" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-           <path id="Tracé_37" data-name="Tracé 37" d="M8.891.854H36.432L27.867,24.125H.138Z" transform="translate(-0.138 -0.854)"/>
+         <svg xmlns="http://www.w3.org/2000/svg" width="36.295" 
+         height="23.271" viewBox="0 0 36.295 23.271" 
+         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden">
+           <path id="Tracé_37" data-name="Tracé 37" d="M8.891.854H36.432L27.867,24.125H.138Z"
+            transform="translate(-0.138 -0.854)"/>
          </svg>
-
+<img src={BtnForm} alt="gaming zone register" width="3px" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 "/>
          <img src={UserIcon} alt="gaming zone user" className="z-10" />
             </div>
            
  
-   <p className="z-10 pl-5">REGISTER </p>
+   <p className="z-10 pl-5 max-lg:pl-2">REGISTER </p>
     </div>
            
            <p className="px-2">OR</p>
@@ -170,16 +198,14 @@ const Navbar=()=>{
 
 {/**lower navbar */}
 
-
-
-<div className="flex justify-between items-center py-4 w-10/12 border-t-4 border-t-secondary z-10 ">
+<div className="flex justify-between items-center py-4 w-10/12 border-t-2 border-t-secondary z-10 ">
 
     {/**left menue */}
     <div className="flex justify-start items-center w-3/12 ">
-        <a href="/"   className="mx-2">HOME</a>
-        <a href="/"  className="mx-2">PRODUCTS</a>
-        <a href="/"  className="mx-2">CONFIGURATIONS</a>
-        <a href="/"  className="mx-2">STORE</a>
+        <Link to="/"  className="mx-2">HOME</Link>
+        <Link to="/products" className="mx-2">PRODUCTS</Link>
+        <Link to="/configurations" className="mx-2">CONFIGURATIONS</Link>
+        <Link to="/store" className="mx-2">STORE</Link>
     
     
     </div>
@@ -188,9 +214,9 @@ const Navbar=()=>{
    {/**right menue */}
 <div className="flex justify-end items-center   w-4/12">
         <div className="flex justify-between items-center">
-        <a href="/"   className="mx-2">PARTNERS</a>
-        <a href="/"   className="mx-2">STORE</a>
-        <a href="/"   className="mx-2">BLOG</a>
+        <Link to="/partners"  className="mx-2">PARTNERS</Link>
+        <Link to="/store"  className="mx-2">STORE</Link>
+        <Link to="/blog"  className="mx-2">BLOG</Link>
         </div>
         
 </div>

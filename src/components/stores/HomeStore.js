@@ -2,7 +2,8 @@ import { create  } from "zustand";
 //import imageCarousel1 from "../../assets/home/section1/Composant11.png";
 import imageCarousel1 from "../../assets/home/section1/withoutbackg/Women Png copy.png";
 import imageCarousel2 from "../../assets/home/section1/withoutbackg/Groupe 92.png";
-
+import imageCarousel3 from "../../assets/home/section1/Groupe 1232.svg"
+import imageCarousel4 from "../../assets/home/section1/Groupe 1232.png"
 
 import axios from "axios";
 
@@ -19,22 +20,22 @@ export const HomeCarouselElements =create((set,get)=>({
       title:"your gaming destination",
   },
   {
-    ImageUrl:imageCarousel1,
+    ImageUrl:imageCarousel3,
     subtitle:"the epic gaming store3",
     title:"your gaming destination",
 },
     {
-        ImageUrl:imageCarousel2,
+        ImageUrl:imageCarousel4,
         subtitle:"the epic gaming store 4",
         title:"your gaming destination ",
     }, 
      {
-      ImageUrl:imageCarousel1,
+      ImageUrl:imageCarousel4,
       subtitle:"the epic gaming store 5",
       title:"your gaming destination 2",
   },
   {
-    ImageUrl:imageCarousel2,
+    ImageUrl:imageCarousel3,
     subtitle:"the epic gaming store 6",
     title:"your gaming destination 2",
 }

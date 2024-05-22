@@ -94,7 +94,7 @@ const handelDynamicPosition=()=>{
 
 <div className="flex justify-center items-center w-full h-full p-20 max-md:p-2 bg-sectionOnebg bg-cover bg-no-repeat bg-center max-sm:p-0">
    
-<div className="w-10/12 max-md:w-full max-sm:w-full h-screen max-sm:h-auto max-sm:pb-[10%]  flex  justify-between items-center max-sm:flex-col-reverse ">
+<div className="w-10/12 max-lg:w-11/12  max-sm:w-full h-screen max-sm:h-auto max-sm:pb-[10%]  flex  justify-between items-center max-sm:flex-col-reverse ">
             <div className="group flex  flex-col  w-1/3 items-start justify-between   h-full
               max-sm:w-full max-sm:items-center max-sm:mt-2">
                 {/**titeles */}
@@ -131,15 +131,11 @@ const handelDynamicPosition=()=>{
         </div>
 
 {/*******************************************images inimated *****************************************/}
-<div className="w-2/3 max-md:w-1/2 relative  h-screen max-sm:h-auto max-sm:py-[10%] flex justify-end max-sm:justify-center  max-sm:w-full " onMouseEnter={handelDynamicPosition} onMouseLeave={handelDynamicPositionInitial}>
+<div className="w-2/3 max-md:w-1/2 relative  h-screen max-sm:h-auto max-sm:py-[10%] flex justify-end max-sm:justify-center   " onMouseEnter={handelDynamicPosition} onMouseLeave={handelDynamicPositionInitial}>
         
 {/*************************************************************************************************** */}
 <div className="group absolute top-0 max-sm:top-1/4 right-0 flex justify-center  w-full z-10 ">
-  
-  <img src={image.getBanner()} alt="gaming" className={`max-sm:hidden hover:w-[750px] hover:h-[750px] w-[600px] max-md:w-[300px] max-md:h-[300px] h-[00px] max-sm:hidden ${classVisible}`}/>
-  <img src={image.getBanner()} alt="gaming" className={`sm:hidden w-[200px]  h-[200px] ${classVisible}`}/>
-  
-  {/*<img src={image.getBanner()} alt="gaming" className={`w-[600px] h-[600px] max-sm:w-[300px] max-sm:h-[300px] right-0 ${classInvisible}`}/>*/}
+ <img src={image.getBanner()} alt="gaming" className={`w-[600px] h-[600px] max-lg:w-[300px] max-lg:h-[300px] right-0 ${classVisible}`}/>
   
 </div>  
             <div className="w-full  max-sm:w-10/12 max-md:mt-10  h-1/2 ">
@@ -147,25 +143,25 @@ const handelDynamicPosition=()=>{
                 
                  {/*****Responsive image*******/}
                             
-                            <img src={trace1} alt="gaming zone" className={` translate-y-10 max-sm:translate-y-0 max-sm:w-[24px]  max-sm:h-[24px] animate-spin-slow animate-running ${dynamicPosition.postion1}`}/>
+                            <img src={trace1} alt="gaming zone" className={` translate-y-10 max-sm:translate-y-0 max-lg:w-[24px]  max-lg:h-[24px] animate-spin-slow animate-running ${dynamicPosition.postion1}`}/>
                 {/*****Responsive image*******/}
-                           <img src={trace2} alt="gaming zone" className={` max-md:w-[50px]  max-md:h-[50px] max-w-[80px] ${dynamicPosition.postion2}`}/>
+                           <img src={trace2} alt="gaming zone" className={` max-lg:w-[50px]  max-lg:h-[50px] max-w-[80px] ${dynamicPosition.postion2}`}/>
                 {/*****Responsive image*******/}
-                           <img src={trace3} alt="gaming zone" className={`max-md:translate-y-20 max-md:w-[40px]  max-sm:h-[40px]  max-sm:translate-y-0 animate-spin-slow ${dynamicPosition.postion3}`}/>
+                           <img src={trace3} alt="gaming zone" className={`max-md:translate-y-20 max-lg:w-[40px]  max-lg:h-[40px]  max-sm:translate-y-0 animate-spin-slow ${dynamicPosition.postion3}`}/>
                  {/*****Responsive image*******/}          
-                           <img src={trace1} alt="gaming zone" className={`max-sm:rotate-180w-[24px]  max-md:h-[24px]  max-md:max-w-[80px] animate-spin-slow ${dynamicPosition.postion4}`}/>
+                           <img src={trace1} alt="gaming zone" className={`max-sm:rotate-180w-[24px]  max-lg:h-[24px]  max-lg:max-w-[80px] animate-spin-slow ${dynamicPosition.postion4}`}/>
             </div>
                  <div className={`flex w-full justify-between `}>
                   {/*****Responsive image*******/} 
-                   <img src={trace1} alt="gaming zone" className={`max-md:w-[24px]  max-md:h-[24px] rotate-[-135deg] ${dynamicPosition.postion5}`}/>
+                   <img src={trace1} alt="gaming zone" className={`max-lg:w-[24px]  max-lg:h-[24px] rotate-[-135deg] ${dynamicPosition.postion5}`}/>
                    {/*****Responsive image*******/} 
-                   <img src={trace6} alt="gaming zone" className={`max-md:w-[71px]  max-md:h-[63px]  rotate-[163deg] ${dynamicPosition.postion6}`}/>
+                   <img src={trace6} alt="gaming zone" className={`max-lg:w-[71px]  max-lg:h-[63px]  rotate-[163deg] ${dynamicPosition.postion6}`}/>
                 </div>
                 <div className="flex w-full justify-between m-t-10 ">
                   {/*****Responsive image*******/} 
-                   <img src={trace7} alt="gaming zone" className={`max-sm:ranslate-x-[0%] max-md:w-[50px] max-md:h-[50px] rotate-[65deg] ${dynamicPosition.postion7}`}/>
+                   <img src={trace7} alt="gaming zone" className={`max-sm:ranslate-x-[0%] max-lg:w-[50px] max-lg:h-[50px] rotate-[65deg] ${dynamicPosition.postion7}`}/>
                    {/*****Responsive image*******/} 
-                    <img src={trace8} alt="gaming zone" className={`max-sm:translate-x-[-35%]  max-md:w-[71px]  max-md:h-[70px] max-sm:ranslate-y-[35%] max-sm:rotate-[2deg] ${dynamicPosition.postion8}`}/>
+                    <img src={trace8} alt="gaming zone" className={`max-sm:translate-x-[-35%]  max-lg:w-[71px]  max-lg:h-[70px] max-sm:ranslate-y-[35%] max-sm:rotate-[2deg] ${dynamicPosition.postion8}`}/>
                  
                  </div>
       

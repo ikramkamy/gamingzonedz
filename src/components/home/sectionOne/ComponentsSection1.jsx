@@ -5,7 +5,7 @@ const [fillColor , setFillColor]=useState('none')
 
     return(
     <div className="flex justify-center items-center z-10 
-    cursor-pointer relative  p-10 h-[40.961px] max-sm:w-full" 
+    cursor-pointer relative  p-10 max-sm:p-2 h-[40.961px] max-sm:w-full" 
     onMouseEnter={()=>setFillColor("#ca2026")} onMouseLeave={()=>setFillColor("none")} >
 
   <div className="uppercase text-[24px] max-xl:text-[18px] bg-transparent cursor-pointer z-20 

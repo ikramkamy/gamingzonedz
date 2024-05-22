@@ -132,6 +132,84 @@ NewConfigs:[{
     urlImage:newProdimg3,
     btn:"config"
 
+}],
+
+AllProducts:[{
+    name:'MCEX',
+    typeProduct:'case',
+    descreption:`3 ventilateurs CHROMA RGB extra larges de 140 mm et une grille 
+    d'aération avant Diamond offrent un refroidissement exceptionnel. Structure E-ATX pour une amplitude maximale. Spectacle total avec ses 2`,
+    price:'25 000 DZD',
+    urlImage:newProdimg3,
+    btn:"buy"
+
+},
+{
+    name:'MCEX',
+    typeProduct:'case',
+    descreption:`3 ventilateurs CHROMA RGB extra larges de 140 mm et une grille 
+    d'aération avant Diamond offrent un refroidissement exceptionnel. Structure E-ATX pour une amplitude maximale. Spectacle total avec ses 2`,
+    price:'25 000 DZD',
+    urlImage:newProdimg3,
+    btn:"config"
+
+},
+{
+    name:'MCEX',
+    typeProduct:'case',
+    descreption:`3 ventilateurs CHROMA RGB extra larges de 140 mm et une grille 
+    d'aération avant Diamond offrent un refroidissement exceptionnel. Structure E-ATX pour une amplitude maximale. Spectacle total avec ses 2`,
+    price:'25 000 DZD',
+    urlImage:newProdimg3,
+    btn:"buy"
+
+},{
+    name:'MCEX',
+    typeProduct:'case',
+    descreption:`3 ventilateurs CHROMA RGB extra larges de 140 mm et une grille 
+    d'aération avant Diamond offrent un refroidissement exceptionnel. Structure E-ATX pour une amplitude maximale. Spectacle total avec ses 2`,
+    price:'25 000 DZD',
+    urlImage:newProdimg3,
+    btn:"buy"
+
+},
+{
+    name:'MCEX',
+    typeProduct:'case',
+    descreption:`3 ventilateurs CHROMA RGB extra larges de 140 mm et une grille 
+    d'aération avant Diamond offrent un refroidissement exceptionnel. Structure E-ATX pour une amplitude maximale. Spectacle total avec ses 2`,
+    price:'25 000 DZD',
+    urlImage:newProdimg3,
+    btn:"config"
+
+},
+{
+    name:'MCEX',
+    typeProduct:'case',
+    descreption:`3 ventilateurs CHROMA RGB extra larges de 140 mm et une grille 
+    d'aération avant Diamond offrent un refroidissement exceptionnel. Structure E-ATX pour une amplitude maximale. Spectacle total avec ses 2`,
+    price:'25 000 DZD',
+    urlImage:newProdimg3,
+    btn:"config"
+
+},{
+    name:'MCEX',
+    typeProduct:'case',
+    descreption:`3 ventilateurs CHROMA RGB extra larges de 140 mm et une grille 
+    d'aération avant Diamond offrent un refroidissement exceptionnel. Structure E-ATX pour une amplitude maximale. Spectacle total avec ses 2`,
+    price:'25 000 DZD',
+    urlImage:newProdimg3,
+    btn:"config"
+
+},{
+    name:'MCEX',
+    typeProduct:'case',
+    descreption:`3 ventilateurs CHROMA RGB extra larges de 140 mm et une grille 
+    d'aération avant Diamond offrent un refroidissement exceptionnel. Structure E-ATX pour une amplitude maximale. Spectacle total avec ses 2`,
+    price:'25 000 DZD',
+    urlImage:newProdimg3,
+    btn:"config"
+
 }]
 
 }))

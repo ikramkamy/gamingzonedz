@@ -1,0 +1,33 @@
+@keyframes changeColor {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: 100%;
+    }
+  }
+  @keyframes changeBorder {
+    0% {
+        border-bottom:"#D6D6D6";
+      
+    }
+    100% {
+        border-bottom: #CA2026 ;
+    }
+  }
+
+
+
+#Trace_863 {
+    fill: #222;
+   
+    stroke: #CA2026;
+    stroke-width: 2px;
+    stroke-dasharray: 100%;
+    stroke-dashoffset: 100%;
+    animation: changeColor 500ms linear 1;
+    cursor:pointer;
+}
+ #btnPagination :hover  {
+    animation: changeBorder 500ms linear infinite;
+ }

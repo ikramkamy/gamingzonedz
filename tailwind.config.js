@@ -36,6 +36,11 @@ backgroundImage: {
         'bgActualite':"url('assets/home/actualite/Groupe 1226.png')",
         'bgActualiteItem':"url('assets/home/actualite/Groupe 1227.png')",
         'bgNouveaute':"url('assets/home/nouveaute/Groupe 1227.png')",
+        "bgFilterBar":"url('assets/products/Tracé 863.png')",
+        "bgpaginationBar":"url('assets/products/Groupe 1226.png')",
+        "bgpaginationBtn1":"url('assets/products/Tracé 34.png')",
+        "bgpaginationBtn2":"url('assets/products/Tracé 34.svg')",
+
 
 
         

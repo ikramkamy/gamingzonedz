@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 
 function valuetext(value) {
-  return `${value}°C`;
+  return `${value}DZD`;
 }
 
 export default function RangeSlider() {
@@ -21,6 +21,7 @@ export default function RangeSlider() {
         onChange={handleChange}
         valueLabelDisplay="auto"
         getAriaValueText={valuetext}
+        className='MuiSlider-thumbColorWarning bg-red-500'
       />
     </Box>
   );

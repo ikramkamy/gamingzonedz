@@ -42,7 +42,7 @@ export default function FreeSoloCreateOption() {
       selectOnFocus
       clearOnBlur
       handleHomeEndKeys
-      id="free-solo-with-text-demo"
+      id="Search for a product"
       options={top100Films}
       getOptionLabel={(option) => {
         // Value selected with enter, right from the input
@@ -60,7 +60,7 @@ export default function FreeSoloCreateOption() {
       sx={{ width: 300 }}
       freeSolo
       renderInput={(params) => (
-        <TextField {...params} label="Free solo with text demo" />
+        <TextField {...params} label="Search for a product" size='small' />
       )}
     />
   );

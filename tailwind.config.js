@@ -55,7 +55,7 @@ backgroundColor:{
   '#444444':'#444444',
 },
 backgroundPosition:{
-  'bottom-10':"10%"
+  'bottom-10':"30%"
 },
 backgroundSize:{
   '100%': '100%',

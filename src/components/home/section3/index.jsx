@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 
 const Section3=()=>{
   const [textAnimated, setTextAnimated]=useState('');
-  const [text, setText]=useState("why go rebuilt?");
+  const [text, setText]=useState("why go prebuilt?");
   const [indexl, setIndexl]=useState(0)
   const delay=200
 
@@ -15,7 +15,7 @@ const Section3=()=>{
       if (indexl < text.length) {
         setTextAnimated(prevText => prevText + text.charAt(indexl));
         setIndexl(indexl+1);
-        console.log("text",textAnimated)
+       
       } else {
         clearInterval(interval);
         setIndexl(0);

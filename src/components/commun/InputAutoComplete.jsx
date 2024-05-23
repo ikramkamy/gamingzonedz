@@ -9,6 +9,7 @@ export default function FreeSoloCreateOption() {
 
   return (
     <Autocomplete
+    
       value={value}
       onChange={(event, newValue) => {
         if (typeof newValue === 'string') {
@@ -60,7 +61,7 @@ export default function FreeSoloCreateOption() {
       sx={{ width: 300 }}
       freeSolo
       renderInput={(params) => (
-        <TextField {...params} label="Search for a product" size='small' />
+        <TextField {...params} label="Search for a product" size='small' className="bg-[#D6D6D6]" />
       )}
     />
   );

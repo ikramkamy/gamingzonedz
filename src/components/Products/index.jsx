@@ -5,14 +5,60 @@ import CarouselItem from "../home/NouveauteSection/CarouselItem";
 import { UseProductsStore } from "../stores/ProductsStore";
 import RangeSlider from "../commun/Slider";
 import '../../components/commun/svgStyling.css';
-import FreeSoloCreateOption from '../../components/commun/InputAutoComplete'
+import FreeSoloCreateOption from '../../components/commun/InputAutoComplete';
+import { useFiltersStor } from "../../components/stores/filertsStore";
+import { useEffect, useState } from "react";
 const Products=()=>{
- const {AllProducts}=UseProductsStore((state)=>state) 
+ const {AllProducts}=UseProductsStore((state)=>state) ;
+ const {getProducts,ProductsList,cathegories}=useFiltersStor((state)=>state);
+ const [filersActive, setFiltersActive]=useState([]);
+ const [filersActiveCode, setFiltersActiveCode]=useState([]);
+ const [filteredProducts, setFilteredProducts]=useState([])
+ useEffect(()=>{
+       var array=[];
+       filersActive.forEach((e)=>{
+              array.push(e.codeCategory)
+              setFiltersActiveCode(array)
+  }) 
+ },[filersActive])
+
+
+ useEffect(()=>{
+     getProducts && getProducts();  
+ },[])
+
+ const handelActiveFilters=(e)=>{
+ 
+       if(filersActive.indexOf(e) === -1){
+              setFiltersActive([...filersActive,e])
+             
+       }else if(filersActive.indexOf(e) > -1) {
+              console.log("the condition is verified",filersActive.includes(e))
+              setFiltersActive(filersActive.filter((filter) => filter!== e));
+
+       }
+    
+      
+ }
+ useEffect(()=>{
+       var array=[];
+       ProductsList.forEach((e)=>{
+              
+         if(filersActiveCode.includes(e.fields.category)){
+              //setFilteredProducts([...filteredProducts,e])
+              array.push(e);
+              setFilteredProducts(array)
+              console.log("filted products list", filteredProducts)
+         }
+       })
+
+ },[filersActiveCode])
+
     return(<div className="flex flex-col  ">
         <Navbar/>
-        <div className="w-full relative flex flex-col justify-center items-center mt-20">
-             <div className="text-[78px]  uppercase w-full text-center">shop</div> 
-             <div className="w-fit flex justify-between items-center">
+        <div className="bg-bgSection3 p-20  bg-cover bg-bottom bg-no-repeat  w-full relative flex flex-col justify-center items-center mt-20">
+             <div className="text-[78px] z-10 uppercase w-full text-center">shop</div> 
+             <div className="w-fit flex z-10 justify-between items-center">
                       <svg 
         className="cursor-pointer mx-2"
         xmlns="http://www.w3.org/2000/svg" width="10.244" height="11.326" viewBox="0 0 10.244 11.326">
@@ -24,27 +70,8 @@ const Products=()=>{
                     <h1>Home  <span className="mx-2">&#62;</span> Shop </h1> 
 
 
-             </div>
-             <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="2046.567" height="714.974" viewBox="0 0 2046.567 714.974" className="absolute hidden top-[30%]">
-            <defs>
-                <linearGradient id="linear-gradient" x1="0.028" y1="0.5" x2="0.966" y2="0.5" gradientUnits="objectBoundingBox">
-                  <stop offset="0"/>
-                  <stop offset="0.452" stop-color="#ca2026"/>
-                  <stop offset="1"/>
-                </linearGradient>
-                <linearGradient id="linear-gradient-2" x1="0.028" y1="0.5" x2="0.966" y2="0.5" gradientUnits="objectBoundingBox">
-                  <stop offset="0"/>
-                  <stop offset="0.452" stop-color="#333"/>
-                  <stop offset="1"/>
-                </linearGradient>
-             </defs>
-            <g id="Groupe_1227" data-name="Groupe 1227" transform="translate(75.284 499.45)">
-              <g id="Groupe_1226" data-name="Groupe 1226" transform="translate(24 -3)">
-                <path id="Tracé_450" data-name="Tracé 450" d="M0,33.255,856.524,0l159.525,43.324L1168.412,0l878.156,33.255v646.8l-822.462,34.917L1016.049,596.92,830.534,714.974,0,680.057Z" transform="translate(1947.283 218.524) rotate(180)" fill="url(#linear-gradient)"/>
-              </g>
-               <path id="Tracé_451" data-name="Tracé 451" d="M0,5.93,857.27,0l158.779,23.47L1171.188,0l875.379,5.93V664.28H1225.954l-209.9-95.043L832.625,664.28H0Z" transform="translate(1971.283 191.534) rotate(180)" fill="url(#linear-gradient-2)"/>
-             </g>
-             </svg>
+       </div>
+            
         
         </div>
 
@@ -55,12 +82,12 @@ const Products=()=>{
                             <div className="w-full flex-col pb-4 border-b-2 border-b-secondary">
                        <h1 className="uppercase text-[18px] mb-4">series</h1>
                        <div className="flex justify-between">
-                <input type="checkbox" className="mr-2"/>
-                <label className="text-[14px]">ROG Rampage</label>
+                <input type="checkbox" className="mr-4"/>
+                <label className="text-[14px] w-full">ROG Rampage</label>
                        </div>
                        <div className="flex justify-between">
-                <input type="checkbox" className="mr-2"/>
-                <label className="text-[14px]">ROG Rampage</label>
+                <input type="checkbox" className="mr-4"/>
+                <label className="text-[14px]  w-full">ROG Rampage</label>
                        </div>
                        <div className="flex justify-between">
                 <input type="checkbox" className="mr-2"/>
@@ -80,7 +107,7 @@ const Products=()=>{
                        </div>
                             </div>
                  {/****Brands*****/}
-                         <div className="w-full flex-col pb-4 border-b-2 border-b-secondary">
+                         <div className="w-full mt-2 flex-col pb-4 border-b-2 border-b-secondary">
                        <h1 className="uppercase text-[18px] mb-4">brands</h1>
                        <div className="flex justify-between">
                 <input type="checkbox" className="mr-2"/>
@@ -108,41 +135,28 @@ const Products=()=>{
                        </div>
                             </div>
                    {/****Filter by Price*****/}
-                           <div className="flex flex-col">
-                            <h1 className="uppercase tex-[28px]">filter by price</h1>
+                           <div className="flex flex-col mt-2">
+                            <h1 className="uppercase tex-[28px] mt-2">filter by price</h1>
                              <RangeSlider/>
                            </div>
 
                    {/****cathégories*****/}
-                   <div className="w-full flex-col pb-4 ">
-                       <h1 className="uppercase text-[18px] mb-4">cathegory</h1>
-                       <div className="flex justify-between">
-                <input type="checkbox" className="mr-2"/>
-                <label className="text-[14px]">CPU</label>
-                       </div>
-                       <div className="flex justify-between">
-                <input type="checkbox" className="mr-2"/>
-                <label className="text-[14px]">GPU</label>
-                       </div>
-                       <div className="flex justify-between">
-                <input type="checkbox" className="mr-2"/>
-                <label className="text-[14px]">CASQUE</label>
-                       </div>
-                       <div className="flex justify-between">
-                <input type="checkbox" className="mr-2"/>
-                <label className="text-[14px]">CASE</label>
-                       </div>
-                       <div className="flex justify-between">
-                <input type="checkbox" className="mr-2"/>
-                <label className="text-[14px]">ACCESSOIRES</label>
-                       </div>
+                   <div className="w-full mt-2 pt-2 flex-col pb-4 border-t-2 border-t-secondary">
+                       <h1 className="uppercase text-[18px] mb-4">category</h1>
+
+                       {cathegories.map((e)=> <div className="flex  w-full">
+                                             <input type="checkbox" className="mr-4" value={e.FilterIsActive} onChange={()=>handelActiveFilters(e)}/>
+                                             <label className="text-[14px]">{e.category}</label>
+                                             </div>)}
+                      
+                      
                
-                            </div>
+                    </div>
                   
-                  </div>
+                   </div>
                  
                   {/****Products section*****/}
-                  <div className="w-8/12 flex flex-col px-20">
+                  <div className="w-8/12 flex  flex-col px-20">
                     {/****Filter bar*****/}
                      <div className="flex py-2 px-4 w-full bg-no-repeat bg-center bg-cover  bg-bgFilterBar relative justify-between items-center">
                     
@@ -175,9 +189,24 @@ const Products=()=>{
 
                     {/****products*****/}
 
-                  <div className="flex w-full flex-wrap mt-20 mb-20">
+                  <div className="flex w-full   flex-wrap justify-center mt-20 mb-20">
                    {AllProducts.map((e)=><CarouselItem urlImage={e.urlImage}  name={e.name} typeProduct={e.typeProduct} descreption={e.descreption} price={e.price} btn={e.btn}/>)}
                   </div>
+
+                   {/******displaying Products from divatech data base */}
+
+                    <div>
+                     <h1>Products from divatech database</h1>
+                     {filteredProducts.map((e)=><div>
+                            <div>cathegory: {e.fields.category}</div>
+                            <div> technical specs: {e.fields.tech_specs}</div>
+                     </div>)}
+                    </div>
+
+
+
+
+
                    {/****Pagination and number of products****/}
                    <div className="flex justify-between relative bg-bgpaginationBar bg-no-repeat bg-center bg-cover px-5">
                   

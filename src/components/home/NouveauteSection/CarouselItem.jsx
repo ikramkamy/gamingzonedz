@@ -1,11 +1,12 @@
 
 import { UseProductsStore } from '../../stores/ProductsStore.js';
 import { useEffect, useState } from 'react';
-const CarouselItem=({urlImage, name,typeProduct,descreption,price,btn})=>{
+
+const CarouselItem=({urlImage, name,typeProduct,descreption,price,btn,category})=>{
 
     const [filleye, setFilleye]=useState('none')
     const [fillViewBtn, setFillViewBtn]=useState('#444444')
-    const {NewProducts ,NewConfigs}=UseProductsStore((state)=>state);
+    const {NewProducts ,NewConfigs,ShowcategoryName}=UseProductsStore((state)=>state);
     const [allnewProducts, setAllnewProducts]=useState()
     
     useEffect(()=>{
@@ -32,6 +33,10 @@ const handelBtnColor=()=>{
   }
   
 }
+useEffect(()=>{
+  ShowcategoryName && ShowcategoryName(category)
+  console.log('ShowcategoryName(category)',ShowcategoryName(category))
+},[])
     return(  <div id="#carouselitem" className='group  cursor-pointer bg-carousItemNouveaute
     hover:bg-bgNouveaute 
      flex flex-col items-center justify-center h-[60vh] w-[310px]  

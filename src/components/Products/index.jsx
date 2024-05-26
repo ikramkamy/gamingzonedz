@@ -3,56 +3,80 @@ import Footer from "../footer";
 import BasicSelect from "../commun/SelectDropdown";
 import CarouselItem from "../home/NouveauteSection/CarouselItem";
 import { UseProductsStore } from "../stores/ProductsStore";
-import RangeSlider from "../commun/Slider";
+
 import '../../components/commun/svgStyling.css';
 import FreeSoloCreateOption from '../../components/commun/InputAutoComplete';
 import { useFiltersStor } from "../../components/stores/filertsStore";
 import { useEffect, useState } from "react";
+import FiltersProducts from "../commun/FiltersProducts";
 const Products=()=>{
  const {AllProducts}=UseProductsStore((state)=>state) ;
- const {getProducts,ProductsList,cathegories}=useFiltersStor((state)=>state);
- const [filersActive, setFiltersActive]=useState([]);
- const [filersActiveCode, setFiltersActiveCode]=useState([]);
+ const {getProducts,ProductsList,cathegories,Filters}=useFiltersStor((state)=>state);
+ const [allProductsFiltered, setAllProductsFiltered]=useState(AllProducts.slice(0 ,8))
+ const [copyCathegories, setCopyCathegories]=useState(cathegories)
+ const [filtersActive, setFiltersActive]=useState(cathegories[0]);
+const [filersActiveCode, setFiltersActiveCode]=useState([1]);
  const [filteredProducts, setFilteredProducts]=useState([])
+{/******update the array of codes corresponding to each category**********/}
  useEffect(()=>{
+       setFiltersActiveCode(filtersActive[0]?.codeCategory)
+
+       /*
        var array=[];
+       The multiple selection of categories
        filersActive.forEach((e)=>{
               array.push(e.codeCategory)
               setFiltersActiveCode(array)
   }) 
- },[filersActive])
+  */
+ },[filtersActive])
 
 
  useEffect(()=>{
      getProducts && getProducts();  
  },[])
-
- const handelActiveFilters=(e)=>{
- 
-       if(filersActive.indexOf(e) === -1){
-              setFiltersActive([...filersActive,e])
-             
-       }else if(filersActive.indexOf(e) > -1) {
-              console.log("the condition is verified",filersActive.includes(e))
-              setFiltersActive(filersActive.filter((filter) => filter!== e));
-
-       }
-    
-      
- }
- useEffect(()=>{
-       var array=[];
-       ProductsList.forEach((e)=>{
+{/******update the array Active categories**********/}
+const handelActiveFilters=(e)=>{
+setFiltersActive(e)
+copyCathegories.forEach((elem)=>{
+       if(e===elem){
+              elem.FilterIsActive= !elem.FilterIsActive;
               
-         if(filersActiveCode.includes(e.fields.category)){
-              //setFilteredProducts([...filteredProducts,e])
+       }else{
+              elem.FilterIsActive=false;
+       }
+})
+ }
+ 
+ useEffect(()=>{
+      let array=[]
+      
+       ProductsList.forEach((e)=>
+       {
+             if(filtersActive.codeCategory=== e.fields.category)
+              {
+             
+              setFilteredProducts([...filteredProducts,e])
               array.push(e);
               setFilteredProducts(array)
-              console.log("filted products list", filteredProducts)
-         }
+              
+              }
        })
+   
+},[filtersActive])
 
- },[filersActiveCode])
+useEffect(()=>{
+ var array=[];
+      AllProducts.forEach((e)=>{
+          console.log('all products', e.category)
+          if(filtersActive.codeCategory === e.category)
+               {
+               array.push(e);
+               setAllProductsFiltered(array)
+            }
+     })
+     
+},[filtersActive])
 
     return(<div className="flex flex-col  ">
         <Navbar/>
@@ -76,85 +100,12 @@ const Products=()=>{
         </div>
 
         {/****Products and filters*****/}
-        <div className="flex w-full justify-center mt-20">
+        <div className="flex w-full justify-center mt-20 p-20 items-start">
                  {/****Series*****/}
                  <div className="flex flex-col w-2/12">
-                            <div className="w-full flex-col pb-4 border-b-2 border-b-secondary">
-                       <h1 className="uppercase text-[18px] mb-4">series</h1>
-                       <div className="flex justify-between">
-                <input type="checkbox" className="mr-4"/>
-                <label className="text-[14px] w-full">ROG Rampage</label>
-                       </div>
-                       <div className="flex justify-between">
-                <input type="checkbox" className="mr-4"/>
-                <label className="text-[14px]  w-full">ROG Rampage</label>
-                       </div>
-                       <div className="flex justify-between">
-                <input type="checkbox" className="mr-2"/>
-                <label className="text-[14px]">ROG Rampage</label>
-                       </div>
-                       <div className="flex justify-between">
-                <input type="checkbox" className="mr-2"/>
-                <label className="text-[14px]">ROG Rampage</label>
-                       </div>
-                       <div className="flex justify-between">
-                <input type="checkbox" className="mr-2"/>
-                <label className="text-[14px]">ROG Rampage</label>
-                       </div>
-                       <div className="flex justify-between">
-                <input type="checkbox" className="mr-2"/>
-                <label className="text-[14px]">ROG Rampage</label>
-                       </div>
-                            </div>
-                 {/****Brands*****/}
-                         <div className="w-full mt-2 flex-col pb-4 border-b-2 border-b-secondary">
-                       <h1 className="uppercase text-[18px] mb-4">brands</h1>
-                       <div className="flex justify-between">
-                <input type="checkbox" className="mr-2"/>
-                <label className="text-[14px]">ROG Rampage</label>
-                       </div>
-                       <div className="flex justify-between">
-                <input type="checkbox" className="mr-2"/>
-                <label className="text-[14px]">ROG Rampage</label>
-                       </div>
-                       <div className="flex justify-between">
-                <input type="checkbox" className="mr-2"/>
-                <label className="text-[14px]">ROG Rampage</label>
-                       </div>
-                       <div className="flex justify-between">
-                <input type="checkbox" className="mr-2"/>
-                <label className="text-[14px]">ROG Rampage</label>
-                       </div>
-                       <div className="flex justify-between">
-                <input type="checkbox" className="mr-2"/>
-                <label className="text-[14px]">ROG Rampage</label>
-                       </div>
-                       <div className="flex justify-between">
-                <input type="checkbox" className="mr-2"/>
-                <label className="text-[14px]">ROG Rampage</label>
-                       </div>
-                            </div>
-                   {/****Filter by Price*****/}
-                           <div className="flex flex-col mt-2">
-                            <h1 className="uppercase tex-[28px] mt-2">filter by price</h1>
-                             <RangeSlider/>
-                           </div>
-
-                   {/****cathégories*****/}
-                   <div className="w-full mt-2 pt-2 flex-col pb-4 border-t-2 border-t-secondary">
-                       <h1 className="uppercase text-[18px] mb-4">category</h1>
-
-                       {cathegories.map((e)=> <div className="flex  w-full">
-                                             <input type="checkbox" className="mr-4" value={e.FilterIsActive} onChange={()=>handelActiveFilters(e)}/>
-                                             <label className="text-[14px]">{e.category}</label>
-                                             </div>)}
-                      
-                      
-               
-                    </div>
-                  
-                   </div>
+                <FiltersProducts filtersActive={filtersActive}  FiltersList={Filters[0]} handelActiveFilters={handelActiveFilters} />
                  
+                    </div>
                   {/****Products section*****/}
                   <div className="w-8/12 flex  flex-col px-20">
                     {/****Filter bar*****/}
@@ -190,7 +141,7 @@ const Products=()=>{
                     {/****products*****/}
 
                   <div className="flex w-full   flex-wrap justify-center mt-20 mb-20">
-                   {AllProducts.map((e)=><CarouselItem urlImage={e.urlImage}  name={e.name} typeProduct={e.typeProduct} descreption={e.descreption} price={e.price} btn={e.btn}/>)}
+                   {allProductsFiltered.map((e)=><CarouselItem urlImage={e.urlImage} category={e.category} name={e.name} typeProduct={e.typeProduct} descreption={e.descreption} price={e.price} btn={e.btn}/>)}
                   </div>
 
                    {/******displaying Products from divatech data base */}
@@ -199,7 +150,8 @@ const Products=()=>{
                      <h1>Products from divatech database</h1>
                      {filteredProducts.map((e)=><div>
                             <div>cathegory: {e.fields.category}</div>
-                            <div> technical specs: {e.fields.tech_specs}</div>
+                           {/* <div> technical specs: <div className="text-red-500 " dangerouslySetInnerHTML={{__html:e.fields.tech_specs}}></div> </div>*/}
+                            <div>page support link: <div  dangerouslySetInnerHTML={{__html:e.presentation}}></div></div>
                      </div>)}
                     </div>
 
@@ -242,6 +194,21 @@ const Products=()=>{
                   
                   
                   </div>
+
+
+                   {/****cathégories*****/}
+                  
+                   <div className="w-2/12 mt-2 pt-2 flex-col pb-4 ">
+                       <h1 className="uppercase text-[18px] mb-4">category</h1>
+
+                       {copyCathegories.map((e)=> <div className="flex  w-full">
+                                             <input type="checkbox" className="mr-4"  checked={e.FilterIsActive} onChange={()=>handelActiveFilters(e)}/>
+                                             <label className="text-[14px]">{e.category}</label>
+                                             </div>)}
+                      
+                      
+               
+                    </div>
         </div>
 
 

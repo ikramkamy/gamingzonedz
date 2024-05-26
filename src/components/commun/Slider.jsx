@@ -18,8 +18,8 @@ export default function RangeSlider() {
     <div>
     <Box  className="w-full">
       <Slider
-      min={10000}
-      max={50000}
+      min={0}
+      max={200000}
      sx={{
       '&.MuiSlider-thumbColorWarning': {
         backgroundColor: '#CA2026',

@@ -9,6 +9,7 @@ import PartnersPage from '../src/components/PartnersPage';
 import Login from '../src/components/Login';
 import ContactUs from '../src/components/Contact';
 import FAQ from '../src/components/FAQ';
+import PredesignedPC from '../src/components/PredesignedPC';
 function App() {
   return (
     <div className="bg-black text-white ">
@@ -16,13 +17,14 @@ function App() {
   <Routes>
     <Route exact path='/' Component={Home}/>
     <Route exact path='/products' Component={Products}/>
-    <Route exat path={`/configurations`} Component={PrebuiltComputers}/>
-    <Route exat path={`/viewproduct/:id`} Component={ViewProductPage}/>
-    <Route exat path={`/blog`} Component={BlogPage}/>
-    <Route exat path={`/partners`} Component={PartnersPage}/>
-    <Route exat path={`/login`} Component={Login}/>
-    <Route exat path={`/faq`} Component={FAQ}/>
-
+    <Route exact path={`/configurations`} Component={PrebuiltComputers}/>
+    <Route exact path={`/viewproduct/:id`} Component={ViewProductPage}/>
+    <Route exact path={`/blog`} Component={BlogPage}/>
+    <Route exact path={`/partners`} Component={PartnersPage}/>
+    <Route exact path={`/login`} Component={Login}/>
+    <Route exact path={`/faq`} Component={FAQ}/>
+    <Route exact path={`/contact`} Component={ContactUs}/>
+    <Route exact path ={`/predesignedpc`} Component={PredesignedPC}/>
   </Routes>
 
      

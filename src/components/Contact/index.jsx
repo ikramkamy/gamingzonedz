@@ -1,5 +1,6 @@
 import Navbar from "../navbar";
 import Footer from "../footer";
+import HeaderPages from "../commun/HeaderPages";
 import img from '../../assets/contact/NoPath - Copy 19.svg';
 import {BtnLogin, BtnLogin8, BtnLogin66, BtnLogin55 , BtnLogin5 ,BtnLogin9, BtnLogin7} from "../commun/BtnLogin";
 import { UseBrandssStore } from "../stores/BrandsStore";
@@ -9,6 +10,7 @@ const ContactUs=()=>{
     return(<div className="relative w-full flex justify-center items-center flex-col">
           <img src={img} alt="gaming zone partners" className="absolute  top-0   h-full w-full opacity-10"/>
         <Navbar/>
+        <HeaderPages title="contact us"/>
 <div className="mt-20 mb-20 w-10/12 flex flex-col justify-center items-center pt-20">
        
 

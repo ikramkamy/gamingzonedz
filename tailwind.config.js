@@ -44,6 +44,8 @@ backgroundImage: {
         "bgpartnerspage1":"url('assets/partners/Trace 20659.svg')",
         "bglogin":"url('assets/login/Trace 863.png')",
         "bgloginpage":"url('assets/login/Groupe 1048.png')",
+        "bgFAQitem":"url('assets/faq/Trace 900.png')",
+
 
 
 

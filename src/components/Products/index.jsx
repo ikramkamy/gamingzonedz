@@ -16,7 +16,8 @@ const Products=()=>{
  const [copyCathegories, setCopyCathegories]=useState(cathegories)
  const [filtersActive, setFiltersActive]=useState(cathegories[0]);
 const [filersActiveCode, setFiltersActiveCode]=useState([1]);
- const [filteredProducts, setFilteredProducts]=useState([])
+ const [filteredProducts, setFilteredProducts]=useState([]);
+ 
 {/******update the array of codes corresponding to each category**********/}
  useEffect(()=>{
        setFiltersActiveCode(filtersActive[0]?.codeCategory)

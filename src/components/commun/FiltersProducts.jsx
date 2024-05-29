@@ -20,7 +20,7 @@ const FiltersProducts=({filtersActive})=>{
              {/****Filter by Price*****/}
                            <div className="flex flex-col mt-2">
                             <h1 className="uppercase tex-[28px] mt-2">filter by price</h1>
-                             <RangeSlider/>
+                             {/*<RangeSlider/>*/}
                            </div>
 
                   

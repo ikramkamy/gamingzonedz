@@ -1,0 +1,26 @@
+@keyframes changeColor {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: 100%;
+    }
+  }
+  
+  #Trace_20950 {
+    stroke: red;
+    stroke-width: 2px;
+    stroke-dasharray: 100%;
+    stroke-dashoffset: 100%;
+    animation: changeColor 500ms linear infinite;
+    cursor:pointer;
+    
+  }
+  #Groupe_1:hover{
+    stroke: red;
+    stroke-width: 2px;
+    stroke-dasharray: 100%;
+    stroke-dashoffset: 100%;
+    animation: changeColor 500ms linear infinite;
+    cursor:pointer;
+  }

@@ -2,7 +2,7 @@ import Navbar from "../navbar";
 import Footer from "../footer";
 import HeaderPages from "../commun/HeaderPages";
 import img from '../../assets/contact/NoPath - Copy 19.svg';
-import {BtnLogin, BtnLogin8, BtnLogin66, BtnLogin55 , BtnLogin5 ,BtnLogin9, BtnLogin7} from "../commun/BtnLogin";
+import {BtnLogin, Textzone, BtnLogin66, BtnLogin55 , BtnLogin5 ,BtnLogin9, BtnLogin7} from "../commun/BtnLogin";
 import { UseBrandssStore } from "../stores/BrandsStore";
 import ItemContact from "./ItemContect";
 const ContactUs=()=>{
@@ -11,11 +11,14 @@ const ContactUs=()=>{
           <img src={img} alt="gaming zone partners" className="absolute  top-0   h-full w-full opacity-10"/>
         <Navbar/>
         <HeaderPages title="contact us"/>
-<div className="mt-20 mb-20 w-10/12 flex flex-col justify-center items-center pt-20">
+<div className=" w-10/12 flex flex-col justify-center items-center ">
        
 
 
-<div className="bg-bglogin bg-no-repeat bg-cover  flex p-20 mb-20   flex-col jutify-between ">
+<div className=" relative px-52 py-10 flex    flex-col jutify-between items-center">
+
+
+<div className="z-10 px-52 py-20  bg-bglogin bg-center bg-no-repeat bg-contain">
     <div className="flex  justify-center items-center">
           <div className="flex flex-col w-1/2">
 <BtnLogin5/>
@@ -34,12 +37,9 @@ const ContactUs=()=>{
           </div>
           <div className="flex flex-col w-1/2">
 
-<BtnLogin55/>
-<BtnLogin66/>
+          <BtnLogin55/>
+          <BtnLogin66/>
 
-<div className="flex justify-between items-center w-[272px]">
-
-</div>
           </div>
           
           
@@ -50,17 +50,18 @@ const ContactUs=()=>{
           </div>
           
           
-<BtnLogin8/>
-     <div>
-  <div className="w-full justify-center items-center">
-    <BtnLogin7 btn="send"/>
-    </div>      
+          <Textzone/>
+        
+          <div className="justify-center items-center">
+         <BtnLogin7 btn="send" />
+        
         
         </div>     
           </div>
         
-         </div>
-<div className="flex w-7/12 justify-between mb-20 mt-20">
+</div>
+</div>
+<div className="flex w-7/12 justify-between mb-20 ">
 {services.map((e)=><ItemContact img={e.urlImage} title={e.title} subtitle={e.subtitle} phone={e.phone} email={e.email}/>)}
 </div>
          <Footer/>

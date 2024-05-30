@@ -19,7 +19,13 @@
   .css-188mx6n-MuiSlider-root{
     color: #CA2026;
   }
-
+#svgbtnlogin{
+  height: 20px;
+  background-color: aqua;
+}
+#svgbtnlogin1{
+  height: 100%;
+}
 #Trace_863 {
     fill: #222;
    

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-const HeaderPages=({title})=>{
+const HeaderPages=({title,marginTop})=>{
     return(
 
-  <div className="bg-bgSection3 p-10   bg-cover bg-bottom bg-no-repeat  w-full relative flex flex-col justify-center items-center mt-20">
+  <div className={`bg-bgSection3 p-10   bg-cover bg-bottom bg-no-repeat  w-full relative flex flex-col justify-center items-center mt-20 ${marginTop }`}>
              <div className="text-[48px] z-10 uppercase w-full text-center">{title}</div> 
              <div className="w-fit flex z-10 justify-between items-start  items-center">
                  <Link to="/">     <svg 

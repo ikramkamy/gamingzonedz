@@ -111,10 +111,11 @@ export const BtnLogin66 =()=>{
 
   </div>)
 }
-export const BtnLogin8 =()=>{
+export const Textzone =()=>{
   const [fillcolor, setFillColor]=useState('#505050')
-  return( <div className="relative w-full  m-2 cursor-pointer  flex justify-start items-center" onMouseEnter={()=>setFillColor("#505050")} onMouseLeave={()=>setFillColor("#505050")}>
-   <textarea type="text" placeholder="message" className="absolute top-0 pl-1  z-10 bg-transparent w-full  focus:outline-none" />
+  return( 
+  <div className="relative w-11/12  m-2 cursor-pointer  flex justify-start items-center" onMouseEnter={()=>setFillColor("#505050")} onMouseLeave={()=>setFillColor("#505050")}>
+   <textarea type="text" placeholder="message" className="absolute p-10 top-0 pl-10  z-10 bg-transparent w-full  focus:outline-none" />
                         <svg xmlns="http://www.w3.org/2000/svg" width="" height="" viewBox="0 0 272.574 57.212">
              <path id="Tracé_870" data-name="Tracé 870" d="M-20566.016-5282.286l-12.285,15.569v41.643h260.051l12.523-16.607v-40.6Z" 
              transform="translate(20578.301 5282.286)" fill={fillcolor}/>
@@ -146,22 +147,30 @@ export const BtnLogin10 =()=>{
 }
 export const BtnLogin7 =({btn})=>{
   const [fillcolor, setFillColor]=useState('#505050')
-  return( <div className="relative w-1/2 m-2 cursor-pointer  flex justify-center items-center" onMouseEnter={()=>setFillColor("#505050")} onMouseLeave={()=>setFillColor("#505050")}>
-   <div className="uppercase text-[11px] z-10 absolute flex items-center">{btn}</div>
-   <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="" height="" viewBox="0 0 236.358 129.703">
-  <defs>
-    <filter id="Tracé_262" x="0" y="0" width="" height="" filterUnits="userSpaceOnUse">
-      <feOffset input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="16" result="blur"/>
-      <feFlood flood-color="#ca2026"/>
-      <feComposite operator="in" in2="blur" />
-      <feComposite in="SourceGraphic"/>
-    </filter>
+  return( 
+  <div className=" mt-4 cursor-pointer  flex justify-center items-center w-full" onMouseEnter={()=>setFillColor("#505050")} onMouseLeave={()=>setFillColor("#505050")}>
+   <div className="uppercase text-[11px] z-10 flex items-center absolute">{btn}</div>
+
+
+
+   <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="484.345" viewBox="0 0 384.122 48.24">  <defs>
+    <clipPath id="clip-path">
+      <rect x="0" y="0" width="384.122" height="48.24"/>  </clipPath>
   </defs>
-  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Tracé_262)">
-    <path id="Tracé_262-2" data-name="Tracé 262" d="M7.409,0H136.135l-12.89,33.7H-4.223Z" transform="translate(52.22 48)" fill="#ca2026"/>
+  <g transform="translate(-50%, -50%)" clip-path="url(#clip-path)">
+    <path data-name="Tracé 262" d="M27.961,0H384.122L348.458,48.24H-4.223Z" fill="#ca2026"/>
   </g>
 </svg>
+
+
+
+
+
+
+
+
+
+
 
 
   </div>)

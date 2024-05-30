@@ -19,7 +19,7 @@ const Footer=()=>{
     
                       <div className="flex justify-start items-center w-3/12 ">
                     <a href="/"   className="mx-2">HOME</a>
-                    <a href="/predesignedpc"  className="mx-2">PRODUCTS</a>
+                    <a href="/predesignedpc"  className="mx-2">PREDESIGNED PC</a>
                     <a href="/faq"  className="mx-2">FAQ</a>
                     <a href="/contact"  className="mx-2 uppercase">contact us</a>
     

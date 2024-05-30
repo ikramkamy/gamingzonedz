@@ -45,6 +45,7 @@ backgroundImage: {
         "bglogin":"url('assets/login/Trace 863.png')",
         "bgloginpage":"url('assets/login/Groupe 1048.png')",
         "bgFAQitem":"url('assets/faq/Trace 900.png')",
+        "bgpredesignedpc":"url('assets/predesignedpc/Trace 20703.svg')",
 
 
 
@@ -66,6 +67,7 @@ backgroundPosition:{
 },
 backgroundSize:{
   '100%': '100%',
+
 },
 width: {
   '57':'57px',

@@ -39,18 +39,19 @@ useEffect(()=>{
 },[])
     return(  <div id="#carouselitem" className='group  cursor-pointer bg-carousItemNouveaute
     hover:bg-bgNouveaute 
-     flex flex-col items-center justify-center h-[60vh] w-[310px]  
-     bg-no-repeat bg-cover bg-center relative '>
+     flex flex-col items-center justify-center h-[60vh] w-[310px] 
+     bg-no-repeat bg-cover max-lg:bg-contain bg-center relative '>
                      
-    <div className='flex flex-col items-center' 
+    <div className='flex flex-col items-center ' 
     onMouseEnter={()=>setFilleye('btnCarouselHover')} onMouseOut={()=>setFilleye('none')} >
     
 
-       <div className='flex justify-between'>
-         <img src={urlImage} alt="gaming zone new product " className='group-hover:animate-zoomEffect1 
-         max-sm:w-[160px] max-sm:h-[160px]'/>
-         <svg 
-         className=" cursor-pointer group-hover:animate-ping "
+       <div className='flex justify-around items-center w-2/3 max-lg:w-1/3 '>
+                  <img src={urlImage} alt="gaming zone new product "
+                   className='group-hover:animate-zoomEffect1 
+                   w-[100px] max-lg:w-[50px] max-lg:h-[50px] h-[100px]'/>
+                  <svg 
+         className=" cursor-pointer w-[20px] h-[20px] group-hover:animate-ping "
          xmlns="http://www.w3.org/2000/svg"
             width="37.883" height="38.997" viewBox="0 0 37.883 38.997" 
            >
@@ -62,16 +63,13 @@ useEffect(()=>{
                 transform="translate(6.158 3.849)" fill={filleye} stroke="#fff" stroke-linecap="round" stroke-linejoin="round" 
                 stroke-width="1.5"/>
               </g>
-  </svg> 
- 
-
-
-         </div> 
+                   </svg> 
+        </div> 
         
-         <h2 className='text-[20px] font-semibold text-center'>{name}</h2>
+         <h2 className='text-[20px] max-lg:text-[15px] font-semibold text-center'>{name}</h2>
          <h2 className='text-[10px] font-bold text-center text-redPrimary'>{typeProduct}</h2>
-         <p className='w-[70%] text-[15px]'>{descreption}</p>
-         <div className='text-[17px] font-bold text-center text-redPrimary'>{price}</div>
+         <p className='w-[70%] max-lg:w-1/3 text-[15px] max-lg:text-[10px]'>{descreption}</p>
+         <div className='text-[17px] max-lg:text-[15px] font-bold text-center text-redPrimary'>{price}</div>
          
          
             

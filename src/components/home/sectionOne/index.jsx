@@ -13,6 +13,7 @@ import trace8 from "../../../assets/home/section1/Tracé 44.png"
 import { HomeCarouselElements } from "../../stores/HomeStore";
 import { useEffect, useState } from "react";
 import { ButtonHomeSection } from "./ComponentsSection1";
+import { Link } from "react-router-dom";
 
 const SectionOne=()=>{
    
@@ -60,14 +61,14 @@ const handelDynamicPositionInitial =()=>{
   }
 const handelDynamicPosition=()=>{
     setDynamicPosition({
-      postion1:'translate-x-[100%] translate-y-[100%] rotate-[0deg] transition ease-in-out delay-150',
-      postion2:'translate-x-[45%] max-sm:translate-x-[100%] translate-y-[150%] rotate-[0deg] transition ease-in-out delay-150',
-      postion3:'-translate-x-[100%] translate-y-[100%] rotate-[0deg] ',
-      postion4:'-translate-x-[140%] translate-y-[100%] rotate-[0deg] transition ease-in-out delay-150',
-      postion5:'translate-x-[410%] transition ease-in-out delay-150',
-      postion6:'-translate-x-[45%] transition ease-in-out delay-150',
-      postion7:'translate-x-[147%] -translate-y-[35%] rotate-[2deg] transition ease-in-out delay-150',
-      postion8:'-translate-x-[30%] -translate-y-[30%] rotate-[0deg] transition ease-in-out delay-150',
+      postion1:'translate-x-[100%] translate-y-[100%] rotate-[0deg] transition ease-in-out delay-150 opacity-50',
+      postion2:'translate-x-[45%] max-sm:translate-x-[100%] translate-y-[150%] rotate-[0deg] transition ease-in-out delay-150 opacity-50',
+      postion3:'-translate-x-[100%] translate-y-[100%] rotate-[0deg]  opacity-50',
+      postion4:'-translate-x-[140%] translate-y-[100%] rotate-[0deg] transition ease-in-out delay-150 opacity-50',
+      postion5:'translate-x-[410%] transition ease-in-out delay-150 opacity-0',
+      postion6:'-translate-x-[45%] transition ease-in-out delay-150 opacity-0',
+      postion7:'translate-x-[147%] -translate-y-[35%] rotate-[2deg] transition ease-in-out delay-150 opacity-0',
+      postion8:'-translate-x-[30%] -translate-y-[30%] rotate-[0deg] transition ease-in-out delay-150 opacity-0',
  
   
     })
@@ -90,11 +91,11 @@ const handelDynamicPosition=()=>{
   }, [elem]);
     return(
     
-<div className="w-full   flex flex-col items-center mt-20">
+<div className="w-full   flex flex-col items-center mt-2">
 
 <div className="flex justify-center items-center w-full h-full p-20 max-md:p-2 bg-sectionOnebg bg-cover bg-no-repeat bg-center max-sm:p-0">
-   
-<div className="w-10/12 max-lg:w-11/12  max-sm:w-full h-screen max-sm:h-auto max-sm:pb-[10%]  flex  justify-between items-center max-sm:flex-col-reverse ">
+<Link to="/products" className="w-full flex justify-center items-center max-md:mt-20"> 
+<div className="w-10/12  max-xl:w-full  max-sm:w-full h-screen max-sm:h-auto max-sm:pb-[10%]  flex  justify-between items-center max-sm:flex-col-reverse ">
             <div className="group flex  flex-col  w-1/3 items-start justify-between   h-full
               max-sm:w-full max-sm:items-center max-sm:mt-2">
                 {/**titeles */}
@@ -107,7 +108,7 @@ const handelDynamicPosition=()=>{
               <h1 className="text-[69px]  max-2xl:text-[38px] max-xl:text-[38px]  uppercase text-left max-sm:text-center text-wrap max-sm:text-[43px] group-hover:animate-fade"> {`${CarouselElements[elem].title.split(' ')[0]} ${CarouselElements[elem].title.split(' ')[1]}`}</h1>
               <h2 className="text-[79px]  max-2xl:text-[38px] max-xl:text-[38px]   uppercase text-left max-sm:flex max-sm:justify-center max-sm:w-full  font-light max-sm:text-[43px] group-hover:animate-fade2 delay-700">{CarouselElements[elem].title.split(' ')[2]}</h2> 
               {/**buttons Products & trending */}
-              <div className="flex justify-between items-center mb-10 max-sm:w-full">
+              <div className="flex justify-between items-center  max-sm:w-full ">
                <ButtonHomeSection btnName="products" linkbtn="/products" />
                <ButtonHomeSection btnName="trendings"/>
              </div>
@@ -116,7 +117,7 @@ const handelDynamicPosition=()=>{
               <div className="h-1/2  flex flex-col justify-start  w-full">
               
               {/**buttons to control carousel */}
-              <div className="btnCarousel flex justify-between  w-full ">
+              <div className="btnCarousel flex justify-between  w-full my-10">
     
                         <div className="w-[57px] max-sm:w-10 h-1 bg-btnCarousel   m-1 cursor-pointer hover:bg-btnCarouselHover hover:shadow-btnCarouselShadow" onClick={()=>setElem(0)}></div>
                         <div className="w-[57px] max-sm:w-10 h-1 bg-btnCarousel   m-1 cursor-pointer hover:bg-btnCarouselHover hover:shadow-btnCarouselShadow" onClick={()=>setElem(1)}></div>
@@ -134,8 +135,11 @@ const handelDynamicPosition=()=>{
 <div className="w-2/3 max-md:w-1/2 relative  h-screen max-sm:h-auto max-sm:py-[10%] flex justify-end max-sm:justify-center   " onMouseEnter={handelDynamicPosition} onMouseLeave={handelDynamicPositionInitial}>
         
 {/*************************************************************************************************** */}
-<div className="group absolute top-0 max-sm:top-1/4 right-0 flex justify-center  w-full z-10 ">
- <img src={image.getBanner()} alt="gaming" className={`w-[600px] h-[600px] max-lg:w-[300px] max-lg:h-[300px] right-0 ${classVisible}`}/>
+<div className="group absolute  top-0 max-sm:top-1/4 right-0 flex justify-center  w-full z-10 ">
+ <Link to="/products">
+ 
+ <img src={image.getBanner()} alt="gaming" className={`w-[500px] h-[500px] max-lg:w-[300px] max-lg:h-[300px] right-0 ${classVisible}`}/>
+ </Link>
   
 </div>  
             <div className="w-full  max-sm:w-10/12 max-md:mt-10  h-1/2 ">
@@ -174,7 +178,7 @@ const handelDynamicPosition=()=>{
 
 
         </div>
-        
+</Link>       
       
 </div>            
  

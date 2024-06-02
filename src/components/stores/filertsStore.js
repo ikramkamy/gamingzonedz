@@ -1,5 +1,6 @@
 import {create} from 'zustand'
 import axios from 'axios'
+
 export const useFiltersStor=create((set,get)=>({
 cathegories: [
     {category:"Processor",
@@ -7,7 +8,7 @@ cathegories: [
      FilterIsActive:true,
      filtersList:[
      {filterName:'brands', filtersItems:['AMD', 'intel']},
-     {filterName:'models', filtersItems:['AMD Ryzen 3','AMD Ryzen 5','AMD Ryzen 5 Pro','AMD Ryzen 7']},
+     {filterName:'models', filtersItems:['AMD Ryzen 3','AMD Ryzen 5','AMD Ryzen 5 Pro','AMD Ryzen 7','Core i3']},
      {filterName:'support', filtersItems:['AMD sTR5','AMD sWRX8','Intel 1200','Intel 1700']},
      {filterName:'platfome',filtersItems:['AMD Zen 2','AMD Zen 3','AMD Zen 4','Intel Alder Lake-S']}
     ]
@@ -90,6 +91,8 @@ ProductsList:[],
 
 
 
+
+
 getProducts: async ()=>{
     console.log("we are in the get banner function")
     try{
@@ -101,7 +104,7 @@ let response = await axios.get('/product_pages.json',
       },
     }
   )
-  console.log('data', response.data)
+ // console.log('data', response.data)
   set ({ProductsList: response.data})
     } catch (err) {
 console.error(err)
@@ -117,5 +120,9 @@ SetFilterIsActive: async (category,isActive)=>{
   set ({ cathegories:category})
   console.log('we are setting new value for is active',category)
   },
+
+
+
+
 
 }))

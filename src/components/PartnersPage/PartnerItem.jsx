@@ -1,7 +1,10 @@
 
 const PartnerItem=({logo, phone, name, adress})=>{
     return(
-    <div className="z-100 bg-bgpartnerspage bg-no-repeat bg-cover hover:bg-bgpartnerspage1 cursor-pointer text-black h-[200px]  w-[200px] flex flex-col justify-center items-center p-5">
+    <div className="z-100 
+     bg-bgpartnerspage bg-no-repeat bg-cover ho hover:border-[#CA2026] hover:border-2
+     hover:bg-bgpartnerspage1 cursor-pointer 
+     text-black h-[200px]  w-[200px] flex flex-col justify-center items-center p-5">
               <div className="w-full h-1/3 justify-center items-center border-b-[#575757] border-b-2 pb-4">
                 <img src={logo} alt="gaming zone partners" className="w-full"/>
                 </div>

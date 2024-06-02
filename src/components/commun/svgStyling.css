@@ -26,7 +26,7 @@
 #svgbtnlogin1{
   height: 100%;
 }
-#Trace_863 {
+#Trace_863  {
     fill: #222;
    
     stroke: #CA2026;
@@ -35,4 +35,13 @@
     stroke-dashoffset: 100%;
     animation: changeColor 500ms linear 1;
     cursor:pointer;
+}
+#Trace_37:hover{
+  fill: #222;
+  stroke: #CA2026;
+  stroke-width: 2px;
+  stroke-dasharray: 100%;
+  stroke-dashoffset: 100%;
+  animation: changeColor 500ms linear infinite;
+  cursor:pointer;
 }

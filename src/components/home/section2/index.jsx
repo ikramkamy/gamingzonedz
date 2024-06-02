@@ -16,7 +16,7 @@ import trace19 from "../../../assets/home/section2/forms/Tracé 104.png";
 import image from "../../../assets/home/section2/configurator-pc-exemple.c598a585.png"
 import { ButtonHomeSection } from "../sectionOne/ComponentsSection1";
 import { useState } from "react";
-import AnimatedImages from "../sectionOne/AnimatedImages";
+import AnimatedImages from "../../commun/AnimatedImages";
 const Section2=()=>{
 
 const [dynamicAnimate, setDynamicAnimate]=useState({
@@ -110,7 +110,7 @@ width="" height="" viewBox="0 0 2046.567 798.282" className="" >
       max-sm:flex-col-reverse max-sm:w-full " >
         <div className="w-2/6 max-lg:w-1/2 max-lg:pl-10 flex flex-col end max-sm:w-full">
         <div className="uppercase w-fit max-sm:w-full 
-         text-[47px] text-center  max-lg:text-[30px] max-sm:text-[18px]">
+         text-[37px] text-center  max-lg:text-[20px] max-sm:text-[18px]">
           build your<br/>dream pc</div>
           <h3 className="text-[18px] max-lg:text-[12px] max-sm:text-center  text-left max-sm:w-full max-sm:p-5">
             Grow your empire as you learn to repair, build and customize PCs at the next level. Experience deeper
@@ -141,7 +141,7 @@ width="" height="" viewBox="0 0 2046.567 798.282" className="" >
          
          </div> 
          
-         <AnimatedImages hide='hidden'/>
+         <AnimatedImages />
      </div>
     </div>)
 }

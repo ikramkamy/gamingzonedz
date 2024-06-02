@@ -1,7 +1,7 @@
 import Navbar from "../navbar";
 import Footer from "../footer";
 import BasicSelect from "../commun/SelectDropdown";
-import CarouselItem from "../home/NouveauteSection/CarouselItem";
+import ProductItem from "./ProductItem";
 import { UseProductsStore } from "../stores/ProductsStore";
 import { Link } from "react-router-dom";
 import '../../components/commun/svgStyling.css';
@@ -9,16 +9,23 @@ import FreeSoloCreateOption from '../../components/commun/InputAutoComplete';
 import { useFiltersStor } from "../../components/stores/filertsStore";
 import { useEffect, useState } from "react";
 import FiltersProducts from "../commun/FiltersProducts";
+import { includes } from "@egjs/flicking";
 const Products=()=>{
- const {AllProducts}=UseProductsStore((state)=>state) ;
+ const {AllProducts, FiltersofEachCategory}=UseProductsStore((state)=>state) ;
  const {getProducts,ProductsList,cathegories,Filters}=useFiltersStor((state)=>state);
  const [allProductsFiltered, setAllProductsFiltered]=useState(AllProducts.slice(0 ,8))
  const [copyCathegories, setCopyCathegories]=useState(cathegories)
  const [filtersActive, setFiltersActive]=useState(cathegories[0]);
 const [filersActiveCode, setFiltersActiveCode]=useState([1]);
  const [filteredProducts, setFilteredProducts]=useState([]);
- 
-{/******update the array of codes corresponding to each category**********/}
+ const [processorFilters, setProcessorFilters]=useState([{
+     brands:"",
+     models:"",
+     support:"",
+     platfom:"",
+ }])
+//{/******update the array of codes corresponding to each category**********/}
+
  useEffect(()=>{
        setFiltersActiveCode(filtersActive[0]?.codeCategory)
 
@@ -36,7 +43,9 @@ const [filersActiveCode, setFiltersActiveCode]=useState([1]);
  useEffect(()=>{
      getProducts && getProducts();  
  },[])
-{/******update the array Active categories**********/}
+
+//{/******update the array Active categories**********/}
+
 const handelActiveFilters=(e)=>{
 setFiltersActive(e)
 copyCathegories.forEach((elem)=>{
@@ -48,7 +57,17 @@ copyCathegories.forEach((elem)=>{
        }
 })
  }
- 
+ const handelActiveFiltersInCategory=(e)=>{
+     setFiltersActive(e)
+     filteredProducts.forEach((elem)=>{
+            if(e.brands===elem){
+                   elem.FilterIsActive= !elem.FilterIsActive;
+                   
+            }else{
+                   elem.FilterIsActive=false;
+            }
+     })
+      }
  useEffect(()=>{
       let array=[]
       
@@ -60,7 +79,7 @@ copyCathegories.forEach((elem)=>{
               setFilteredProducts([...filteredProducts,e])
               array.push(e);
               setFilteredProducts(array)
-              
+             
               }
        })
    
@@ -69,20 +88,70 @@ copyCathegories.forEach((elem)=>{
 useEffect(()=>{
  var array=[];
       AllProducts.forEach((e)=>{
-          console.log('all products', e.category)
+         
           if(filtersActive.codeCategory === e.category)
                {
                array.push(e);
                setAllProductsFiltered(array)
+               
             }
      })
      
-},[filtersActive])
+},[allProductsFiltered])
+
+const [productsFilteredByDetailedFilter, setProductsFilteredByDetailedFilter]=useState([])
+const handeldetailedFilters=()=>{
+     //console.log("products filtered", productsFilteredByDetailedFilter)
+
+     allProductsFiltered.forEach((e)=>{
+          
+     //     console.log("one filtered", e)
+     //     console.log("keys of the product", Object.keys(e))
+     //     console.log("list of products", allProductsFiltered)
+         var array1=Object.keys(e)
+         var array11=Object.values(e)
+         console.log("all processors", allProductsFiltered)
+         console.log("processors", FiltersofEachCategory)
+         console.log("properties",(array1))
+         console.log("values", array11)
+          FiltersofEachCategory.forEach((p)=>{
+               var array2=Object.keys(p);
+               var array3=Object.values(p)
+               // console.log("property",(array2[0]))
+               
+               // console.log("value",(array3[0]))
+               
+               if(array1.includes(array2[0]) && array11.includes(array3[0]))
+                   
+                    {
+                         console.log("condition ", array1.includes(array2[0]) && array11.includes(array3[0]))
+                         // console.log("this element is concidered", e)
+                         const index = productsFilteredByDetailedFilter.findIndex(el => JSON.stringify(el) === JSON.stringify(e));
+                         if(index === -1){
+                              setProductsFilteredByDetailedFilter([...productsFilteredByDetailedFilter,e])
+                              console.log("ProductsFilteredByDetailedFilter",productsFilteredByDetailedFilter)
+                         }else{
+                              console.log('it already exists')
+                         }
+                         
+                    }else{
+                         //console.log("the value of the property",Object.values(e))
+                         console.log("condition ",  array11.includes(array3[0]))
+                         setProductsFilteredByDetailedFilter(productsFilteredByDetailedFilter)
+                         console.log("ProductsFilteredByDetailedFilter",productsFilteredByDetailedFilter)
+                    }
+                    })
+
+          })
+}
+    
+
+
 
 useEffect(()=>{
      var productsWithId = allProductsFiltered.map((product, index) => ({ ...product, id: index }));
      setAllProductsFiltered(productsWithId);
-     console.log('products with ids', allProductsFiltered)
+     
 },[filtersActive])
 
     return(<div className="flex flex-col  ">
@@ -112,16 +181,19 @@ useEffect(()=>{
                  {/****Series*****/}
                  <div className="flex flex-col w-2/12">
                 <FiltersProducts filtersActive={filtersActive}  FiltersList={Filters[0]} handelActiveFilters={handelActiveFilters} />
-                 
+                <div 
+                onClick={()=>handeldetailedFilters()} 
+                className="m-10 w-full mt-20 bg-red-500" >Validate filter</div>
                     </div>
+                    
                   {/****Products section*****/}
-                  <div className="w-8/12 flex  flex-col px-20">
+                  <div className="w-8/12 flex  flex-col px-20 ">
                     {/****Filter bar*****/}
-                     <div className="flex py-2 px-4 w-full bg-no-repeat bg-center bg-cover  bg-bgFilterBar relative justify-between items-center">
+                     <div className="flex max-lg:flex-col bg-[#CA2026]  py-2 px-4 w-full bg-no-repeat bg-center bg-cover  bg-bgFilterBar relative justify-between items-center">
                     
 
 
-                          <div className="flex items-center z-10 ">
+                          <div className="flex items-center  z-10 ">
                                    <h1 className="mx-2">filtering </h1>
                                    <svg xmlns="http://www.w3.org/2000/svg" width="12.547" height="11.392" viewBox="0 0 12.547 11.392">
                                       <path id="Icon_feather-filter" data-name="Icon feather-filter" d="M14.547,4.5H3L7.619,9.962v3.776l2.309,1.155V9.962Z" transform="translate(-2.5 -4)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
@@ -148,8 +220,8 @@ useEffect(()=>{
 
                     {/****products*****/}
 
-                  <div className="flex w-full   flex-wrap justify-center mt-20 mb-20">
-                   {allProductsFiltered.map((e)=><CarouselItem 
+                  <div className="flex w-full  flex-wrap justify-center mt-20 mb-20">
+                   {allProductsFiltered.map((e)=><ProductItem
                    urlImage={e.urlImage} 
                    id={e.id}
                    category={e.category} 

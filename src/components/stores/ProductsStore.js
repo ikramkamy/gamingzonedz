@@ -10,7 +10,7 @@ import newProdimg3 from '../../assets/home/section1/nouveaute/mcneo_960x960.png'
 import newProdimg4 from '../../assets/home/section1/nouveaute/mcex_640x640.png'
 import newProdimg5 from '../../assets/home/section1/nouveaute/mc777_640x640.png'
 import newProdimg6 from '../../assets/home/section1/nouveaute/marm2-color-1_480x600_edited.png'
-
+import processor from '../../assets/products/viewProduct/processor.png';
 
 export const UseProductsStore= create((set, get)=>({
 OurProductsTypes :[{
@@ -251,37 +251,64 @@ AllProducts:[{
     btn:"config",
     category:2,
 
+},
+{
+    name:'AMD Reysen 3',
+    typeProduct:'processor',
+    descreption:`3 ventilateurs CHROMA RGB extra larges de 140 mm et une grille 
+    d'aération avant Diamond offrent un refroidissement exceptionnel. Structure E-ATX pour une amplitude maximale. Spectacle total avec ses 2`,
+    price:'25 000 DZD',
+    urlImage:processor,
+    btn:"config",
+    category:1,
+    brands:"AMD",
+    model:"AMD Reysen 3",
+    support:"AMD sTR5",
+    platfom:"AMD Zen 2"
+
 },{
-    name:'MCEX',
-    typeProduct:'case',
+    name:'AMD Reysen 3',
+    typeProduct:'processor',
     descreption:`3 ventilateurs CHROMA RGB extra larges de 140 mm et une grille 
     d'aération avant Diamond offrent un refroidissement exceptionnel. Structure E-ATX pour une amplitude maximale. Spectacle total avec ses 2`,
     price:'25 000 DZD',
-    urlImage:newProdimg3,
+    urlImage:processor,
     btn:"config",
     category:1,
+    brands:"AMD",
+    model:"AMD Reysen 3",
+    support:"AMD sTR5",
+    platfom:"AMD Zen 2"
 
 },
 {
-    name:'MCEX',
-    typeProduct:'case',
+    name:'Intel Core i3',
+    typeProduct:'processor',
     descreption:`3 ventilateurs CHROMA RGB extra larges de 140 mm et une grille 
     d'aération avant Diamond offrent un refroidissement exceptionnel. Structure E-ATX pour une amplitude maximale. Spectacle total avec ses 2`,
     price:'25 000 DZD',
-    urlImage:newProdimg3,
+    urlImage:processor,
     btn:"config",
     category:1,
+    brands:"intel",
+    model:"Intel Core i3",
+    support:"Intel 1200",
+    platfom:"Intel Alder Lake-S"
 
 },
 {
-    name:'MCEX',
-    typeProduct:'case',
+    name:'Intel Core i3',
+    typeProduct:'processor',
     descreption:`3 ventilateurs CHROMA RGB extra larges de 140 mm et une grille 
     d'aération avant Diamond offrent un refroidissement exceptionnel. Structure E-ATX pour une amplitude maximale. Spectacle total avec ses 2`,
     price:'25 000 DZD',
-    urlImage:newProdimg3,
+    urlImage:processor,
     btn:"config",
     category:1,
+    brands:"intel",
+    model:"Intel Core i3",
+    support:"Intel 1200",
+    platfom:"Intel Alder Lake-S"
 
 },{
     name:'MCEX',
@@ -411,8 +438,27 @@ case 10:
 
 default: 
     return 'Extras'}
+},
+FiltersofEachCategory:[],
+
+setFiltersofEachCategory: async (list)=>{
+
+try {
+  set ({
+    FiltersofEachCategory: list
+  
+  }) 
+  
+} catch (error) {
+  
 }
-
-
+  
+},
+FilterProcessors: async (produit,body )=>{
+    console.log('we are in the filter process')
+    if(produit.brands){
+        console.log('we are in the filter brands')
+    }
+  },
 
 }))

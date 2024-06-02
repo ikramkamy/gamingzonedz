@@ -10,7 +10,7 @@ import smallImage1 from "../../assets/products/viewProduct/marm2-color-1_480x600
 import smallImage2 from "../../assets/products/viewProduct/mcex_640x640.png";
 import smallImage3 from "../../assets/products/viewProduct/mcneo_960x960.png";
 import smallImage4 from "../../assets/products/viewProduct/mcpro2_960x960.png";
-import  Image1 from "../../assets/home/rebuiltcomputers/mc777_640x640.png"
+import  Image1 from "../../assets/home/rebuiltcomputers/mc777_640x640.png";
 export const Carou2=()=> {
     const images = [
         {

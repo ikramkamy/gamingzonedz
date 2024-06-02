@@ -28,6 +28,9 @@ backgroundImage: {
         'btnbg':"url('assets/home/section1/btns/Tracé 51.png')",
         'newLabel':"url('assets/home/section1/Tracé 87.png')",
         'carousItemNouveaute':"url('assets/home/section1/Groupe 1226.png')",
+        'productItem':"url('assets/products/Soustraction 26.svg')",
+        'productItem1':"url('assets/products/Soustraction 26.png')",
+        
         'bgSection2':"url('assets/home/section2/configurator-pc-exemple.c598a585.png')",
         'bgRebuiltPc':"url('assets/home/rebuiltcomputers/Ellipse 7.png')",
         'bgImgRebuiltPc':"url('assets/home/rebuiltcomputers/Ellipse 8.png')",
@@ -46,7 +49,7 @@ backgroundImage: {
         "bgloginpage":"url('assets/login/Groupe 1048.png')",
         "bgFAQitem":"url('assets/faq/Trace 900.png')",
         "bgpredesignedpc":"url('assets/predesignedpc/Trace 20703.svg')",
-
+        'reflection-below': '-webkit-box-reflect: below 0 linear-gradient(transparent, white)',
 
 
 

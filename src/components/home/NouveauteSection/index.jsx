@@ -1,7 +1,10 @@
 import CarouselItem from './CarouselItem.jsx';
 import { UseProductsStore } from '../../stores/ProductsStore';
 import { useState,useRef } from 'react';
-
+import { Carou2 } from '../../carou/Carou2.jsx';
+import CarouselFliking from '../../commun/CarouselFliking.jsx';
+import { CarouselBrands } from '../../commun/CarosuselFlikingForBrands.jsx';
+import CarouselPerspective from '../../commun/PerspectiveCarousel.jsx';
 const NouveauteSection=()=>{
     const {NewProducts ,NewConfigs}=UseProductsStore((state)=>state);
     const [translateX, setTranslateX] = useState(0);
@@ -70,7 +73,7 @@ const NouveauteSection=()=>{
              
                  <div className='relative h-[80vh]  w-10/12  overflow-hidden' 
                  >
-                 <div className={`flex justify-between w-fit items-center absolute`}
+                 <div className={`flex justify-between w-fit items-center absolute hidden`}
                   ref={divRef}
                   style={{ transform: `translateX(${translateX}px)` }}
                   onMouseDown={handleMouseDown}
@@ -87,10 +90,10 @@ const NouveauteSection=()=>{
 
                </div>
 
-               
-
-              
-                  
+               <CarouselPerspective/>
+               <CarouselBrands/>  
+   <CarouselFliking/>           
+             
         </div>
     </div>)
 }

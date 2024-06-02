@@ -1,15 +1,17 @@
 
 import Arrow from "../../assets/home/section1/icons/ARROW 48.png";
-import FaceBookIcon from "../../assets/home/section1/icons/Icon awesome-facebook-f.png";
-import InstagramIcon from "../../assets/home/section1/icons/Icon feather-instagram.png";
-import TwitterIcon from "../../assets/home/section1/icons/Icon awesome-twitter.png";
-import YoutubeBookIcon from "../../assets/home/section1/icons/Icon awesome-youtube.png";
+//import FaceBookIcon from "../../assets/home/section1/icons/Icon awesome-facebook-f.png";
+//import InstagramIcon from "../../assets/home/section1/icons/Icon feather-instagram.png";
+//import TwitterIcon from "../../assets/home/section1/icons/Icon awesome-twitter.png";
+//import YoutubeBookIcon from "../../assets/home/section1/icons/Icon awesome-youtube.png";
 import UserIcon from "../../assets/home/section1/icons/user.png";
 import Iconsearch from "../../assets/home/section1/icons/Icon feather-search.png";
+import { FacebookIcon , InstagramIcon,TwitterIcon} from "../commun/SocialMediaIcons";
 import NavSmallScreen from "./navSmallScreen";
 import BtnForm from './SVG/Tracé 35.svg'
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
 import './nav.css';
 
 
@@ -69,7 +71,7 @@ useEffect(()=>{
 
   
 
-
+<Link to="/">
 <svg 
 
 xmlns="http://www.w3.org/2000/svg" width="113.225" height="57.357" viewBox="0 0 113.225 57.357" className="absolute  top-1/4 left-1/5 cursor-pointer w-full max-lg:w-1/2 max-lg:left-1/4">
@@ -99,7 +101,7 @@ xmlns="http://www.w3.org/2000/svg" width="113.225" height="57.357" viewBox="0 0 
     </g>
   </g>
 </svg>
-
+</Link>
 </div>
 </div>
 
@@ -117,32 +119,35 @@ xmlns="http://www.w3.org/2000/svg" width="113.225" height="57.357" viewBox="0 0 
          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
          <path id="Tracé_31" data-name="Tracé 31" d="M5.367,0H33.5L27.867,27.867H0Z" fill="#2d2d2d"/>
          </svg>
-        <img src={TwitterIcon} alt="gaming zone twitter " className="mb-4 mt-3 mx-3   
-        w-[12] h-[12px] z-10"/></div></a>
+       <TwitterIcon/>
+       
+       </div></a>
 
-     <a href="/facebook.com">
+     <a href="https://web.facebook.com/divatechdz/?_rdc=1&_rdr">
         <div className="allIcon flex  mr-2 cursor-pointer  relative">
         <svg xmlns="http://www.w3.org/2000/svg" width="33.498" height="27.867" viewBox="0 0 33.498 27.867" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
          <path id="Tracé_31" data-name="Tracé 31" d="M5.367,0H33.5L27.867,27.867H0Z" fill="#2d2d2d"/>
          </svg>
-          <img src={FaceBookIcon} alt="gaming zone facebook  " className="mb-4 mt-3 mx-3 w-[12] h-[12px] z-10"/> </div> </a>
-          <a href="/facebook.com">
+          <FacebookIcon/>
+          </div>
+        </a>
+          <a href="https://www.instagram.com/divatech.dz/?hl=en">
     <div className="allIcon flex justify-center items-center mr-2 cursor-pointer relative ">
          <svg xmlns="http://www.w3.org/2000/svg" width="33.498" height="27.867" viewBox="0 0 33.498 27.867" 
          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
          <path id="Tracé_31" data-name="Tracé 31" d="M5.367,0H33.5L27.867,27.867H0Z" fill="#2d2d2d"/>
          </svg>
-        <img src={InstagramIcon} alt="gaming zone twitter " className="mb-4 mt-3 mx-3   
-        w-[12] h-[12px] z-10"/></div></a>
+        <InstagramIcon/>
+        </div></a>
 
-<a href="/facebook.com">
+{/*<a href="/facebook.com">
     <div className="allIcon flex justify-center items-center mr-2 cursor-pointer relative ">
          <svg xmlns="http://www.w3.org/2000/svg" width="33.498" height="27.867" viewBox="0 0 33.498 27.867" 
          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
          <path id="Tracé_31" data-name="Tracé 31" d="M5.367,0H33.5L27.867,27.867H0Z" fill="#2d2d2d"/>
          </svg>
         <img src={YoutubeBookIcon} alt="gaming zone twitter " className="mb-4 mt-3 mx-3   
-        w-[12] h-[12px] z-10"/></div></a>
+    w-[12] h-[12px] z-10"/></div></a>*/}
 
       
         
@@ -159,38 +164,35 @@ xmlns="http://www.w3.org/2000/svg" width="113.225" height="57.357" viewBox="0 0 
       <div className="bg-primary h-10 flex flex-col justify-center items-center "></div>
              <div className="flex justify-center items-center z-10 relative"> 
        
-         <svg xmlns="http://www.w3.org/2000/svg" width="36.295" 
-         height="23.271" viewBox="0 0 36.295 23.271" 
-         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden">
-           <path id="Tracé_37" data-name="Tracé 37" d="M8.891.854H36.432L27.867,24.125H.138Z"
-            transform="translate(-0.138 -0.854)"/>
+             <svg xmlns="http://www.w3.org/2000/svg" width="36.295" height="23.271" viewBox="0 0 36.295 23.271" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+           <path id="Trace_37" data-name="Tracé 37" d="M8.891.854H36.432L27.867,24.125H.138Z" transform="translate(-0.138 -0.854)"/>
          </svg>
-<img src={BtnForm} alt="gaming zone register" width="3px" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 "/>
-         <img src={UserIcon} alt="gaming zone user" className="z-10" />
+         <img src={BtnForm} alt="gaming zone register" width="3px" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 "/>
+       <Link to="/login" className="z-10"> <img src={UserIcon} alt="gaming zone user" className="z-10 cursor-pointer" /></Link> 
             </div>
            
  
-   <p className="z-10 pl-5 max-lg:pl-2"><Link to='/login'>REGISTER</Link> </p>
+   <p className="z-10 pl-5 max-lg:pl-2 hover:text-[#CA2026]"><Link to='/login'>REGISTER</Link> </p>
     </div>
            
            <p className="px-2">OR</p>
            <div className="flex justify-center items-center  px-4 mx-2 relative">
      <svg xmlns="http://www.w3.org/2000/svg" width="127.115" height="31.405" viewBox="0 0 127.115 31.405" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-  <path id="Tracé_35" data-name="Tracé 35" d="M2.538,0H117.927l-12.2,31.405H-9.188Z" transform="translate(9.188)" fill="#2d2d2d"/>
+  <path id="Trace_35" data-name="Tracé 35" d="M2.538,0H117.927l-12.2,31.405H-9.188Z" transform="translate(9.188)" fill="#2d2d2d"/>
 </svg>
 
       <div className="bg-primary h-10 flex flex-col justify-center items-center "></div>
              <div className="flex justify-center items-center z-10 relative"> 
        
          <svg xmlns="http://www.w3.org/2000/svg" width="36.295" height="23.271" viewBox="0 0 36.295 23.271" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-           <path id="Tracé_37" data-name="Tracé 37" d="M8.891.854H36.432L27.867,24.125H.138Z" transform="translate(-0.138 -0.854)"/>
+           <path id="Trace_37" data-name="Tracé 37" d="M8.891.854H36.432L27.867,24.125H.138Z" transform="translate(-0.138 -0.854)"/>
          </svg>
 
-         <img src={Arrow} alt="gaming zone user" className="z-10" />
+         <Link to="/login" className="z-10"><img src={Arrow} alt="gaming zone user"  /></Link>
             </div>
            
  
-   <p className="z-10 pl-5"><Link to='/login'>SIGN IN</Link> </p>
+   <p className="z-10 pl-5 hover:text-[#CA2026]"><Link to='/login'>SIGN IN</Link> </p>
     </div>
            
         </div> 

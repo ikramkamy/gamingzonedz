@@ -22,7 +22,8 @@ const ProductInTheStore=()=>{
         <div className="h-2/5 ">
         
         <img src={e.urlImage} alt="gaming" className="w-full  mb-30  group-hover:shadow-lg group-hover:shadow-black "/>
-        <h1 className="uppercase font-semibold text-[20px] text-center max-md:text-[16px]">{e.name}</h1>
+        
+        <h1 className="uppercase font-semibold text-[20px] text-center max-lg:text-[11px]">{e.name}</h1>
         <div className="uppercase font-normal text-[18px] max-md:text-[12px] text-center 
         
         bg-btnbg bg-no-repeat bg-center cursor-pointer mt-3 hover:font-bold">discover</div>

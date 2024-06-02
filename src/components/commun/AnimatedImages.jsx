@@ -1,15 +1,15 @@
-import trace1 from "../../../assets/home/section1/Tracé 47.png";
-import trace11 from "../../../assets/home/section1/smallScreen/Tracé 20788.png"
-import trace2 from "../../../assets/home/section1/Tracé 41.png";
-import trace3 from "../../../assets/home/section1/Tracé 46.png";
+import trace1 from "../../assets/home/section1/Tracé 47.png";
+import trace11 from "../../assets/home/section1/smallScreen/Tracé 20788.png"
+import trace2 from "../../assets/home/section1/Tracé 41.png";
+import trace3 from "../../assets/home/section1/Tracé 46.png";
 //import trace4 from "../../../assets/home/section1/Tracé 47.png;
-import trace5 from "../../../assets/home/section1/Tracé 49.png";
-import trace6 from "../../../assets/home/section1/Tracé 45.png";
+import trace5 from "../../assets/home/section1/Tracé 49.png";
+import trace6 from "../../assets/home/section1/Tracé 45.png";
 
-import trace7 from "../../../assets/home/section1/Tracé 43.png";
-import trace8 from "../../../assets/home/section1/Tracé 44.png"
-import img from '../../../assets/home/section2/configurator-pc-exemple.c598a585.png'
-import { HomeCarouselElements } from "../../stores/HomeStore";
+import trace7 from "../../assets/home/section1/Tracé 43.png";
+import trace8 from "../../assets/home/section1/Tracé 44.png"
+import img from '../../assets/home/section2/config2.png'
+import { HomeCarouselElements } from "../stores/HomeStore";
 import { useState, useEffect } from "react";
 const AnimatedImages=()=>{
  const {CarouselElements, getBanners}=HomeCarouselElements((state=>state))
@@ -58,10 +58,10 @@ const handelDynamicPosition=()=>{
       postion2:'translate-x-[45%] max-sm:translate-x-[100%] translate-y-[150%] rotate-[0deg] transition ease-in-out delay-150',
       postion3:'-translate-x-[100%] translate-y-[100%] rotate-[0deg] ',
       postion4:'-translate-x-[140%] translate-y-[100%] rotate-[0deg] transition ease-in-out delay-150',
-      postion5:'translate-x-[410%] transition ease-in-out delay-150',
-      postion6:'-translate-x-[45%] transition ease-in-out delay-150',
-      postion7:'translate-x-[147%] -translate-y-[35%] rotate-[2deg] transition ease-in-out delay-150',
-      postion8:'-translate-x-[30%] -translate-y-[30%] rotate-[0deg] transition ease-in-out delay-150',
+      postion5:'translate-x-[410%] transition ease-in-out delay-150 ',
+      postion6:'-translate-x-[45%] transition ease-in-out delay-150 ',
+      postion7:'translate-x-[147%] -translate-y-[35%] rotate-[2deg] transition ease-in-out delay-150 ',
+      postion8:'-translate-x-[30%] -translate-y-[30%] rotate-[0deg] transition ease-in-out delay-150 ',
  
   
     })
@@ -88,7 +88,7 @@ const handelDynamicPosition=()=>{
     {/*************************************************************************************************** */}
     <div className="group absolute top-0 max-sm:top-1/4 right-0 flex justify-center  w-full z-10 ">
      {/*<img src={image.getBanner()} alt="gaming" className={`w-[600px] h-[600px] max-lg:w-[300px] max-lg:h-[300px] right-0 ${classVisible}`}/>*/}
-     <img src={img} alt="gaming" className={`w-[450px] h-[600px] max-lg:w-[300px] max-lg:h-[300px] right-0 ${classVisible}`}/>
+     <img src={img} alt="gaming" className={`bg-reflection-below  w-[450px] h-[450px] max-lg:w-[300px] max-lg:h-[300px] right-0 ${classVisible}`}/>
     </div>  
                 <div className="w-full  max-sm:w-10/12 max-md:mt-10  h-1/2 ">
                   <div className="flex w-full justify-between" >

@@ -1,15 +1,16 @@
 import * as React from 'react';
-import TextField from '@mui/material/TextField/TextField1';
-import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete/Autocomplete1';
+//import {TextField} from '@mui/material/TextField/TextField1';
+//import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete/Autocomplete1';
 
-const filter = createFilterOptions();
+//const filter = createFilterOptions();
 
 export default function FreeSoloCreateOption() {
   const [value, setValue] = React.useState(null);
 
   return (
-    <Autocomplete
-    
+    <div className='ma-xl:w-full max-xl:my-4'>
+    <input
+     className='w-full'
       value={value}
       onChange={(event, newValue) => {
         if (typeof newValue === 'string') {
@@ -25,6 +26,7 @@ export default function FreeSoloCreateOption() {
           setValue(newValue);
         }
       }}
+      /*
       filterOptions={(options, params) => {
         const filtered = filter(options, params);
 
@@ -40,6 +42,7 @@ export default function FreeSoloCreateOption() {
 
         return filtered;
       }}
+      */
       selectOnFocus
       clearOnBlur
       handleHomeEndKeys
@@ -61,9 +64,10 @@ export default function FreeSoloCreateOption() {
       sx={{ width: 300 }}
       freeSolo
       renderInput={(params) => (
-        <TextField {...params} label="Search for a product" size='small' className="bg-[#D6D6D6]" />
+        <textarea {...params} label="Search for a product" size='small' className="bg-[#D6D6D6]" />
       )}
     />
+    </div>
   );
 }
 

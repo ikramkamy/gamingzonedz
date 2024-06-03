@@ -39,7 +39,7 @@ useEffect(()=>{
 },[colorNavLine])
 
     return(
- <div className="sticky top-[-1%] z-20 w-full ">
+ <div className="sticky top-[-1%] z-30 w-full ">
 <div className="flex flex-col  max-sm:hidden  justify-center items-center bg-secondary text-[10px] z-10  relative w-full">
    
     <svg 

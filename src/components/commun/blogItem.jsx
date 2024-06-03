@@ -1,11 +1,12 @@
 import FaceBookIcon from "../../assets/home/section1/icons/Icon awesome-facebook-f.png";
 import InstagramIcon from "../../assets/home/section1/icons/Icon feather-instagram.png";
 import TwitterIcon from "../../assets/home/section1/icons/Icon awesome-twitter.png";
-
+import { Link } from "react-router-dom";
 
 const BlogItem=({img, date, title, subtitle, })=>{
     return(
     <div className="flex flex-col justify-center items-center w-full m-10 p-20">
+      <Link to="/tournementpage/:id">
       <img src={img} className="w-full" alt='gaming zone blog'/>
       <div className="text-[#7E7E7E] text-[15px] w-full text-left">{date} /NEWS</div>
       <div className=" text-[25px] font-semibold mt-5 w-full text-left">{title}</div>
@@ -44,6 +45,7 @@ const BlogItem=({img, date, title, subtitle, })=>{
 
       </div>
       </div>
+      </Link>
     </div>)
 }
 export default BlogItem;

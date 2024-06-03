@@ -7,7 +7,7 @@ cathegories: [
      codeCategory:1,
      FilterIsActive:true,
      filtersList:[
-     {filterName:'brands', filtersItems:['AMD', 'intel']},
+     {filterName:'brands', filtersItems:['all','AMD', 'intel']},
      {filterName:'models', filtersItems:['AMD Ryzen 3','AMD Ryzen 5','AMD Ryzen 5 Pro','AMD Ryzen 7','Core i3']},
      {filterName:'support', filtersItems:['AMD sTR5','AMD sWRX8','Intel 1200','Intel 1700']},
      {filterName:'platfome',filtersItems:['AMD Zen 2','AMD Zen 3','AMD Zen 4','Intel Alder Lake-S']}
@@ -79,7 +79,7 @@ cathegories: [
 ],
 Filters:[{
 FiltersList:[
-  {brands:[ 'AMD', 'intel']},
+  {brands:['all','AMD', 'intel']},
   {models:['AMD Ryzen 3','AMD Ryzen 5','AMD Ryzen 5 Pro','AMD Ryzen 7']},
   {support:['AMD sTR5','AMD sWRX8','Intel 1200','Intel 1700']},
   {platfome:['AMD Zen 2','AMD Zen 3','AMD Zen 4','Intel Alder Lake-S']},

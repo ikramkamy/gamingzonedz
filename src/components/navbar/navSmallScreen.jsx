@@ -1,6 +1,6 @@
 const NavSmallScreen=()=>{
     return(<div className="w-full ">
-        <div className="flex flex-col justify-start aline-center sticky h-screen bg-black z-10 transition ease-in-out delay-150">
+        <div className="flex flex-col justify-start aline-center sticky h-screen bg-black z-20 transition ease-in-out delay-150">
         <a href="/"   className="mx-2 my-4">HOME</a>
         <a href="/"  className="mx-2 my-4">PRODUCTS</a>
         <a href="/"  className="mx-2 my-4">CONFIGURATIONS</a>

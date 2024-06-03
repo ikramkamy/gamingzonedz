@@ -1,31 +1,38 @@
 import RangeSlider from "./Slider";
 import { UseProductsStore } from "../../components/stores/ProductsStore";
 import { useEffect, useState } from "react";
+import { includes } from "@egjs/flicking";
 const FiltersProducts=({filtersActive})=>{
 
 const {setFiltersofEachCategory}=UseProductsStore((state)=>state)
 const [list, setList]=useState([])
+
+
 const getThefilterdetails=(e,p)=>{
-console.log("le filtre selectioné", e)
-console.log("le filtre selectioné", p)
-var array=[];
 var elem={
    [e]:p
 }
 // Find the index of the element in the array
-const index = list.findIndex(el => JSON.stringify(el) === JSON.stringify(elem));
-
+var index = list.findIndex(el => JSON.stringify(el) === JSON.stringify(elem));
 // If the element is not in the array, add it
 if (index === -1) {
-   array.push(elem);
+
   setList([...list, elem]);
   setFiltersofEachCategory(list)
-  
+  console.log('index', index)
   
 } else {
+  console.log('index', index)
+  console.log('SON.stringify(elem)',JSON.stringify(elem))
   // If the element is in the array, remove it
-  setList(list.splice(index, 1));
-  setFiltersofEachCategory(list)
+  //setList(list.splice(index, 1));
+  setList(list.filter((el) => 
+  JSON.stringify(el) === JSON.stringify(elem)
+  
+  ));
+  setFiltersofEachCategory(list);
+  console.log("filter exist ");
+  console.log("filter  exists ",list);
 }
 
 
@@ -42,7 +49,8 @@ if (index === -1) {
   <div className="flex justify-between">
              <input type="checkbox" className="mr-4" 
              //value={item.FilterIsActive}
-              checked={item.FilterIsActive}  onChange={()=>getThefilterdetails(filter.filterName,item)}/>
+              checked={item.FilterIsActive}  
+              onChange={()=>getThefilterdetails(filter.filterName,item)}/>
              <label className="text-[14px] w-full">{item}</label>
    </div>) }
   

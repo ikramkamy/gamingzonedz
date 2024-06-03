@@ -10,6 +10,9 @@ import Login from '../src/components/Login';
 import ContactUs from '../src/components/Contact';
 import FAQ from '../src/components/FAQ';
 import PredesignedPC from '../src/components/PredesignedPC';
+import Affiliate from '../src/components/Affiliate';
+import Tournement from '../src/components/Tournement';
+import TournementPage from '../src/components/Tournement/TournementPage';
 function App() {
   return (
     <div className="bg-black text-white ">
@@ -25,6 +28,9 @@ function App() {
     <Route exact path={`/faq`} Component={FAQ}/>
     <Route exact path={`/contact`} Component={ContactUs}/>
     <Route exact path ={`/predesignedpc`} Component={PredesignedPC}/>
+    <Route exact path ={`/affiliate`} Component={Affiliate}/>
+    <Route exact path ={`/tournement`} Component={Tournement}/>
+    <Route exact path ={`/tournementpage/:id`} Component={TournementPage}/>
   </Routes>
 
      

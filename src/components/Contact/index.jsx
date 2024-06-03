@@ -21,8 +21,8 @@ const ContactUs=()=>{
 <div className="z-10 px-52 py-20  bg-bglogin bg-center bg-no-repeat bg-contain">
     <div className="flex  justify-center items-center">
           <div className="flex flex-col w-1/2">
-<BtnLogin5/>
-<BtnLogin9/>
+           <BtnLogin5/>
+           <BtnLogin9/>
           </div>
           <div className="flex flex-col mx-2 items-center">
            <svg xmlns="http://www.w3.org/2000/svg" width="2" height="85.277" viewBox="0 0 2 85.277">
@@ -42,22 +42,15 @@ const ContactUs=()=>{
 
           </div>
           
+    </div>
           
-          
-          
-          
-          
-          </div>
-          
-          
-          <Textzone/>
+    <Textzone/>
         
-          <div className="justify-center items-center">
+    <div className="justify-center items-center">
          <BtnLogin7 btn="send" />
-        
-        
-        </div>     
-          </div>
+    </div>     
+          
+</div>
         
 </div>
 </div>

@@ -11,6 +11,7 @@ import newProdimg4 from '../../assets/home/section1/nouveaute/mcex_640x640.png'
 import newProdimg5 from '../../assets/home/section1/nouveaute/mc777_640x640.png'
 import newProdimg6 from '../../assets/home/section1/nouveaute/marm2-color-1_480x600_edited.png'
 import processor from '../../assets/products/viewProduct/processor.png';
+import processor2 from '../../assets/products/processor2.png'
 
 export const UseProductsStore= create((set, get)=>({
 OurProductsTypes :[{
@@ -253,12 +254,11 @@ AllProducts:[{
 
 },
 {
-    name:'AMD Reysen 3',
+    name:'AMD Ryzen 3 4100 Wraith Stealth (3.8 GHz / 4.0 GHz)',
     typeProduct:'processor',
-    descreption:`3 ventilateurs CHROMA RGB extra larges de 140 mm et une grille 
-    d'aération avant Diamond offrent un refroidissement exceptionnel. Structure E-ATX pour une amplitude maximale. Spectacle total avec ses 2`,
-    price:'25 000 DZD',
-    urlImage:processor,
+    descreption:`The AMD Ryzen 3 4100 desktop processor is based on the AMD Zen 2 architecture and features 4 physical cores + 8 logical cores as well as 6 MB cache (L2 + L3). Thanks to its high operating frequencies`,
+    price:'12977 DZD',
+    urlImage:processor2,
     btn:"config",
     category:1,
     brands:"AMD",
@@ -267,11 +267,10 @@ AllProducts:[{
     platfom:"AMD Zen 2"
 
 },{
-    name:'AMD Reysen 3',
+    name:'AMD Ryzen 3 4300G Wraith Stealth (3.8 GHz / 4.0 GHz)',
     typeProduct:'processor',
-    descreption:`3 ventilateurs CHROMA RGB extra larges de 140 mm et une grille 
-    d'aération avant Diamond offrent un refroidissement exceptionnel. Structure E-ATX pour une amplitude maximale. Spectacle total avec ses 2`,
-    price:'25 000 DZD',
+    descreption:`Processor 4-Core 8-Threads socket AM4 Cache L3 4 Mo Radeon Vega Graphics TDP 65W with cooling system (box version - 3-year manufacturer's warranty)`,
+    price:'13977 DZD',
     urlImage:processor,
     btn:"config",
     category:1,
@@ -282,33 +281,31 @@ AllProducts:[{
 
 },
 {
-    name:'Intel Core i3',
+    name:'Intel Celeron G5905 (3.5 GHz)',
     typeProduct:'processor',
-    descreption:`3 ventilateurs CHROMA RGB extra larges de 140 mm et une grille 
-    d'aération avant Diamond offrent un refroidissement exceptionnel. Structure E-ATX pour une amplitude maximale. Spectacle total avec ses 2`,
-    price:'25 000 DZD',
+    descreption:`Processor 2-Core 2-Threads Socket 1200 Cache L3 4 MB Intel UHD Graphics 610 0.014 micron (boxed version - 3 years Intel warranty)`,
+    price:'11977 DZD',
     urlImage:processor,
     btn:"config",
     category:1,
     brands:"intel",
     model:"Intel Core i3",
     support:"Intel 1200",
-    platfom:"Intel Alder Lake-S"
+    platfom:"Intel Comet Lake-S"
 
 },
 {
-    name:'Intel Core i3',
+    name:'Intel Core i3-10100 (3.6 GHz / 4.3 GHz)',
     typeProduct:'processor',
-    descreption:`3 ventilateurs CHROMA RGB extra larges de 140 mm et une grille 
-    d'aération avant Diamond offrent un refroidissement exceptionnel. Structure E-ATX pour une amplitude maximale. Spectacle total avec ses 2`,
-    price:'25 000 DZD',
+    descreption:`Processor 4-Core 8-Threads Socket 1200 Cache L3 6 Mo Intel UHD Graphics 630 0.014 micron (boxed version - 3 years Intel warranty)`,
+    price:'11977 DZD',
     urlImage:processor,
     btn:"config",
     category:1,
     brands:"intel",
     model:"Intel Core i3",
     support:"Intel 1200",
-    platfom:"Intel Alder Lake-S"
+    platfom:"Intel Comet Lake-S"
 
 },{
     name:'MCEX',

@@ -72,7 +72,7 @@ useEffect(()=>{
         
          <h2 className='text-[20px] font-semibold text-center'>{name}</h2>
          <h2 className='text-[10px] font-bold text-center text-redPrimary'>{typeProduct}</h2>
-         <p className='w-[70%] text-[10px]'>{descreption}</p>
+         <p className='w-[70%] text-[10px] min-h  min-h-20'>{descreption}</p>
          <div className='text-[17px] font-bold text-center text-redPrimary'>{price}</div>
          
          

@@ -102,7 +102,7 @@ useEffect(()=>{
 const [productsFilteredByDetailedFilter, setProductsFilteredByDetailedFilter]=useState([])
 const handeldetailedFilters=()=>{
      //console.log("products filtered", productsFilteredByDetailedFilter)
-
+     console.log("les filtres", FiltersofEachCategory)
      allProductsFiltered.forEach((e)=>{
           
      //     console.log("one filtered", e)
@@ -110,10 +110,10 @@ const handeldetailedFilters=()=>{
      //     console.log("list of products", allProductsFiltered)
          var array1=Object.keys(e)
          var array11=Object.values(e)
-         console.log("all processors", allProductsFiltered)
-         console.log("processors", FiltersofEachCategory)
-         console.log("properties",(array1))
-         console.log("values", array11)
+     //     console.log("all processors", allProductsFiltered)
+     //     console.log("processors", FiltersofEachCategory)
+     //     console.log("properties",(array1))
+     //     console.log("values", array11)
           FiltersofEachCategory.forEach((p)=>{
                var array2=Object.keys(p);
                var array3=Object.values(p)
@@ -129,7 +129,7 @@ const handeldetailedFilters=()=>{
                          const index = productsFilteredByDetailedFilter.findIndex(el => JSON.stringify(el) === JSON.stringify(e));
                          if(index === -1){
                               setProductsFilteredByDetailedFilter([...productsFilteredByDetailedFilter,e])
-                              console.log("ProductsFilteredByDetailedFilter",productsFilteredByDetailedFilter)
+                             
                          }else{
                               console.log('it already exists')
                          }
@@ -137,14 +137,14 @@ const handeldetailedFilters=()=>{
                     }else{
                          //console.log("the value of the property",Object.values(e))
                          console.log("condition ",  array11.includes(array3[0]))
-                         setProductsFilteredByDetailedFilter(productsFilteredByDetailedFilter)
-                         console.log("ProductsFilteredByDetailedFilter",productsFilteredByDetailedFilter)
+                         //setProductsFilteredByDetailedFilter(productsFilteredByDetailedFilter)
+                         //console.log("ProductsFilteredByDetailedFilter",productsFilteredByDetailedFilter)
                     }
                     })
 
           })
 }
-    
+//console.log("ProductsFilteredByDetailedFilter",productsFilteredByDetailedFilter)
 
 
 
@@ -179,27 +179,31 @@ useEffect(()=>{
         {/****Products and filters*****/}
         <div className="flex w-full justify-center mt-20 p-20 items-start">
                  {/****Series*****/}
-                 <div className="flex flex-col w-2/12">
+                 <div className="flex cursor-pointer flex-col w-2/12 max-sm:w-full max-sm:translate-x-[-90%] hover:max-sm:translate-x-[0%]  max-sm:pl-20 max-sm:bg-[#CA2026] max-sm:absolute max-sm:z-20 transition ease-in-out delay-150 ">
                 <FiltersProducts filtersActive={filtersActive}  FiltersList={Filters[0]} handelActiveFilters={handelActiveFilters} />
                 <div 
                 onClick={()=>handeldetailedFilters()} 
-                className="m-10 w-full mt-20 bg-red-500" >Validate filter</div>
+                className=" w-full mt-20 bg-red-500" >Validate filter</div>
                     </div>
                     
                   {/****Products section*****/}
-                  <div className="w-8/12 flex  flex-col px-20 ">
+                  <div className="w-8/12 max-sm:w-full flex  flex-col px-20 max-sm:px-0 ">
                     {/****Filter bar*****/}
-                     <div className="flex max-lg:flex-col bg-[#CA2026]  py-2 px-4 w-full bg-no-repeat bg-center bg-cover  bg-bgFilterBar relative justify-between items-center">
+                     <div className="flex max-lg:flex-col bg-[#CA2026] 
+                      py-2 px-4 max-sm:px-0 w-full bg-no-repeat bg-center bg-cover 
+                       bg-bgFilterBar relative justify-between items-center">
                     
 
 
                           <div className="flex items-center  z-10 ">
                                    <h1 className="mx-2">filtering </h1>
                                    <svg xmlns="http://www.w3.org/2000/svg" width="12.547" height="11.392" viewBox="0 0 12.547 11.392">
-                                      <path id="Icon_feather-filter" data-name="Icon feather-filter" d="M14.547,4.5H3L7.619,9.962v3.776l2.309,1.155V9.962Z" transform="translate(-2.5 -4)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
-                                    </svg>
+                                   <path id="Icon_feather-filter" data-name="Icon feather-filter" d="M14.547,4.5H3L7.619,9.962v3.776l2.309,1.155V9.962Z" transform="translate(-2.5 -4)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+                                   </svg>
 
                           </div>
+                           
+                           
                            {/*<input type="text" placeholder="Search for products"  className="w-5/12 z-10 p-[5px] bg-[#D6D6D6]"/>*/}
                            <FreeSoloCreateOption/>
                            {/**<FreeSoloCreateOption/>*/}
@@ -284,7 +288,7 @@ useEffect(()=>{
 
                    {/****cathégories*****/}
                   
-                   <div className="w-2/12 mt-2 pt-2 flex-col pb-4 ">
+                   <div className="w-2/12 cursor-pointer mt-2 pt-2 flex-col pb-4 max-sm:w-full max-sm:translate-x-[90%] hover:max-sm:translate-x-[0%]  max-sm:pl-20 max-sm:bg-[#CA2026] max-sm:absolute max-sm:z-20 transition ease-in-out delay-150">
                        <h1 className="uppercase text-[18px] mb-4">category</h1>
 
                        {copyCathegories.map((e)=> <div className="flex  w-full">

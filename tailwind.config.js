@@ -50,8 +50,8 @@ backgroundImage: {
         "bgFAQitem":"url('assets/faq/Trace 900.png')",
         "bgpredesignedpc":"url('assets/predesignedpc/Trace 20703.svg')",
         'reflection-below': '-webkit-box-reflect: below 0 linear-gradient(transparent, white)',
-
-
+        "bgaffiliate":"url('assets/affiliate/back.jpg')",
+        
 
 
         

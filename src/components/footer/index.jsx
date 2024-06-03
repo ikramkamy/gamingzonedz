@@ -15,9 +15,9 @@ const Footer=()=>{
       {/**upper footer*/}
 
 
-           <div className="flex max-sm:flex-col justify-between align-middle bor w-10/12 border-b-secondary border-b-2 p-4">
+           <div className="flex max-sm:flex-col justify-between align-middle bor w-10/12 max-sm:w-full border-b-secondary border-b-2 p-4">
     
-                      <div className="flex justify-start items-center w-3/12 ">
+                      <div className="flex justify-start items-center w-3/12 max-sm:w-full ">
                     <a href="/"   className="mx-2">HOME</a>
                     <a href="/predesignedpc"  className="mx-2">PREDESIGNED PC</a>
                     <a href="/faq"  className="mx-2">FAQ</a>
@@ -80,7 +80,8 @@ const Footer=()=>{
 
 
 
-    <div className="flex justify-start text-left w-10/12 p-4 opacity-35 text-[14px] uppercase">© gaming zone – All rights reserved</div>
+    <div className="flex justify-start text-left w-10/12 p-4 opacity-35 text-[14px] uppercase">
+      © gaming zone – All rights reserved</div>
 
 
     </div>)

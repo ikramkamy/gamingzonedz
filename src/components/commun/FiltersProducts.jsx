@@ -10,26 +10,23 @@ const getThefilterdetails=(e,p)=>{
  var elem={
     [e]:p
  }
-//console.log("elem", elem)
+
 var index = list.some((el) => JSON.stringify(el) === JSON.stringify(elem));
-//console.log(index)
+
  if (index === false || list.length === 0) {
   list.push(elem)
  setList([...list])
-// console.log("filters list",list);
+
 setFiltersofEachCategory(list);
   
 } else{
- //setList(list.splice(index, 1))
-  //setList(list.filter((el) => JSON.stringify(el) === JSON.stringify(elem)));
+
 
  var array=list.filter((el) => JSON.stringify(el) !== JSON.stringify(elem))
-//   console.log("array",array)
-  //var index2=list.findIndex((el)=> JSON.stringify(el) === JSON.stringify(elem))
-  //console.log('index2', index2)
+
   setFiltersofEachCategory(array);
   setList(array)
-//   console.log(" we are deleting from the list filters list",list);
+
 
 }}
 const handelclear=()=>{

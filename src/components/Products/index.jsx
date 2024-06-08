@@ -13,44 +13,21 @@ import FiltersProducts from "../commun/FiltersProducts";
 const Products=()=>{
  const {AllProducts, FiltersofEachCategory, setFiltersofEachCategory}=UseProductsStore((state)=>state) ;
  const {cathegories,Filters}=useFiltersStor((state)=>state);
- //const [allProductsFiltered, setAllProductsFiltered]=useState([])
-
  const [productsFilteredByDetailedFilter, setProductsFilteredByDetailedFilter]=useState([])
  const [copyCathegories, setCopyCathegories]=useState(cathegories)
- const [filtersActive, setFiltersActive]=useState(cathegories[0]);
- const [show, setShow]=useState(false)
- const [filersActiveCode, setFiltersActiveCode]=useState([1]);
+ const [filtersActive, setFiltersActive]=useState(cathegories[3]);
+ const [show, setShow]=useState(true)
  const [filteredProducts, setFilteredProducts]=useState([]);
 
-//{/******update the array of codes corresponding to each category**********/}
-
- useEffect(()=>{
-       //setFiltersActiveCode(filtersActive[0]?.codeCategory)
-
-       /*
-       var array=[];
-       The multiple selection of categories
-       filersActive.forEach((e)=>{
-              array.push(e.codeCategory)
-              setFiltersActiveCode(array)
-  }) 
-  */
- },[filtersActive])
-
-// To get the products of the current divatech database from JSON file 
-
-
-//  useEffect(()=>{
-//      getProducts && getProducts();  
-//  },[])
+ const allProductsFiltered=AllProducts.filter((e)=> e.category ===filtersActive.codeCategory)
+ const [productsFiltedbySpecificFilters , setProductsFiltedbySpecificFilters]=useState([])
 
 //{/******update the array Active categories **********/}
 
 const handelActiveFilters=(e)=>{
 setFiltersActive(e)
 setFiltersofEachCategory([])
-
-console.log('we are clearing filters list', FiltersofEachCategory)
+setProductsFiltedbySpecificFilters([])
 setShow(true)
 copyCathegories.forEach((elem)=>{
        if(e===elem){
@@ -61,108 +38,44 @@ copyCathegories.forEach((elem)=>{
        }
 })
  }
- //not using this fucntion 
- const handelActiveFiltersInCategory=(e)=>{
-     setFiltersActive(e)
-     filteredProducts.forEach((elem)=>{
-            if(e.brands===elem){
-                   elem.FilterIsActive= !elem.FilterIsActive;
-                   
-            }else{
-                   elem.FilterIsActive=false;
-            }
-     })
-      }
-//used to filter products in the packet json 
-
-//  useEffect(()=>{
-//       let array=[]
-      
-//        ProductsList.forEach((e)=>
-//        {
-//              if(filtersActive.codeCategory=== e.fields.category)
-//               {
-             
-//               setFilteredProducts([...filteredProducts,e])
-//               array.push(e);
-//               setFilteredProducts(array)
-//              console.log('filtered products', filteredProducts)
-//               }
-//        })
-   
-// },[filtersActive])
-
-
-const allProductsFiltered=AllProducts.filter((e)=> e.category ===filtersActive.codeCategory)
 
 //this function takes products from a specific category than apply corresponding filters
 const handeldetailedFilters=()=>{
+    
 
-console.log("allproductsFilteredByDetailedFilter",productsFilteredByDetailedFilter)
-     allProductsFiltered.forEach((e)=>{
-          setShow(false)
-          const array=[]
+ allProductsFiltered.forEach((e)=>{
+     
+          
          var array1=Object.keys(e)
           for(let i = 0 ; i < FiltersofEachCategory.length ; i++){
                 const hasProperty = array1.some((property) => property === Object.keys(FiltersofEachCategory[i])[0]);
                 const valuesMatches = (Object.values(FiltersofEachCategory[i])[0]=== e[Object.keys(FiltersofEachCategory[i])]);
-                var index = productsFilteredByDetailedFilter.findIndex(el => JSON.stringify(el) === JSON.stringify(e));
+                var index = productsFiltedbySpecificFilters.findIndex(el => JSON.stringify(el) === JSON.stringify(e));
                 
-                if(hasProperty===true && valuesMatches===true ){
-                    console.log('all products filterd', allProductsFiltered)
-                     //productsFilteredByDetailedFilter.push(e)
-                    //const newarray=allProductsFiltered.filter((el) => JSON.stringify(el) === JSON.stringify(e))
-                    //setProductsFilteredByDetailedFilter([...productsFilteredByDetailedFilter])
-                    //console.log('new array', newarray[0] )
-                  
-                    array.push(e)
-                    console.log(array)
-                    //setProductsFilteredByDetailedFilter([...productsFilteredByDetailedFilter,e])
-                    //console.log("processor that satisfies filters", productsFilteredByDetailedFilter)
+                if(hasProperty===true && valuesMatches===true && index===-1){
+                    setShow(false)  
+                    productsFiltedbySpecificFilters.push(e)
+                    setProductsFiltedbySpecificFilters(productsFiltedbySpecificFilters)
                  }else{
-                    //console.log("processor that satisfies filters", productsFilteredByDetailedFilter)
-                    //setAllProductsFiltered(setProductsFilteredByDetailedFilter)
-                    // console.log('new array')
-                    // console.log('the element that dos not match',e)
-                    // console.log("active filters", FiltersofEachCategory)
-                    console.log('here', productsFilteredByDetailedFilter)
+                  
+                    
                  }
     
         
           }
+         
      })
+ 
+     
 }
 // this function udated product by category
 useEffect(()=>{
-      //var array=[];
 const fprod= AllProducts.filter((e)=> e.category === filtersActive.codeCategory)
-//setAllProductsFiltered(fprod)
-
 setProductsFilteredByDetailedFilter(fprod)
-console.log("is updating productsFilteredByDetailedFilter ", productsFilteredByDetailedFilter)
-     
-     //  AllProducts.forEach((e)=>{
-     // if(filtersActive.codeCategory === e.category )
-     //            {         
-     //                         array.push(e);
-     //                         setAllProductsFiltered(array)
-     //                          console.log("all products filterd", allProductsFiltered)
-     //                     }else{
-     //                         console.log("this product does not belong to this category")
-     //                          setAllProductsFiltered(allProductsFiltered)
-                              
-     //                     }
-     //     })
-         
-    },[AllProducts,filtersActive])
+ },[AllProducts,filtersActive])
     
 
-useEffect(()=>{
-     var productsWithId = allProductsFiltered.map((product, index) => ({ ...product, id: index }));
-    // setAllProductsFiltered(productsWithId);
-     //console.log("all products with id", allProductsFiltered)
-     
-},[filtersActive])
+
 
     return(<div className="flex flex-col  ">
         <Navbar/>
@@ -212,9 +125,9 @@ useEffect(()=>{
                           </div>
                            
                            
-                           {/*<input type="text" placeholder="Search for products"  className="w-5/12 z-10 p-[5px] bg-[#D6D6D6]"/>*/}
+                          
                            <FreeSoloCreateOption/>
-                           {/**<FreeSoloCreateOption/>*/}
+                           
                              <svg 
                                    className="absolute left-[60%] z-10"
                                    xmlns="http://www.w3.org/2000/svg" width="12.851" height="12.851" viewBox="0 0 12.851 12.851">
@@ -234,7 +147,7 @@ useEffect(()=>{
 
                 
                  
-                 <div className="flex w-full  flex-wrap justify-center mt-20 mb-20">
+               {show &&  <div className="flex w-full  flex-wrap justify-center mt-20 mb-20">
                  
                    {productsFilteredByDetailedFilter.map((e)=><ProductItem
                    urlImage={e.urlImage} 
@@ -243,8 +156,19 @@ useEffect(()=>{
                    name={e.name} typeProduct={e.typeProduct} 
                    descreption={e.descreption} 
                    price={e.price} btn={e.btn}/>)}
-                  </div>
-
+                 </div>
+                  }
+                  
+                  {!show && <div className="flex w-full  flex-wrap justify-center mt-20 mb-20">
+                   {productsFiltedbySpecificFilters.map((e)=><ProductItem
+                   urlImage={e.urlImage} 
+                   id={e.id}
+                   category={e.category} 
+                   name={e.name} typeProduct={e.typeProduct} 
+                   descreption={e.descreption} 
+                   price={e.price} btn={e.btn}/>)}
+                  </div>}
+                 
 
                    {/******displaying Products from divatech data base */}
 

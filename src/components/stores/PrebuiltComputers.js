@@ -16,19 +16,14 @@ import icon6 from "../../assets/predesignedpc/icons/ssd.png";
 import icon7 from "../../assets/predesignedpc/icons/outline.png";
 import icon8 from "../../assets/predesignedpc/icons/cpu-tower.png";
 import icon9 from "../../assets/predesignedpc/icons/graphic-card.png";
-export const UseRebuiltComputersStore= create((set, get)=>({
-    OurRebuiltComputers :[ {
-    name:'divakit',
+export const UsePrebuiltComputersStore= create((set, get)=>({
+OurPrebuiltComputers :[ {
+    name:'DIVATECH PC ART',
     //typeProduct:'case',
-    description:`5000X, 5000T, and 7000X case options with tempered glass panels 
-    Up to an Intel Core i9-14900K, or AMD Ryzen 9 7950X3D Soft 
-    tube or hardline options for CPU and GPU Cooling Up to a single 
-    NVIDIA GeForce RTX 4090 GPU liquid cooled Up to 96GB of DDR5 RAM 
-    5600MHz or 32GB 6000Mhz DRAM Up to 3 year warranty + 24/7 tech support
-     and lifetime labor included', urlImage:newProdimg6`,
+    description:`PC gamer AMD Ryzen 5 5500 (3.6 GHz / 4.2 GHz) 16 Go SSD 1 To NVIDIA GeForce RTX 4060 8 Go Wi-FI AC (sans Windows - non monté)`,
     urlImage:image,
 } ,{
-    name:'origami',
+    name:'DIVATECH PC Bazooka Dark Gen 12',
     //typeProduct:'case',
     description:`5000X, 5000T, and 7000X case options with tempered glass panels 
     Up to an Intel Core i9-14900K, or AMD Ryzen 9 7950X3D Soft tube or hardline 
@@ -71,7 +66,7 @@ export const UseRebuiltComputersStore= create((set, get)=>({
     urlImage:image2,
 }
     ],
-    PredesignedComputers: [{
+PredesignedComputers: [{
         name:'HADES MC-R43',
         //typeProduct:'case',
         description:`HADES MC-R43 est un PC gaming puissant et polyvalent. Équipé d'un processeur AMD Ryzen 3 PRO 4350G avec l'une des plus puissants APU, la Radeon VEGA 6, ça vous aidera à profitez d'une expérience gaming exceptionnelle au titres d'e-sports plus connus et les jeux AAA, en vous offrant une configuration entièrement évolutive, 8GB de RAM DDR4 3200Mhz avec un emplacement vide une 2éme barrette de RAM, 128GB de stockage SSD (avec des espaces vides pour les HDD), assez de puissance grâce à l'alimentation MARS GAMING 550W 85+ certifié, et un boîtier MC-X2 équipé de 2 ventilateurs FRGB et plein d'espace pour un bon refroidissement`,

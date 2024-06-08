@@ -13,6 +13,7 @@ import PredesignedPC from '../src/components/PredesignedPC';
 import Affiliate from '../src/components/Affiliate';
 import Tournement from '../src/components/Tournement';
 import TournementPage from '../src/components/Tournement/TournementPage';
+import ShopingCart from '../src/components/ShopingCart';
 function App() {
   return (
     <div className="bg-black text-white ">
@@ -31,6 +32,7 @@ function App() {
     <Route exact path ={`/affiliate`} Component={Affiliate}/>
     <Route exact path ={`/tournement`} Component={Tournement}/>
     <Route exact path ={`/tournementpage/:id`} Component={TournementPage}/>
+    <Route exact path ={`/shopingcart`} Component={ShopingCart}/>
   </Routes>
 
      

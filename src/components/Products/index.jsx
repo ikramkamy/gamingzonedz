@@ -9,25 +9,23 @@ import FreeSoloCreateOption from '../../components/commun/InputAutoComplete';
 import { useFiltersStor } from "../../components/stores/filertsStore";
 import { useEffect, useState } from "react";
 import FiltersProducts from "../commun/FiltersProducts";
-import { includes } from "@egjs/flicking";
+
 const Products=()=>{
- const {AllProducts, FiltersofEachCategory}=UseProductsStore((state)=>state) ;
- const {getProducts,ProductsList,cathegories,Filters}=useFiltersStor((state)=>state);
- const [allProductsFiltered, setAllProductsFiltered]=useState(AllProducts.slice(0 ,8))
+ const {AllProducts, FiltersofEachCategory, setFiltersofEachCategory}=UseProductsStore((state)=>state) ;
+ const {cathegories,Filters}=useFiltersStor((state)=>state);
+ //const [allProductsFiltered, setAllProductsFiltered]=useState([])
+
+ const [productsFilteredByDetailedFilter, setProductsFilteredByDetailedFilter]=useState([])
  const [copyCathegories, setCopyCathegories]=useState(cathegories)
  const [filtersActive, setFiltersActive]=useState(cathegories[0]);
-const [filersActiveCode, setFiltersActiveCode]=useState([1]);
+ const [show, setShow]=useState(false)
+ const [filersActiveCode, setFiltersActiveCode]=useState([1]);
  const [filteredProducts, setFilteredProducts]=useState([]);
- const [processorFilters, setProcessorFilters]=useState([{
-     brands:"",
-     models:"",
-     support:"",
-     platfom:"",
- }])
+
 //{/******update the array of codes corresponding to each category**********/}
 
  useEffect(()=>{
-       setFiltersActiveCode(filtersActive[0]?.codeCategory)
+       //setFiltersActiveCode(filtersActive[0]?.codeCategory)
 
        /*
        var array=[];
@@ -39,15 +37,21 @@ const [filersActiveCode, setFiltersActiveCode]=useState([1]);
   */
  },[filtersActive])
 
+// To get the products of the current divatech database from JSON file 
 
- useEffect(()=>{
-     getProducts && getProducts();  
- },[])
 
-//{/******update the array Active categories**********/}
+//  useEffect(()=>{
+//      getProducts && getProducts();  
+//  },[])
+
+//{/******update the array Active categories **********/}
 
 const handelActiveFilters=(e)=>{
 setFiltersActive(e)
+setFiltersofEachCategory([])
+
+console.log('we are clearing filters list', FiltersofEachCategory)
+setShow(true)
 copyCathegories.forEach((elem)=>{
        if(e===elem){
               elem.FilterIsActive= !elem.FilterIsActive;
@@ -57,6 +61,7 @@ copyCathegories.forEach((elem)=>{
        }
 })
  }
+ //not using this fucntion 
  const handelActiveFiltersInCategory=(e)=>{
      setFiltersActive(e)
      filteredProducts.forEach((elem)=>{
@@ -68,89 +73,94 @@ copyCathegories.forEach((elem)=>{
             }
      })
       }
- useEffect(()=>{
-      let array=[]
+//used to filter products in the packet json 
+
+//  useEffect(()=>{
+//       let array=[]
       
-       ProductsList.forEach((e)=>
-       {
-             if(filtersActive.codeCategory=== e.fields.category)
-              {
+//        ProductsList.forEach((e)=>
+//        {
+//              if(filtersActive.codeCategory=== e.fields.category)
+//               {
              
-              setFilteredProducts([...filteredProducts,e])
-              array.push(e);
-              setFilteredProducts(array)
-             
-              }
-       })
+//               setFilteredProducts([...filteredProducts,e])
+//               array.push(e);
+//               setFilteredProducts(array)
+//              console.log('filtered products', filteredProducts)
+//               }
+//        })
    
-},[filtersActive])
+// },[filtersActive])
 
-useEffect(()=>{
- var array=[];
-      AllProducts.forEach((e)=>{
-         
-          if(filtersActive.codeCategory === e.category)
-               {
-               array.push(e);
-               setAllProductsFiltered(array)
-               
-            }
-     })
-     
-},[allProductsFiltered])
 
-const [productsFilteredByDetailedFilter, setProductsFilteredByDetailedFilter]=useState([])
+const allProductsFiltered=AllProducts.filter((e)=> e.category ===filtersActive.codeCategory)
+
+//this function takes products from a specific category than apply corresponding filters
 const handeldetailedFilters=()=>{
-     //console.log("products filtered", productsFilteredByDetailedFilter)
-     console.log("les filtres", FiltersofEachCategory)
+
+console.log("allproductsFilteredByDetailedFilter",productsFilteredByDetailedFilter)
      allProductsFiltered.forEach((e)=>{
-          
-     //     console.log("one filtered", e)
-     //     console.log("keys of the product", Object.keys(e))
-     //     console.log("list of products", allProductsFiltered)
+          setShow(false)
+          const array=[]
          var array1=Object.keys(e)
-         var array11=Object.values(e)
-     //     console.log("all processors", allProductsFiltered)
-     //     console.log("processors", FiltersofEachCategory)
-     //     console.log("properties",(array1))
-     //     console.log("values", array11)
-          FiltersofEachCategory.forEach((p)=>{
-               var array2=Object.keys(p);
-               var array3=Object.values(p)
-               // console.log("property",(array2[0]))
-               
-               // console.log("value",(array3[0]))
-               
-               if(array1.includes(array2[0]) && array11.includes(array3[0]))
-                   
-                    {
-                         console.log("condition ", array1.includes(array2[0]) && array11.includes(array3[0]))
-                         // console.log("this element is concidered", e)
-                         const index = productsFilteredByDetailedFilter.findIndex(el => JSON.stringify(el) === JSON.stringify(e));
-                         if(index === -1){
-                              setProductsFilteredByDetailedFilter([...productsFilteredByDetailedFilter,e])
-                             
-                         }else{
-                              console.log('it already exists')
-                         }
-                         
-                    }else{
-                         //console.log("the value of the property",Object.values(e))
-                         console.log("condition ",  array11.includes(array3[0]))
-                         //setProductsFilteredByDetailedFilter(productsFilteredByDetailedFilter)
-                         //console.log("ProductsFilteredByDetailedFilter",productsFilteredByDetailedFilter)
-                    }
-                    })
-
-          })
+          for(let i = 0 ; i < FiltersofEachCategory.length ; i++){
+                const hasProperty = array1.some((property) => property === Object.keys(FiltersofEachCategory[i])[0]);
+                const valuesMatches = (Object.values(FiltersofEachCategory[i])[0]=== e[Object.keys(FiltersofEachCategory[i])]);
+                var index = productsFilteredByDetailedFilter.findIndex(el => JSON.stringify(el) === JSON.stringify(e));
+                
+                if(hasProperty===true && valuesMatches===true ){
+                    console.log('all products filterd', allProductsFiltered)
+                     //productsFilteredByDetailedFilter.push(e)
+                    //const newarray=allProductsFiltered.filter((el) => JSON.stringify(el) === JSON.stringify(e))
+                    //setProductsFilteredByDetailedFilter([...productsFilteredByDetailedFilter])
+                    //console.log('new array', newarray[0] )
+                  
+                    array.push(e)
+                    console.log(array)
+                    //setProductsFilteredByDetailedFilter([...productsFilteredByDetailedFilter,e])
+                    //console.log("processor that satisfies filters", productsFilteredByDetailedFilter)
+                 }else{
+                    //console.log("processor that satisfies filters", productsFilteredByDetailedFilter)
+                    //setAllProductsFiltered(setProductsFilteredByDetailedFilter)
+                    // console.log('new array')
+                    // console.log('the element that dos not match',e)
+                    // console.log("active filters", FiltersofEachCategory)
+                    console.log('here', productsFilteredByDetailedFilter)
+                 }
+    
+        
+          }
+     })
 }
-//console.log("ProductsFilteredByDetailedFilter",productsFilteredByDetailedFilter)
+// this function udated product by category
+useEffect(()=>{
+      //var array=[];
+const fprod= AllProducts.filter((e)=> e.category === filtersActive.codeCategory)
+//setAllProductsFiltered(fprod)
 
-
+setProductsFilteredByDetailedFilter(fprod)
+console.log("is updating productsFilteredByDetailedFilter ", productsFilteredByDetailedFilter)
+     
+     //  AllProducts.forEach((e)=>{
+     // if(filtersActive.codeCategory === e.category )
+     //            {         
+     //                         array.push(e);
+     //                         setAllProductsFiltered(array)
+     //                          console.log("all products filterd", allProductsFiltered)
+     //                     }else{
+     //                         console.log("this product does not belong to this category")
+     //                          setAllProductsFiltered(allProductsFiltered)
+                              
+     //                     }
+     //     })
+         
+    },[AllProducts,filtersActive])
+    
 
 useEffect(()=>{
      var productsWithId = allProductsFiltered.map((product, index) => ({ ...product, id: index }));
-     setAllProductsFiltered(productsWithId);
+    // setAllProductsFiltered(productsWithId);
+     //console.log("all products with id", allProductsFiltered)
      
 },[filtersActive])
 
@@ -161,7 +171,7 @@ useEffect(()=>{
              <div className="w-fit flex z-10 justify-between items-start  items-center">
                  <Link to="/">     <svg 
                                className="cursor-pointer mx-2  "
-        xmlns="http://www.w3.org/2000/svg" width="10.244" height="11.326" viewBox="0 0 10.244 11.326">
+                                xmlns="http://www.w3.org/2000/svg" width="10.244" height="11.326" viewBox="0 0 10.244 11.326">
                                      <g id="Icon_feather-home" data-name="Icon feather-home" transform="translate(0.25 0.25)">
                                        <path id="Tracé_426" data-name="Tracé 426" d="M4.5,6.789,9.372,3l4.872,3.789v5.954a1.083,1.083,0,0,1-1.083,1.083H5.583A1.083,1.083,0,0,1,4.5,12.744Z" transform="translate(-4.5 -3)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5"/>
                                        <path id="Tracé_427" data-name="Tracé 427" d="M13.5,23.413V18h3.248v5.413" transform="translate(-10.252 -12.587)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5"/>
@@ -177,13 +187,11 @@ useEffect(()=>{
         </div>
 
         {/****Products and filters*****/}
-        <div className="flex w-full justify-center mt-20 p-20 items-start">
+        <div className="flex w-full justify-center mt-20 p-20 items-start relative">
                  {/****Series*****/}
                  <div className="flex cursor-pointer flex-col w-2/12 max-sm:w-full max-sm:translate-x-[-90%] hover:max-sm:translate-x-[0%]  max-sm:pl-20 max-sm:bg-[#CA2026] max-sm:absolute max-sm:z-20 transition ease-in-out delay-150 ">
-                <FiltersProducts filtersActive={filtersActive}  FiltersList={Filters[0]} handelActiveFilters={handelActiveFilters} />
-                <div 
-                onClick={()=>handeldetailedFilters()} 
-                className=" w-full mt-20 bg-red-500" >Validate filter</div>
+                <FiltersProducts handeldetailedFilters={handeldetailedFilters} filtersActive={filtersActive}  FiltersList={Filters[0]} handelActiveFilters={handelActiveFilters} />
+               
                     </div>
                     
                   {/****Products section*****/}
@@ -224,8 +232,11 @@ useEffect(()=>{
 
                     {/****products*****/}
 
-                  <div className="flex w-full  flex-wrap justify-center mt-20 mb-20">
-                   {allProductsFiltered.map((e)=><ProductItem
+                
+                 
+                 <div className="flex w-full  flex-wrap justify-center mt-20 mb-20">
+                 
+                   {productsFilteredByDetailedFilter.map((e)=><ProductItem
                    urlImage={e.urlImage} 
                    id={e.id}
                    category={e.category} 
@@ -233,6 +244,7 @@ useEffect(()=>{
                    descreption={e.descreption} 
                    price={e.price} btn={e.btn}/>)}
                   </div>
+
 
                    {/******displaying Products from divatech data base */}
 

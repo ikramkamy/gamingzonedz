@@ -71,12 +71,12 @@ const handelDynamicPosition=()=>{
     const interval = setInterval(() => {
       if(elem < CarouselElements.length -1){
         setElem( elem + 1);
-        console.log("condition 1 elem " ,elem < CarouselElements.length -1)
+        //console.log("condition 1 elem " ,elem < CarouselElements.length -1)
       }
      
      else {
   setElem(0)
-  console.log("condition not verified elem " , elem)
+  //console.log("condition not verified elem " , elem)
        }
     }, 2000); 
 

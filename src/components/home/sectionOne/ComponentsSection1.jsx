@@ -44,11 +44,9 @@ export const ButtonRebuiltPcSection=(props)=>{
    
    >
 
-  <div className="uppercase text-[24px] max-sm:text-
+  <div className="uppercase text-[20px] max-sm:text-
   bg-transparent cursor-pointer z-20 flex 
   justify-center items-center max-sm:text-[13px]
-  
-  
   ">
     {props.btnName}
     
@@ -84,7 +82,7 @@ export const Button2RebuiltPcSection=(props)=>{
    
    >
 
-  <div className="uppercase text-[14px] bg-transparent cursor-pointer 
+  <div className="uppercase text-[10px] bg-transparent cursor-pointer 
   z-20 flex justify-center items-center max-sm:text-[14px]">
     {props.btnName}
     
@@ -121,7 +119,7 @@ export const Button3RebuiltPcSection=(props)=>{
    
    >
 
-  <div className="uppercase text-[14px] bg-transparent cursor-pointer 
+  <div className="uppercase text-[10px] bg-transparent cursor-pointer 
   z-20 flex justify-center items-center max-sm:text-[14px]">
     {props.btnName}
     

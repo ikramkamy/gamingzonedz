@@ -3,13 +3,13 @@ import Footer from "../footer";
 import HeaderPages from "../commun/HeaderPages";
 import ShowProduct from "../commun/ShowProduct";
 import img from "../../assets/predesignedpc/mcneo_960x960.png";
-import { UseRebuiltComputersStore } from "../stores/RebuiltComputers";
+import { UsePrebuiltComputersStore } from "../stores/PrebuiltComputers";
 import { useState } from "react";
 import TechnicalSpecItem from "../commun/technicalSpecItem";
 import { ToolProductBarBtn } from "../commun/CommunBtn";
 import imss from "../../assets/predesignedpc/Trace 20703.svg"
 const PredesignedPC=()=>{
-const {PredesignedComputers, technicalSpecification}=UseRebuiltComputersStore((state)=>state)
+const {PredesignedComputers, technicalSpecification}=UsePrebuiltComputersStore((state)=>state)
 const [styleFlex, setstyleFlex]=useState('flex');
 const handelFlex=(e)=>{
     if(PredesignedComputers.indexOf(e)%2 === 0){ setstyleFlex('flex-row-reverse ')}

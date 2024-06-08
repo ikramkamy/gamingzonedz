@@ -2,6 +2,7 @@
   "name": "gamingzone",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8000/",
   "dependencies": {
     "@egjs/flicking": "^4.11.3",
     "@egjs/flicking-plugins": "^4.7.1",

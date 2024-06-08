@@ -1,10 +1,10 @@
 import { ButtonRebuiltPcSection , Button2RebuiltPcSection} from "../sectionOne/ComponentsSection1";
-import { UseRebuiltComputersStore } from "../../stores/RebuiltComputers";
-import { ReabuiltItem } from "./RebuiltItem";
+import {UsePrebuiltComputersStore} from "../../stores/PrebuiltComputers";
+import { ReabuiltItem } from "./PrebuiltItem";
 const RebuitPc=()=>{
-    const {OurRebuiltComputers}=UseRebuiltComputersStore((state)=>state)
+    const {OurPrebuiltComputers}=UsePrebuiltComputersStore((state)=>state)
     return(
-<div className="flex flex-col justify-center items-center ">
+<div className="flex flex-col justify-center items-center  ">
 <div className="uppercase text-[67px] max-sm:text-[28px] text-center w-full bg-bgRebuiltPc
  bg-no-repeat bg-cover bg-center p-20 ">rebuilt computers</div>
 <div className="flex w-10/12 max-sm:w-11/12 justify-center items-center">
@@ -14,9 +14,9 @@ const RebuitPc=()=>{
 
 </div>
 <div className="flex flex-wrap  mt-[2%] max-sm:flex-col">
-{ OurRebuiltComputers.slice(0,3).map((e)=>
+{OurPrebuiltComputers.slice(0,3).map((e)=>
 
-<ReabuiltItem index={OurRebuiltComputers.indexOf(e)} urlImage={e.urlImage} name={e.name} description={e.description}  widthItem="w-1/3"/>
+<ReabuiltItem index={OurPrebuiltComputers.indexOf(e)} urlImage={e.urlImage} name={e.name} description={e.description}  widthItem="w-1/3"/>
 
 
 )}

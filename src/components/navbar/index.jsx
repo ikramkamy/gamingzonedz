@@ -40,18 +40,28 @@ useEffect(()=>{
 
     return(
  <div className="sticky top-[-1%] z-30 w-full ">
-<div className="flex flex-col  max-sm:hidden  justify-center items-center bg-secondary text-[10px] z-10  relative w-full">
+<div className="w-full flex flex-col bg-red-500 max-sm:hidden  justify-center items-center bg-secondary text-[10px] z-10  relative ">
    
     <svg 
    
     id="Groupe_1089" data-name="Groupe 1089" xmlns="http://www.w3.org/2000/svg"
-     width="100%" height="159.38" viewBox="0 0 1920 159.38" 
-    className="absolute top-12  w-[100%] ">
+     width="" height="159.38" viewBox="0 0 1920 159.38" 
+    className="absolute top-12 hidden w-full ">
     
   <path  id="Trace_20950" data-name="Tracé 20950" d="M1920,8V117.2l-214.05,10.18-8.61,4.9-47.64,27.1H275.2l-49.93-30.02-19.13-11.5L0,125.61V8Z" fill="#242424"/>
   <path id="Trace_20951" data-name="Tracé 20951" d="M1920,0V129.36H1704.62l-7.28,2.92-47.65,19.1H275.19l-46.88-22.02H0V0Z" 
    fill="#111"/>
    </svg>
+   <svg 
+  className="absolute top-12  w-full "
+   xmlns="http://www.w3.org/2000/svg" width="2544.896" height="159.382" viewBox="0 0 2544.896 159.382">
+  <g id="Groupe_1227" data-name="Groupe 1227" transform="translate(-199 70.639)">
+    <path id="Trace_20950" data-name="Tracé 30" d="M1663,2818.081l518.588-19.5,69.053,41.513h1374.5l56.253-32,516.846-24.574,9.656-94.808H1663Z" transform="translate(-1464 -2751.352)" fill="#242424"/>
+    <path id="" data-name="Tracé 19" d="M1663,2836.087l540.754-18.006,46.888,22.015h1374.5l54.926-22.015H4207.9V2688.713H1663Z" transform="translate(-1464 -2759.352)" fill="#101010"/>
+  </g>
+</svg>
+
+
 
 
 

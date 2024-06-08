@@ -2,12 +2,12 @@ import Navbar from "../navbar";
 import Footer from "../footer"
 import { Link } from "react-router-dom";
 import { ButtonRebuiltPcSection } from "../home/sectionOne/ComponentsSection1";
-import { ReabuiltItem } from "../home/RebuiltPcsection/RebuiltItem";
-import { UseRebuiltComputersStore } from "../stores/RebuiltComputers";
+import { ReabuiltItem } from "../home/PrebuiltPcsection/PrebuiltItem";
+import { UsePrebuiltComputersStore } from "../stores/PrebuiltComputers";
 const PrebuiltComputers=()=>{
-    const {OurRebuiltComputers}=UseRebuiltComputersStore((state)=>state)
+    const {OurPrebuiltComputers}=UsePrebuiltComputersStore((state)=>state)
     return(
- <div className="flex flex-col w-full justify-center items-center">
+ <div className="flex flex-col w-full justify-center items-center ">
          <Navbar/>
         <div className="bg-bgSection3 p-10 mt-20  bg-cover bg-bottom bg-no-repeat  w-full relative flex flex-col justify-center items-center mt-20">
              <div className="text-[48px] z-10 uppercase w-full text-center">predesigned computers</div> 
@@ -47,9 +47,9 @@ const PrebuiltComputers=()=>{
 
 <div className="flex flex-wrap w-10/12 mt-20 max-sm:flex-col">
 
-{OurRebuiltComputers.map((e)=>
+{OurPrebuiltComputers.map((e)=>
 
-<ReabuiltItem index={OurRebuiltComputers.indexOf(e)} urlImage={e.urlImage} name={e.name} description={e.description} widthItem='w-1/4'/>
+<ReabuiltItem index={OurPrebuiltComputers.indexOf(e)} urlImage={e.urlImage} name={e.name} description={e.description} widthItem='w-1/4'/>
 )}
 </div>
 
@@ -58,7 +58,7 @@ const PrebuiltComputers=()=>{
 
                   <div className="flex justify-center items-center z-10 h-full " >
                    <h1  className="uppercase text-[10px] mr-2">Total number of products</h1>
-                   <h1 className="uppercase text-[10px] ml-2">{OurRebuiltComputers.length}</h1>
+                   <h1 className="uppercase text-[10px] ml-2">{OurPrebuiltComputers.length}</h1>
                  </div>
             
                    <div className="flex w-1/4 justify-between items-center z-10 ">

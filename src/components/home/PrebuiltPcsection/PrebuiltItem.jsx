@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Button2RebuiltPcSection , Button3RebuiltPcSection } from "../sectionOne/ComponentsSection1"
-
+import {Link }from 'react-router-dom'
 
 export const ReabuiltItem=(props)=>{
     const {index, widthItem}=props;
@@ -10,22 +10,22 @@ export const ReabuiltItem=(props)=>{
 useEffect(()=>{
 console.log('key',index)
 if(index %2 ===1){
-    console.log("we add border to", index)
+    // console.log("we add border to", index)
     setWidthBorder(' border-x-2 border-secondary')
 }else{
-    console.log('we do not add border to ', index)
+    // console.log('we do not add border to ', index)
     setWidthBorder('none')
 }
 },[])
-return(<div 
-className={`py-10 transition delay-50 group hover:bg-lightGrey flex flex-col ${widthItem} max-sm:w-full 
-justify-center items-center px-2 cursor-pointer ${withBorder}`} onClick={()=>setSeeMore(!seeMore)}>
+return(<Link to="/predesignedpc" className={`py-10 transition delay-50 group hover:bg-lightGrey flex flex-col ${widthItem} max-sm:w-full 
+  justify-center items-center px-2 cursor-pointer `} onClick={()=>setSeeMore(!seeMore)}>
+
 <div className="bg-bgImgRebuiltPc bg-contain bg-no-repeat w-full p-[10%] flex justify-center bg-center relative">
 
 <svg 
-className={`absolute top-0 animate-spin-slow animate-running group-hover:animate-none`}
+className={`absolute  max-lg:w-[150px] top-0 animate-spin-slow animate-running group-hover:animate-none`}
 
-id="Groupe_1227" data-name="Groupe 1227" xmlns="http://www.w3.org/2000/svg" width="283.058" height="289.839" viewBox="0 0 283.058 289.839">
+id="Groupe_1227" data-name="Groupe 1227" xmlns="http://www.w3.org/2000/svg" width="" height="" viewBox="0 0 283.058 289.839">
   <g id="Groupe_34" data-name="Groupe 34" transform="translate(53.174 38.411)">
     <g id="Groupe_33" data-name="Groupe 33">
       <path id="Tracé_172" data-name="Tracé 172" d="M430.022,78.636l6.1-.12.058-2.6Z" transform="translate(-430.022 -72.241)" fill="#8f8f8f"/>
@@ -121,7 +121,9 @@ id="Groupe_1227" data-name="Groupe 1227" xmlns="http://www.w3.org/2000/svg" widt
   </g>
 </svg>
 <svg 
-className={`absolute  top-10 animate-spin-slow1 animate-running group-hover:animate-none group-hover:animate-spin-slow2 `}
+className={`absolute  
+max-lg:w-[120px]
+top-10 max-lg:top-0 animate-spin-slow1 animate-running group-hover:animate-none group-hover:animate-spin-slow2 `}
 xmlns="http://www.w3.org/2000/svg" width="222" height="203.155" viewBox="0 0 222.667 203.155">
   <g id="Groupe_1228" data-name="Groupe 1228" transform="translate(-29.473 -40.535)">
     <g id="Groupe_36" data-name="Groupe 36" transform="translate(66.227 78.176)">
@@ -196,18 +198,19 @@ xmlns="http://www.w3.org/2000/svg" width="222" height="203.155" viewBox="0 0 222
 </svg>
 
     <img src={props.urlImage} alt="gaming zone" 
-    className={`group-hover:w-[210px] max-lg:w-[100px] group-hover:animate-skewEffect `}/>
+    
+    className={`w-[150px] group-hover:w-[160px] max-lg:group-hover:w-[110px] max-lg:w-[100px] group-hover:animate-skewEffect `}/>
     </div>
-<h1 className="text-redPrimary text-[38px] max-lg:text-[28px] uppercase animate-colorEffect1 
+<h1 className="text-redPrimary text-[28px] max-lg:text-[28px] uppercase animate-colorEffect1 
 animate-running group-hover:animate-none animate-alternate-reverse">{props.name}</h1>
 {/**deviding the descreption in small paragraps of 10 words */}
-<div className=" w-1/2 max-sm:w-full">
-<p className="  text-[15px]">{props.description.split(' ').slice(0 , 10).join(' ')} <br/></p>
-<p className=" text-[15px] mt-[15px]">{props.description.split(' ').slice(11,21).join(' ')} <br/></p>
-<p className=" text-[15px] mt-[15px]">{props.description.split(' ').slice(22,32).join(' ')} <br/></p>
-<p className=" text-[15px] mt-[15px]">{props.description.split(' ').slice(33,43).join(' ')} <br/></p>
-{seeMore && <p className=" mt-[15px]">
-    
+<div className={`w-10/12 max-sm:w-full `}>
+<p className=" text-[12px]  max-lg:text-[10px] ">{props.description.split(' ').slice(0 , 10).join(' ')} <br/></p>
+<p className=" text-[12px] max-lg:text-[10px]  mt-[15px]">{props.description.split(' ').slice(11,21).join(' ')} <br/></p>
+<p className=" text-[12px] max-lg:text-[10px]  mt-[15px]">{props.description.split(' ').slice(22,32).join(' ')} <br/></p>
+<p className=" text-[12px] max-lg:text-[10px]  mt-[15px]">{props.description.split(' ').slice(33,43).join(' ')} <br/></p>
+{seeMore && <p className="  max-lg:text-[10px] mt-[15px]">
+   
     {props.description.split(' ').slice(44, 54).join(' ')} <br/>
     {props.description.split(' ').slice(55, 65).join(' ')} <br/>
     {props.description.split(' ').slice(66, 76).join(' ')} <br/>
@@ -220,5 +223,7 @@ animate-running group-hover:animate-none animate-alternate-reverse">{props.name}
     <Button2RebuiltPcSection btnName="customize"/>
     <Button3RebuiltPcSection btnName="preconfigured"/>
 </div>
-</div>)
+
+</Link>
+)
 }

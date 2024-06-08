@@ -8,13 +8,16 @@ const ActualiteSection=()=>{
   
   bg-bgActualite bg-top bg-cover bg-no-repeat  w-full">
      <div className="uppercase text-[67px] max-sm:text-[28px] text-center w-full mt-20 ">actualités</div>
-    <div  className="w-10/12 flex flex-wrap items-center justify-center ">
- 
-{blogs.map((e)=>
+
+    
+<div  className="w-10/12 flex grid grid-cols-3 items-center justify-center ">
+ {blogs.map((e)=>
 <ActualiteCardItem image={e.imageURL} title={e.title} subtitle={e.subtitle} bloglink={e.bloglink}/>)}
-
-
 </div>
-    </div>)
+
+
+
+
+</div>)
 }
 export default ActualiteSection;

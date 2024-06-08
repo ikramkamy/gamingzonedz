@@ -10,8 +10,8 @@ export const UseBlogStore= create((set, get)=>({
     blogs :[ {
     imageURL:image,
     date:"27/05/2024",
-    title:"visite entreprise",
-    subtitle:"Grow your empire as you learn to repair, build and customize PCs at the next level. Experience deeper simulation, an upgraded career mode, and powerful new customisation features. Use realistic parts from 40+ hardware brands to bring your ultimate PC to life.",
+    title:"Gaming News",
+    subtitle:"The biggest video game news, rumors, previews, and info about the PC, PlayStation, Xbox, Nintendo, & mobile titles you play..",
     bloglink:"/blog"
     
 },
@@ -19,16 +19,16 @@ export const UseBlogStore= create((set, get)=>({
 {
     imageURL:image2,
     date:"27/05/2024",
-    title:"visite entreprise",
-    subtitle:"Grow your empire as you learn to repair, build and customize PCs at the next level. Experience deeper simulation, an upgraded career mode, and powerful new customisation features. Use realistic parts from 40+ hardware brands to bring your ultimate PC to life.",
+    title:"Dragon Age",
+    subtitle:"Why I'm worried about Dragon Age Dreadwolf—and the Tiamat-sized RPG Baldur's Gate 3 looming over it is just the start",
     bloglink:"/blog"
     
 },
 {
     imageURL:image3,
     date:"27/05/2024",
-    title:"visite entreprise",
-    subtitle:"Grow your empire as you learn to repair, build and customize PCs at the next level. Experience deeper simulation, an upgraded career mode, and powerful new customisation features. Use realistic parts from 40+ hardware brands to bring your ultimate PC to life.",
+    title:"Astro Bot Price...",
+    subtitle:"A Japanese online retailer and the PlayStation Store have revealed the retail price of Astro Bot and Concord, respectively.",
     bloglink:"/blog"
     
 },
